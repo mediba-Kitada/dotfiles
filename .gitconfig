@@ -1,0 +1,16 @@
+[user]
+ name = mediba-kitada
+ email = kitada@mediba.jp
+[alias]
+ alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\t=> \\2/' | sort
+ b = branch -a
+ c = commit
+ co = checkout
+ d = diff
+ dc = diff --cached
+ info = remote show origin
+ l = log --graph -n 20 --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset'
+ s = status --short --branch
+ st = status
+
+	
