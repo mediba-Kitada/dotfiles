@@ -18,3 +18,5 @@
 
 [core]
  pager = LESSCHARSET=utf-8 less
+[merge]
+	conflictstyle = diff3

@@ -11,7 +11,7 @@ ZSH_THEME="amuse"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias less="less -R"
-alias vi=vim
+alias jmeter="~/apache-jmeter-2.11/bin/jmeter"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -48,12 +48,13 @@ alias vi=vim
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
+function git(){hub "$@"} #hub
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
@@ -69,3 +70,23 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+export LANG=ja_JP.UTF-8
+
+# PHP5.5
+export PATH="$(brew --prefix josegonzalez/php/php55)/bin:$PATH"
+
+# ruby
+if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
+
+# adb
+alias adb="adb forward tcp:9222 localabstract:chrome_devtools_remote"
+
+# ec2
+export JAVA_HOME=$(/usr/libexec/java_home)
+export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.14.1
+export PATH=$PATH:$EC2_HOME/bin 
+export AWS_SECRET_KEY="TktIxQxIfSKQzu2jlVwm0xffpGZr2hav"
+export AWS_SECRET_KEY="hQnTAhk/TktIxQxIfSKQzu2jlVwm0xffpGZr2hav"
+
+# added by travis gem
+[ -f /Users/t-kitada/.travis/travis.sh ] && source /Users/t-kitada/.travis/travis.sh
