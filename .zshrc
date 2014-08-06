@@ -90,3 +90,4 @@ export AWS_SECRET_KEY="hQnTAhk/TktIxQxIfSKQzu2jlVwm0xffpGZr2hav"
 
 # added by travis gem
 [ -f /Users/t-kitada/.travis/travis.sh ] && source /Users/t-kitada/.travis/travis.sh
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

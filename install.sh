@@ -5,6 +5,7 @@ git submodule update
 
 for i in `ls -a`
 do
+  rm ~/$i
   [ $i = "." ] && continue
   [ $i = ".." ] && continue
   [ $i = ".git" ] && continue
