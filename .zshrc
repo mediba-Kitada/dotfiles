@@ -87,7 +87,8 @@ export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.14.1
 export PATH=$PATH:$EC2_HOME/bin 
 export AWS_SECRET_KEY="TktIxQxIfSKQzu2jlVwm0xffpGZr2hav"
 export AWS_SECRET_KEY="hQnTAhk/TktIxQxIfSKQzu2jlVwm0xffpGZr2hav"
+export BOXEN_GITHUB_LOGIN="kitatuba"
 
 # added by travis gem
-[ -f /Users/t-kitada/.travis/travis.sh ] && source /Users/t-kitada/.travis/travis.sh
+[ -f /Users/kitada/.travis/travis.sh ] && source /Users/kitada/.travis/travis.sh
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

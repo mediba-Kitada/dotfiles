@@ -9,7 +9,7 @@
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "	    for OpenVMS:  sys$login:.vimrc
 
-" When started as "evim", evim.vim will already have done these settings.
+" When started as 'evim' evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
 endif
@@ -95,3 +95,59 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
+" Edit .vimrc"
+nnoremap <Space>.	:<C-u>edit $MYVIMRC<Enter>
+" Reload .vimrc"
+nnoremap <Space>s.	:<C-u>source $MYVIMRC<Enter>
+
+" 検索における大文字/小文字の区別削除"
+set ignorecase
+set smartcase
+
+" 現在のモードの表示"
+set showmode
+
+" ヘルプモードのショートカット"
+nnoremap <C-h>	:<C-u>help<space>
+nnoremap <C-h><C-h>	:<C-u>help<Space><C-r><C-w><Enter>
+
+" コマンドモードのショートカット"
+noremap ; :
+noremap : ;
+
+" 論理行移動と表示行移動のキーバインディング入れ替え"
+noremap j	gj
+noremap k	gk
+noremap gj	j
+noremap gk	k
+
+" 日時の入力補完"
+inoremap <expr> ,df	strftime('%Y-%m-%d %H:%M:%S')
+inoremap <expr> ,dd	strftime('%Y-%m-%d')
+inoremap <expr> ,dt	strftime('%Y:%m:%S')
+
+" 最後に変更したテキストの選択"
+nnoremap gc	`[v`]
+vnoremap gc	:<C-u>nomal gc<Enter>
+onoremap gc	:<C-u>nomal gc<Enter>
+
+" シンタックスハイライトの色設定の上書き"
+colorscheme desert
+autocmd ColorScheme *
+\ highlight TabLine
+\	cterm=NONE
+\	ctermfg=lightgray
+\	ctermbg=darkgray
+doautocmd ColorScheme _
+
+" カレントウィンドウのカーソル行をハイライト"
+autocmd WinEnter *	setlocal cursorline
+autocmd WinLeave *	setlocal nocursorline
+
+" 文字エンコーディングを指定しファイルを開く"
+command! Cp932	edit ++enc=cp932
+command! Eucjp	edit ++enc=ecu-jp
+command! Iso2022jp	edit ++enc=iso-2022jp
+command! Utf8	edit ++enc=utf-8
+command! Jis	Iso2022jp
+command! Sjis	Cp932
