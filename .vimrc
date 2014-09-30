@@ -151,3 +151,60 @@ command! Iso2022jp	edit ++enc=iso-2022jp
 command! Utf8	edit ++enc=utf-8
 command! Jis	Iso2022jp
 command! Sjis	Cp932
+
+" オートインデント"
+set autoindent
+
+"---------------------------
+" Start Neobundle Settings.
+"---------------------------
+" bundleで管理するディレクトリを指定
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+ 
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+ 
+" neobundle自体をneobundleで管理
+NeoBundleFetch 'Shougo/neobundle.vim'
+ 
+" NERDTreeを設定 
+NeoBundle 'scrooloose/nerdtree' 
+" 自動的に閉じ括弧を挿入
+NeoBundle 'Townk/vim-autoclose' 
+" ねこ
+NeoBundle 'nefo-mi/nyan-modoki.vim'
+" phpcs
+NeoBundle 'bpearson/vim-phpcs'
+" php-cs-fixer
+NeoBundle 'stephpy/vim-php-cs-fixer'
+
+call neobundle#end()
+ 
+" Required:
+filetype plugin indent on
+ 
+" 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
+" 毎回聞かれると邪魔な場合もあるので、この設定は任意です。
+NeoBundleCheck
+ 
+"-------------------------
+" End Neobundle Settings.
+"-------------------------
+
+" ねこ
+set laststatus=2
+set statusline=%{g:NyanModoki()}
+let g:nyan_modoki_select_cat_face_number = 2
+
+" CodeSnifferの設定をプロジェクト毎に読み込み
+augroup vimrc-local
+  autocmd!
+  autocmd BufNewFile,BufReadPost * call s:vimrc_local(expand(':p:h'))
+augroup END
+
+function! s:vimrc_local(loc)
+  let files = findfile('.vimrc.local', escape(a:loc, ' ') . ';', -1)
+  for i in reverse(filter(files, 'filereadable(v:val)'))
+    source `=i`
+  endfor
+endfunction '))
