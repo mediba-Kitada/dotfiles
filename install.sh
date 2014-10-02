@@ -17,6 +17,8 @@ done
 
 # Neobundleの導入
 mkdir -p ~/.vim/bundle
+mkdir -p ~/.vim/tags/
+mkdir -p ~/.vim/dict/
 git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 # php-cs-fixerの導入
