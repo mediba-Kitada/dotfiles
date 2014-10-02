@@ -92,3 +92,10 @@ export BOXEN_GITHUB_LOGIN="kitatuba"
 # added by travis gem
 [ -f /Users/kitada/.travis/travis.sh ] && source /Users/kitada/.travis/travis.sh
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# ctags
+alias ctags="`brew --prefix`/bin/ctags"
+tagsCmd='ctags --languages=php -f'
+tagsVariable=''
+tagsVariable=$tagsVariable"cd $HOME/vagrants/lucky-aws/kittyhawk;$tagsCmd $HOME/.vim/tags/kittyhawk.tags $HOME/vagrants/lucky-aws/kittyhawk;"
+alias TAGS=$tagsVariable
