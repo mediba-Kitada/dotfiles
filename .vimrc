@@ -221,7 +221,7 @@ autocmd FileType php :set dictionary=~/.vim/dict/php.dict
 
 " ctags
 autocmd BufNewFile,BufRead $HOME/vagrants/lucky-aws/kittyhawk/tokuten.auone.jp/*.php setlocal tags=$HOME/.vim/tags/kittyhawk.tags
-BundleLazy 'vim-scripts/taglist.vim', {
+NeoBundleLazy 'vim-scripts/taglist.vim', {
 \    'autoload' : {
 \        'commands' : 'Tlist',},}
 let Tlist_Use_Right_Window = 1
