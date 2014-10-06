@@ -72,9 +72,6 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:$PA
 
 export LANG=ja_JP.UTF-8
 
-# PHP5.5
-export PATH="$(brew --prefix josegonzalez/php/php55)/bin:$PATH"
-
 # ruby
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 
@@ -97,5 +94,5 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 alias ctags="`brew --prefix`/bin/ctags"
 tagsCmd='ctags --languages=php -f'
 tagsVariable=''
-tagsVariable=$tagsVariable"cd $HOME/vagrants/lucky-aws/kittyhawk;$tagsCmd $HOME/.vim/tags/kittyhawk.tags $HOME/vagrants/lucky-aws/kittyhawk;"
+tagsVariable=$tagsVariable"$tagsCmd $HOME/.vim/tags/kittyhawk.tags $HOME/mediba/lucky-aws/kittyhawk;"
 alias TAGS=$tagsVariable
