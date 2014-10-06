@@ -179,6 +179,8 @@ NeoBundle 'bpearson/vim-phpcs'
 NeoBundle 'stephpy/vim-php-cs-fixer'
 " ctags
 NeoBundle 'szw/vim-tags'
+" vim-ref
+NeoBundle 'thinca/vim-ref'
 
 call neobundle#end()
  
@@ -220,13 +222,16 @@ set shiftwidth=4
 autocmd FileType php :set dictionary=~/.vim/dict/php.dict
 
 " ctags
-autocmd BufNewFile,BufRead $HOME/mediba/lucky-aws/kittyhawk/tokuten.auone.jp/*.php setlocal tags=$HOME/.vim/tags/kittyhawk.tags
-"NeoBundleLazy 'vim-scripts/taglist.vim', {
-"\    'autoload' : {
-"\        'commands' : 'Tlist',},}
-"let Tlist_Use_Right_Window = 1
-"let Tlist_Show_One_File = 1
-"let Tlist_Exit_OnlyWindow = 1
-"let g:tlist_php_settings = 'php;c:class;f:function;d:constant'
-"nnoremap <Leader>t :Tlist<CR>
+autocmd BufNewFile,BufRead $HOME/vagrants/lucky-aws/kittyhawk/tokuten.auone.jp/*.php setlocal tags=$HOME/.vim/tags/kittyhawk.tags
+NeoBundleLazy 'vim-scripts/taglist.vim', {
+\    'autoload' : {
+\        'commands' : 'Tlist',},}
+let Tlist_Use_Right_Window = 1
+let Tlist_Show_One_File = 1
+let Tlist_Exit_OnlyWindow = 1
+let g:tlist_php_settings = 'php;c:class;f:function;d:constant'
+nnoremap <Leader>t :Tlist<CR>
 
+" PHPマニュアル読み込み
+let g:ref_cache_dir=$HOME.'/.vim/vim-ref/cache'
+let g:ref_phpmanual_path=$HOME.'/.vim/vim-ref/php-chunked-xhtml'
