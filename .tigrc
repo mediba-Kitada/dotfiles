@@ -1,3 +1,8 @@
 # Vim風キーバインド
 bind generic <Ctrl-f> scroll-page-down
 bind generic <Ctrl-b> scroll-page-up
+
+# デフォルトGの解除
+bind generic G none
+bind generic g move-first-line
+bind generic G move-last-line
