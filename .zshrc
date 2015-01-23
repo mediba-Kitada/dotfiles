@@ -94,5 +94,23 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 alias ctags="`brew --prefix`/bin/ctags"
 tagsCmd='ctags --languages=php -f'
 tagsVariable=''
-tagsVariable=$tagsVariable"$tagsCmd $HOME/.vim/tags/kittyhawk.tags $HOME/mediba/lucky-aws/kittyhawk;"
-alias TAGS=$tagsVariable
+tagsVariableBEF=$tagsVariable"$tagsCmd $HOME/.vim/tags/kittyhawk.tags $HOME/vagrants/lucky-aws/kittyhawk;"
+tagsVariableCoupy=$tagsVariable"$tagsCmd $HOME/.vim/tags/coupy.tags $HOME/vagrants/lucky-aws/coupy;"
+tagsVariableWDG=$tagsVariable"$tagsCmd $HOME/.vim/tags/au-blinkfeed.tags $HOME/project/au-blinkfeed/au-blinkfeed;"
+alias TAGS_BEF=$tagsVariableBEF
+alias TAGS_WDG=$tagsVariableWDG 
+alias TAGS_BEF-CMS=$tagsVariableCoupy
+
+# predict
+#autoload -U predict-on
+#predict-on
+
+# pain間のhistory共有
+setopt SHARE_HISTORY
+
+# directory
+setopt AUTO_CD
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+autoload -Uz compinit
+compinit

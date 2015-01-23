@@ -181,6 +181,8 @@ NeoBundle 'stephpy/vim-php-cs-fixer'
 NeoBundle 'szw/vim-tags'
 " vim-ref
 NeoBundle 'thinca/vim-ref'
+" vim-markdown
+NeoBundle 'plasticboy/vim-markdown'
 
 call neobundle#end()
  
@@ -213,16 +215,13 @@ function! s:vimrc_local(loc)
   endfor
 endfunction '))
 
-" tabの可視化
-set list
-set listchars=tab:>-
-set shiftwidth=4
-
 " PHP辞書ファイル
 autocmd FileType php :set dictionary=~/.vim/dict/php.dict
 
 " ctags
 autocmd BufNewFile,BufRead $HOME/vagrants/lucky-aws/kittyhawk/tokuten.auone.jp/*.php setlocal tags=$HOME/.vim/tags/kittyhawk.tags
+autocmd BufNewFile,BufRead $HOME/project/au-blinkfeed/au-blinkfeed/*.php setlocal tags=$HOME/.vim/tags/au-blinkfeed.tags
+autocmd BufNewFile,BufRead $HOME/vagrants/lucky-aws/coupy/*.php setlocal tags=$HOME/.vim/tags/coupy.tags
 NeoBundleLazy 'vim-scripts/taglist.vim', {
 \    'autoload' : {
 \        'commands' : 'Tlist',},}
@@ -233,5 +232,16 @@ let g:tlist_php_settings = 'php;c:class;f:function;d:constant'
 nnoremap <Leader>t :Tlist<CR>
 
 " PHPマニュアル読み込み
-let g:ref_cache_dir=$HOME.'/.vim/vim-ref/cache'
-let g:ref_phpmanual_path=$HOME.'/.vim/vim-ref/php-chunked-xhtml'
+let g:ref_cache_dir = $HOME.'/.vim/vim-ref/cache'
+let g:ref_phpmanual_path = $HOME.'/.vim/vim-ref/php-chunked-xhtml'
+
+" IDE for PHP
+"autocmd FileType php :NERDTree
+"set number
+
+" md as markdow
+autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+
+" tab space
+set tabstop=4
+set shiftwidth=4
