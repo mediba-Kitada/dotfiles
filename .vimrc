@@ -182,7 +182,10 @@ NeoBundle 'szw/vim-tags'
 " vim-ref
 NeoBundle 'thinca/vim-ref'
 " vim-markdown
+NeoBundle 'godlygeek/tabular'
 NeoBundle 'plasticboy/vim-markdown'
+" TwitVim
+NeoBundle 'vim-scripts/TwitVim'
 
 call neobundle#end()
  
