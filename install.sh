@@ -31,3 +31,6 @@ sudo chmod a+x /usr/local/bin/php-cs-fixer
 
 # PHPマニュアル
 [ -d ~/.vim/vim-ref/php-chunked-xhtml ] || cd ~/.vim/vim-ref && wget http://jp1.php.net/distributions/manual/php_manual_ja.tar.gz && tar -zxvf php_manual_ja.tar.gz -C ~/.vim/vim-ref 
+
+# zsh-completions
+[ ! -d $HOME/.zsh/zsh-completions ] && mkdir -p $HOME/.zsh && cd $HOME/.zsh && git clone git@github.com:zsh-users/zsh-completions.git

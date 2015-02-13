@@ -47,7 +47,7 @@ alias jmeter="~/apache-jmeter-2.11/bin/jmeter"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git,plarailAdvance_IRkit)
 function git(){hub "$@"} #hub
 
 source $ZSH/oh-my-zsh.sh
@@ -112,5 +112,9 @@ setopt SHARE_HISTORY
 setopt AUTO_CD
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
+
+# zsh-completions
+fpath=($HOME/.zsh/zsh-completions/src(N-/) $fpath)
+
 autoload -Uz compinit
 compinit
