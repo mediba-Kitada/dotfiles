@@ -182,7 +182,10 @@ NeoBundle 'szw/vim-tags'
 " vim-ref
 NeoBundle 'thinca/vim-ref'
 " vim-markdown
+NeoBundle 'godlygeek/tabular'
 NeoBundle 'plasticboy/vim-markdown'
+" TwitVim
+NeoBundle 'vim-scripts/TwitVim'
 
 call neobundle#end()
  
@@ -245,3 +248,6 @@ autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 " tab space
 set tabstop=4
 set shiftwidth=4
+
+" swapファイルを利用しない
+set noswapfile
