@@ -34,3 +34,6 @@ sudo chmod a+x /usr/local/bin/php-cs-fixer
 
 # zsh-completions
 [ ! -d $HOME/.zsh/zsh-completions ] && mkdir -p $HOME/.zsh && cd $HOME/.zsh && git clone git@github.com:zsh-users/zsh-completions.git
+
+# tmuxinatorの導入
+which bundle && bundle install

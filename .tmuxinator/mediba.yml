@@ -1,0 +1,31 @@
+# ~/.tmuxinator/mediba.yml
+
+name: mediba
+root: ~/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+tmux_options: -f ~/.tmux.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - memo: cd ~/memo && vi memo.md
+  - kittyhawk: 
+     shell: 
+     layout: main-vertical
+     panes:
+       - cd ~/vagrants/lucky-aws/kittyhawk &&  vi tokuten.auone.jp/index.php
+       - cd ~/vagrants/lucky-aws/kittyhawk 
+  - coupy: cd ~/vagrants/lucky-aws/coupy
+  - widget: cd ~/project/au-blinkfeed/au-blinkfeed
+  - menulist: cd ~/project/menulist/menulist

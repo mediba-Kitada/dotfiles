@@ -118,3 +118,6 @@ fpath=($HOME/.zsh/zsh-completions/src(N-/) $fpath)
 
 autoload -Uz compinit
 compinit
+
+# tmuxnator
+[[ -s ~/.tmuxinator/scripts/tmuxintor ]] && source ~/.tmuxinator/scripts/tmuxinator
