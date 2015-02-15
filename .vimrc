@@ -251,3 +251,7 @@ set shiftwidth=4
 
 " swapファイルを利用しない
 set noswapfile
+
+" Exコマンド補完
+set wildmenu
+set wildmode=full
