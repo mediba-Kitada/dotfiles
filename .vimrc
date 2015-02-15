@@ -186,6 +186,8 @@ NeoBundle 'godlygeek/tabular'
 NeoBundle 'plasticboy/vim-markdown'
 " TwitVim
 NeoBundle 'vim-scripts/TwitVim'
+" fugitive
+NeoBundle 'tpope/vim-fugitive'
 
 call neobundle#end()
  
