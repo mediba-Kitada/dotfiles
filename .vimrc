@@ -193,6 +193,9 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" unite
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimproc'
 
 call neobundle#end()
  
@@ -262,3 +265,22 @@ set noswapfile
 " Exコマンド補完
 set wildmenu
 set wildmode=full
+
+" unite.vim
+" insert modeで開始
+let g:unite_enable_start_insert = 1
+" 大文字/小文字を区別しない
+let g:unite_enable_ignore_case = 1
+let g:unite_enable_smart_case = 1
+" grep検索
+nnoremap <silent> ,g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+" grep検索結果の再呼び出し
+nnoremap <silent> ,r :<C-u>UniteResume search-buffer<CR>
+" unite grep に ag(The Silver Searcher) を利用
+if executable('ag')
+	let g:unite_source_grep_commadn = 'ag'
+	"let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+	let g:unite_source_grep_recursive_opt = ''
+endi
+
