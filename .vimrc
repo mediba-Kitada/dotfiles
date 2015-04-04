@@ -188,6 +188,11 @@ NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'vim-scripts/TwitVim'
 " fugitive
 NeoBundle 'tpope/vim-fugitive'
+" neosnippet
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 " unite
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc'
