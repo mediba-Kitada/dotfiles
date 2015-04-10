@@ -196,6 +196,10 @@ smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 " unite
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc'
+" javascript
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'moll/vim-node'
 
 " preview Markdown
 NeoBundle 'kannokanno/previm'
@@ -273,7 +277,7 @@ set wildmode=full
 
 " unite.vim
 " insert modeで開始
-let g:unite_enable_start_insert = 1
+" let g:unite_enable_start_insert = 1
 " 大文字/小文字を区別しない
 let g:unite_enable_ignore_case = 1
 let g:unite_enable_smart_case = 1
@@ -288,6 +292,15 @@ if executable('ag')
 	"let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
 	let g:unite_source_grep_recursive_opt = ''
 endi
+" バッファ一覧
+nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+" ファイル一覧
+nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+" レジスタ一覧
+nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+
+" indent for javascript
+autocmd filetype coffee,javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 " preview Markdown
 let g:previm_open_cmd = 'atom -n'
