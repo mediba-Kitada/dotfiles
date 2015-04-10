@@ -197,6 +197,11 @@ smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc'
 
+" preview Markdown
+NeoBundle 'kannokanno/previm'
+" ansible
+NeoBundle 'chase/vim-ansible-yaml'
+
 call neobundle#end()
  
 " Required:
@@ -284,3 +289,5 @@ if executable('ag')
 	let g:unite_source_grep_recursive_opt = ''
 endi
 
+" preview Markdown
+let g:previm_open_cmd = 'atom -n'
