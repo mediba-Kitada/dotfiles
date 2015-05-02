@@ -121,3 +121,9 @@ compinit
 
 # tmuxnator
 [[ -s ~/.tmuxinator/scripts/tmuxintor ]] && source ~/.tmuxinator/scripts/tmuxinator
+
+# crontab対策
+export EDITOR=/usr/local/bin/vim
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

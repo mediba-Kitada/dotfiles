@@ -304,3 +304,6 @@ autocmd filetype coffee,javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 " preview Markdown
 let g:previm_open_cmd = 'atom -n'
+
+" crontab対策
+set backupskip=/tmp/*,/private/tmp/*
