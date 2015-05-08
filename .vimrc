@@ -203,6 +203,11 @@ NeoBundle 'moll/vim-node'
 " JSON
 NeoBundle 'elzr/vim-json'
 
+" preview Markdown
+NeoBundle 'kannokanno/previm'
+" ansible
+NeoBundle 'chase/vim-ansible-yaml'
+
 call neobundle#end()
  
 " Required:
@@ -298,3 +303,9 @@ nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 
 " indent for javascript
 autocmd filetype coffee,javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+
+" preview Markdown
+let g:previm_open_cmd = 'atom -n'
+
+" crontab対策
+set backupskip=/tmp/*,/private/tmp/*

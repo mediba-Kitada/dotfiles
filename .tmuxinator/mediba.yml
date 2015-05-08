@@ -27,5 +27,7 @@ windows:
        - cd ~/vagrants/lucky-aws/kittyhawk &&  vi tokuten.auone.jp/index.php
        - cd ~/vagrants/lucky-aws/kittyhawk 
   - coupy: cd ~/vagrants/lucky-aws/coupy
+  - tokuten-aws: cd ~/vagrants/lucky-aws
   - widget: cd ~/project/au-blinkfeed/au-blinkfeed
   - menulist: cd ~/project/menulist/menulist
+  - menulist_sr: cd ~/project/menulist_sr/menulist_sr
