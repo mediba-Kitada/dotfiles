@@ -75,8 +75,6 @@ export LANG=ja_JP.UTF-8
 # ruby
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 
-# adb
-alias adb="adb forward tcp:9222 localabstract:chrome_devtools_remote"
 
 # ec2
 export JAVA_HOME=$(/usr/libexec/java_home)
