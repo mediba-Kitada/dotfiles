@@ -20,6 +20,8 @@
 [core]
  pager = LESSCHARSET=utf-8 less
  excludesfile = /opt/boxen/config/git/gitignore
+	editor = /usr/local/bin/vim
+
 [merge]
 	conflictstyle = diff3
 
