@@ -205,6 +205,8 @@ NeoBundle 'moll/vim-node'
 NeoBundle 'kannokanno/previm'
 " ansible
 NeoBundle 'chase/vim-ansible-yaml'
+" textile
+NeoBundle 'timcharper/textile.vim'
 
 call neobundle#end()
  
@@ -306,4 +308,4 @@ autocmd filetype coffee,javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2
 let g:previm_open_cmd = 'atom -n'
 
 " crontab対策
-set backupskip=/tmp/*,/private/tmp/*
+"set backupskip=/tmp/*,/private/tmp/*
