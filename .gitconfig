@@ -1,6 +1,6 @@
 [user]
- name = mediba-kitada
- email = kitada@mediba.jp
+ name = kitatuba
+ email = hokudenyoku@gmail.com
 [alias]
  alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\t=> \\2/' | sort
  b = branch -a
@@ -30,3 +30,6 @@ protocol = https
 
 [credential]
 helper = /opt/boxen/bin/boxen-git-credential
+
+[push]
+	default = simple

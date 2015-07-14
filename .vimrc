@@ -200,6 +200,8 @@ NeoBundle 'Shougo/vimproc'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'moll/vim-node'
+" JSON
+NeoBundle 'elzr/vim-json'
 
 " preview Markdown
 NeoBundle 'kannokanno/previm'
@@ -261,7 +263,7 @@ let g:ref_phpmanual_path = $HOME.'/.vim/vim-ref/php-chunked-xhtml'
 
 " IDE for PHP
 "autocmd FileType php :NERDTree
-"set number
+set number
 
 " md as markdow
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown

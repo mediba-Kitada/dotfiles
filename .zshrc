@@ -75,15 +75,7 @@ export LANG=ja_JP.UTF-8
 # ruby
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 
-# adb
-alias adb="adb forward tcp:9222 localabstract:chrome_devtools_remote"
 
-# ec2
-export JAVA_HOME=$(/usr/libexec/java_home)
-export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.6.14.1
-export PATH=$PATH:$EC2_HOME/bin 
-export AWS_SECRET_KEY="TktIxQxIfSKQzu2jlVwm0xffpGZr2hav"
-export AWS_SECRET_KEY="hQnTAhk/TktIxQxIfSKQzu2jlVwm0xffpGZr2hav"
 export BOXEN_GITHUB_LOGIN="kitatuba"
 
 # added by travis gem
@@ -123,7 +115,7 @@ compinit
 [[ -s ~/.tmuxinator/scripts/tmuxintor ]] && source ~/.tmuxinator/scripts/tmuxinator
 
 # crontab対策
-export EDITOR=/usr/local/bin/vim
+export EDITOR=/opt/boxen/homebrew/bin/vim
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
