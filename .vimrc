@@ -307,7 +307,8 @@ nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 autocmd filetype coffee,javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 " preview Markdown
-let g:previm_open_cmd = 'atom -n'
+" let g:previm_open_cmd = 'atom -n'
+let g:previm_open_cmd = 'open -a Google\ Chrome'
 
 " crontab対策
 "set backupskip=/tmp/*,/private/tmp/*
