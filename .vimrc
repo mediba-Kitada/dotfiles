@@ -279,7 +279,7 @@ set wildmode=full
 
 " unite.vim
 " insert modeで開始
-" let g:unite_enable_start_insert = 1
+let g:unite_enable_start_insert = 1
 " 大文字/小文字を区別しない
 let g:unite_enable_ignore_case = 1
 let g:unite_enable_smart_case = 1
@@ -290,10 +290,10 @@ nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W
 nnoremap <silent> ,r :<C-u>UniteResume search-buffer<CR>
 " unite grep に ag(The Silver Searcher) を利用
 if executable('ag')
-	let g:unite_source_grep_commadn = 'ag'
-	"let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+	let g:unite_source_grep_command = 'ag'
+	let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
 	let g:unite_source_grep_recursive_opt = ''
-endi
+endif
 " バッファ一覧
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 " ファイル一覧
