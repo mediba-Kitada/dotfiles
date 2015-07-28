@@ -119,3 +119,18 @@ export EDITOR=/opt/boxen/homebrew/bin/vim
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# コマンド履歴をインクリメンタルに検索
+bindkey '^r' \
+  history-incremental-pattern-search-backward
+bindkey '^s' \
+  history-incremental-pattern-search-forward
+
+# コマンド入力途中に履歴を参照
+autoload -Uz history-search-end
+zle -N history-beginning-search-backward-end \
+  history-search-end
+bindkey '^o' history-beginning-search-backward-end
+
+source /usr/local/bin/aws_zsh_completer.sh
+complete -C aws_completer aws
