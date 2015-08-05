@@ -1,0 +1,146 @@
+tap:
+- b4b4r07/brionac
+- caskroom/cask
+- homebrew/binary
+- homebrew/bundle
+- homebrew/completions
+- homebrew/dupes
+- homebrew/php
+- homebrew/versions
+- peco/peco
+brew:
+  install:
+  - name: ack
+    args: ""
+  - name: android-platform-tools
+    args: ""
+  - name: android-sdk
+    args: ""
+  - name: ansible
+    args: ""
+  - name: autoconf
+    args: ""
+  - name: binutils
+    args: ""
+  - name: brew-cask
+    args: ""
+  - name: brionac
+    args: ""
+  - name: cabal-install
+    args: ""
+  - name: cask
+    args: ""
+  - name: cloog018
+    args: ""
+  - name: cmake
+    args: ""
+  - name: composer
+    args: ""
+  - name: coreutils
+    args: ""
+  - name: ctags
+    args: ""
+  - name: dnsmasq
+    args: ""
+  - name: emacs
+    args: ""
+  - name: findutils
+    args: ""
+  - name: fontconfig
+    args: ""
+  - name: freetype
+    args: ""
+  - name: gcc48
+    args: ""
+  - name: gd
+    args: ""
+  - name: gettext
+    args: ""
+  - name: ghc
+    args: ""
+  - name: git
+    args: ""
+  - name: gmp
+    args: ""
+  - name: gmp4
+    args: ""
+  - name: gnu-tar
+    args: ""
+  - name: heroku-toolbelt
+    args: ""
+  - name: hub
+    args: ""
+  - name: icu4c
+    args: ""
+  - name: isl011
+    args: ""
+  - name: jpeg
+    args: ""
+  - name: lha
+    args: ""
+  - name: libevent
+    args: ""
+  - name: libmpc08
+    args: ""
+  - name: libpng
+    args: ""
+  - name: libtiff
+    args: ""
+  - name: libtool
+    args: ""
+  - name: libyaml
+    args: ""
+  - name: makedepend
+    args: ""
+  - name: mongodb
+    args: ""
+  - name: mpfr2
+    args: ""
+  - name: mysql
+    args: ""
+  - name: nginx
+    args: ""
+  - name: node
+    args: ""
+  - name: openssl
+    args: ""
+  - name: pandoc
+    args: ""
+  - name: pcre
+    args: ""
+  - name: peco
+    args: ""
+  - name: peg
+    args: ""
+  - name: php-code-sniffer
+    args: ""
+  - name: php55
+    args: ""
+  - name: pkg-config
+    args: ""
+  - name: rbenv
+    args: ""
+  - name: ruby-build
+    args: ""
+  - name: samba
+    args: ""
+  - name: scons
+    args: ""
+  - name: the_silver_searcher
+    args: ""
+  - name: tig
+    args: ""
+  - name: tmux
+    args: ""
+  - name: tree
+    args: ""
+  - name: unixodbc
+    args: ""
+  - name: vim
+    args: ""
+  - name: wget
+    args: ""
+  - name: xz
+    args: ""
+  - name: zlib
+    args: ""
