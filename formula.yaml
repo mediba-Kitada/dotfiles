@@ -7,12 +7,11 @@ tap:
 - homebrew/dupes
 - homebrew/php
 - homebrew/versions
-- peco/peco
 brew:
   install:
-  - name: ack
+  - name: awscli
     args: ""
-  - name: android-platform-tools
+  - name: ack
     args: ""
   - name: android-sdk
     args: ""
@@ -108,8 +107,6 @@ brew:
     args: ""
   - name: pcre
     args: ""
-  - name: peco
-    args: ""
   - name: peg
     args: ""
   - name: php-code-sniffer
@@ -143,4 +140,6 @@ brew:
   - name: xz
     args: ""
   - name: zlib
+    args: ""
+  - name: lynx
     args: ""
