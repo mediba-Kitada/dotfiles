@@ -316,3 +316,6 @@ let g:previm_open_cmd = 'open -a Google\ Chrome'
 
 " crontab対策
 "set backupskip=/tmp/*,/private/tmp/*
+
+" active directory
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
