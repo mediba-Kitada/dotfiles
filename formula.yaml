@@ -144,3 +144,7 @@ brew:
     args: ""
   - name: zlib
     args: ""
+  - name: awscli
+    args: ""
+  - name: go
+    args: ""
