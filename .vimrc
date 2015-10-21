@@ -213,6 +213,8 @@ NeoBundle 'kannokanno/previm'
 NeoBundle 'chase/vim-ansible-yaml'
 " textile
 NeoBundle 'timcharper/textile.vim'
+" xml.vim
+NeoBundle 'othree/xml.vim'
 
 call neobundle#end()
  
@@ -316,3 +318,12 @@ let g:previm_open_cmd = 'open -a Google\ Chrome'
 
 " crontab対策
 "set backupskip=/tmp/*,/private/tmp/*
+
+command! -nargs=? Jq call s:Jq(<f-args>)
+function! s:Jq(...)
+  if 0 == a:0
+    let l:arg = "."
+  else
+    let l:arg = a:1
+  endif
+endfunction
