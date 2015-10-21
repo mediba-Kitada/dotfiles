@@ -145,3 +145,7 @@ brew:
     args: ""
   - name: jq
     args: ""
+  - name: awscli
+    args: ""
+  - name: go
+    args: ""

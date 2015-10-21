@@ -105,12 +105,6 @@ setopt AUTO_CD
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
 
-# zsh-completions
-fpath=($HOME/.zsh/zsh-completions/src(N-/) $fpath)
-
-autoload -Uz compinit
-compinit
-
 # tmuxnator
 [[ -s ~/.tmuxinator/scripts/tmuxintor ]] && source ~/.tmuxinator/scripts/tmuxinator
 
@@ -134,3 +128,15 @@ bindkey '^o' history-beginning-search-backward-end
 
 # Packer
 export PATH=~/packer:$PATH
+
+# aws cli
+source /usr/local/bin/aws_zsh_completer.sh
+complete -C aws_completer aws
+
+# golang
+export PATH=$PATH:/opt/boxen/homebrew/opt/go/libexec/bin
+
+# zsh-completions
+fpath=($HOME/.zsh/zsh-completions/src(N-/) $fpath)
+autoload -Uz compinit
+compinit

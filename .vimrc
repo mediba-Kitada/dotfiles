@@ -318,6 +318,7 @@ let g:previm_open_cmd = 'open -a Google\ Chrome'
 
 " crontab対策
 "set backupskip=/tmp/*,/private/tmp/*
+<<<<<<< HEAD
 
 command! -nargs=? Jq call s:Jq(<f-args>)
 function! s:Jq(...)
@@ -327,3 +328,9 @@ function! s:Jq(...)
     let l:arg = a:1
   endif
 endfunction
+||||||| merged common ancestors
+=======
+
+" active directory
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+>>>>>>> origin/master
