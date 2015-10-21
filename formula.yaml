@@ -143,3 +143,5 @@ brew:
     args: ""
   - name: lynx
     args: ""
+  - name: jq
+    args: ""
