@@ -130,11 +130,11 @@ bindkey '^o' history-beginning-search-backward-end
 export PATH=~/packer:$PATH
 
 # aws cli
-source /usr/local/bin/aws_zsh_completer.sh
-complete -C aws_completer aws
+# source /usr/local/bin/aws_zsh_completer.sh
+# complete -C aws_completer aws
 
 # golang
-export PATH=$PATH:/opt/boxen/homebrew/opt/go/libexec/bin
+export PATH=$PATH:$GOPATH/bin
 
 # zsh-completions
 fpath=($HOME/.zsh/zsh-completions/src(N-/) $fpath)
