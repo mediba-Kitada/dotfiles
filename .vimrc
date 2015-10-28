@@ -215,6 +215,8 @@ NeoBundle 'chase/vim-ansible-yaml'
 NeoBundle 'timcharper/textile.vim'
 " xml.vim
 NeoBundle 'othree/xml.vim'
+" vim-node-dict
+NeoBundle 'guileen/vim-node-dict'
 
 call neobundle#end()
  
@@ -318,7 +320,6 @@ let g:previm_open_cmd = 'open -a Google\ Chrome'
 
 " crontab対策
 "set backupskip=/tmp/*,/private/tmp/*
-<<<<<<< HEAD
 
 command! -nargs=? Jq call s:Jq(<f-args>)
 function! s:Jq(...)
@@ -328,9 +329,9 @@ function! s:Jq(...)
     let l:arg = a:1
   endif
 endfunction
-||||||| merged common ancestors
-=======
 
 " active directory
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
->>>>>>> origin/master
+
+" node.js辞書ファイル
+au FileType javascript set dictionary+=$HOME/.vim/bundle/vim-node-dict/dict/node.dict
