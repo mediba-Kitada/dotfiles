@@ -48,7 +48,8 @@ alias jmeter="~/apache-jmeter-2.11/bin/jmeter"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git,plarailAdvance_IRkit,aws)
-function git(){hub "$@"} #hub
+eval "$(hub alias -s)"
+#function git(){hub "$@"} #hub
 
 source $ZSH/oh-my-zsh.sh
 
@@ -136,7 +137,8 @@ export PATH=~/packer:$PATH
 # golang
 export PATH=$PATH:$GOPATH/bin
 
-# zsh-completions
+# completions
 fpath=($HOME/.zsh/zsh-completions/src(N-/) $fpath)
+fpath=($HOME/.zsh/completions $fpath)
 autoload -Uz compinit
 compinit
