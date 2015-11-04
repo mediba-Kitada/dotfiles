@@ -47,7 +47,7 @@ alias jmeter="~/apache-jmeter-2.11/bin/jmeter"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git,plarailAdvance_IRkit,aws)
+plugins=(git plarailAdvance_IRkit aws)
 eval "$(hub alias -s)"
 #function git(){hub "$@"} #hub
 
@@ -129,10 +129,6 @@ bindkey '^o' history-beginning-search-backward-end
 
 # Packer
 export PATH=~/packer:$PATH
-
-# aws cli
-# source /usr/local/bin/aws_zsh_completer.sh
-# complete -C aws_completer aws
 
 # golang
 export PATH=$PATH:$GOPATH/bin
