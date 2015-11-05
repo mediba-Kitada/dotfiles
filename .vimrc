@@ -173,10 +173,8 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Townk/vim-autoclose' 
 " ねこ
 NeoBundle 'nefo-mi/nyan-modoki.vim'
-" phpcs
-NeoBundle 'bpearson/vim-phpcs'
-" php-cs-fixer
-NeoBundle 'stephpy/vim-php-cs-fixer'
+" phpqa
+NeoBundle 'joonty/vim-phpqa'
 " ctags
 NeoBundle 'szw/vim-tags'
 " vim-ref
