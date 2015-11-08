@@ -76,8 +76,6 @@ export LANG=ja_JP.UTF-8
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 
 
-export BOXEN_GITHUB_LOGIN="kitatuba"
-
 # added by travis gem
 [ -f /Users/kitada/.travis/travis.sh ] && source /Users/kitada/.travis/travis.sh
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
@@ -108,9 +106,6 @@ setopt PUSHD_IGNORE_DUPS
 # tmuxnator
 [[ -s ~/.tmuxinator/scripts/tmuxintor ]] && source ~/.tmuxinator/scripts/tmuxinator
 
-# crontab対策
-export EDITOR=/opt/boxen/homebrew/bin/vim
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
@@ -127,7 +122,6 @@ zle -N history-beginning-search-backward-end \
 bindkey '^o' history-beginning-search-backward-end
 
 # golang
-export PATH=$PATH:/opt/boxen/homebrew/opt/go/libexec/bin
 
 # zsh-completions
 fpath=($HOME/.zsh/zsh-completions/src(N-/) $fpath)
