@@ -148,3 +148,5 @@ brew:
     args: ""
   - name: go
     args: ""
+  - name: rbenv-bundler
+    args: ""
