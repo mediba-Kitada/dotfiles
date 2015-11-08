@@ -173,10 +173,8 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'Townk/vim-autoclose' 
 " ねこ
 NeoBundle 'nefo-mi/nyan-modoki.vim'
-" phpcs
-NeoBundle 'bpearson/vim-phpcs'
-" php-cs-fixer
-NeoBundle 'stephpy/vim-php-cs-fixer'
+" phpqa
+NeoBundle 'joonty/vim-phpqa'
 " ctags
 NeoBundle 'szw/vim-tags'
 " vim-ref
@@ -215,6 +213,10 @@ NeoBundle 'chase/vim-ansible-yaml'
 NeoBundle 'timcharper/textile.vim'
 " rails.vim
 NeoBundle 'rails.vim'
+" xml.vim
+NeoBundle 'othree/xml.vim'
+" vim-node-dict
+NeoBundle 'guileen/vim-node-dict'
 
 call neobundle#end()
  
@@ -319,5 +321,17 @@ let g:previm_open_cmd = 'open -a Google\ Chrome'
 " crontab対策
 "set backupskip=/tmp/*,/private/tmp/*
 
+command! -nargs=? Jq call s:Jq(<f-args>)
+function! s:Jq(...)
+  if 0 == a:0
+    let l:arg = "."
+  else
+    let l:arg = a:1
+  endif
+endfunction
+
 " active directory
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" node.js辞書ファイル
+au FileType javascript set dictionary+=$HOME/.vim/bundle/vim-node-dict/dict/node.dict

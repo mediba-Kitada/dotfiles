@@ -15,6 +15,9 @@ do
   ln -s ~/dotfiles/$i ~/
 done
 
+# zshコマンド補完
+mkdir -p $HOME/.zsh/completions
+
 # Neobundleの導入
 [ ! -d ~/.vim/bundle ] || mkdir -p ~/.vim/bundle
 [ ! -d ~/.vim/tags/ ] || mkdir -p ~/.vim/tags/
@@ -40,3 +43,7 @@ sudo chmod a+x /usr/local/bin/php-cs-fixer
 
 # tmuxinatorの導入
 which bundle && bundle install
+
+# hub
+[ ! -d $HOME/repos/hub ] && mkdir -p $HOME/repos && cd $HOME/repos && git clone git@github.com:github/hub.git
+[ ! -f $HOME/.zsh/completions/_hub ] && cp $HOME/repos/hub/etc/hub.zsh_completion $HOME/.zsh/completions/_hub
