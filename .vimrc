@@ -213,6 +213,8 @@ NeoBundle 'kannokanno/previm'
 NeoBundle 'chase/vim-ansible-yaml'
 " textile
 NeoBundle 'timcharper/textile.vim'
+" rails.vim
+NeoBundle 'rails.vim'
 
 call neobundle#end()
  
