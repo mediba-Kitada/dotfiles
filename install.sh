@@ -3,6 +3,8 @@
 git submodule init
 git submodule update
 
+RUBY_VERSION=2.2.3
+
 for i in `ls -a`
 do
   rm ~/$i
@@ -40,6 +42,12 @@ sudo chmod a+x /usr/local/bin/php-cs-fixer
 
 # antigen
 [ ! -d $HOME/.zsh/antigen ] && mkdir -p $HOME/.zsh && cd $HOME/.zsh && git clone git@github.com:zsh-users/antigen.git
+
+# ruby
+which rbenv && rbenv install $RUBY_VERSION && rbenv global $RUBY_VERSION
+
+# bundler
+which rbenv && rbenv exex gem install bundler
 
 # tmuxinatorの導入
 which bundle && bundle install
