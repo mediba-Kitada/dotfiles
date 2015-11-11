@@ -202,7 +202,7 @@ NeoBundle 'Shougo/vimproc',{
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'moll/vim-node'
-NeoBundle 'ahayman/vim-nodejs-compilete'
+NeoBundle 'ahayman/vim-nodejs-complete'
 NeoBundle 'jaxbot/github-issues.vim'
 " JSON
 NeoBundle 'elzr/vim-json'
