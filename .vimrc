@@ -202,6 +202,8 @@ NeoBundle 'Shougo/vimproc',{
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'moll/vim-node'
+NeoBundle 'ahayman/vim-nodejs-compilete'
+NeoBundle 'jaxbot/github-issues.vim'
 " JSON
 NeoBundle 'elzr/vim-json'
 
@@ -335,3 +337,6 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " node.js辞書ファイル
 au FileType javascript set dictionary+=$HOME/.vim/bundle/vim-node-dict/dict/node.dict
+
+" github-issues
+let g:github_access_token = "e484054fa0b0737921ca878f45279ee6f391c422"
