@@ -149,3 +149,9 @@ brew:
     args: ""
   - name: go
     args: ""
+  - name: virtualbox
+    args: ""
+  - name: vagrant
+    args: ""
+  - name: packer
+    args: ""
