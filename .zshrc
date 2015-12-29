@@ -1,17 +1,6 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+ZSH=/bin/zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="amuse"
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias less="less -R"
-alias jmeter="~/apache-jmeter-2.11/bin/jmeter"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -50,8 +39,6 @@ alias jmeter="~/apache-jmeter-2.11/bin/jmeter"
 plugins=(git plarailAdvance_IRkit aws)
 eval "$(hub alias -s)"
 #function git(){hub "$@"} #hub
-
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
