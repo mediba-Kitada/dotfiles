@@ -153,3 +153,11 @@ brew:
     args: ""
   - name: vagrant
     args: ""
+  - name: qt
+    args: ""
+  - name: graphviz
+    args: ""
+  - name: qcachegrind
+    args: ""
+  - name: java
+    args: ""
