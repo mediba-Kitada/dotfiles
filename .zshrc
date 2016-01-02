@@ -1,6 +1,85 @@
 # Path to your oh-my-zsh configuration.
 ZSH=/bin/zsh
 
+# man
+function zman() {
+  PAGER="less -g -s '+/^ {7}"$1"'" man zshall
+}
+
+# history
+setopt SHARE_HISTORY
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
+## search incremental
+bindkey '^r' \
+  history-incremental-pattern-search-backward
+bindkey '^s' \
+  history-incremental-pattern-search-forward
+## history-search-end
+autoload -Uz history-search-end
+zle -N history-beginning-search-backward-end \
+  history-search-end
+bindkey '^p' history-beginning-search-backward-end
+
+# directory
+setopt AUTO_CD
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+
+# key bind
+bindkey -e
+
+# Edit CLI
+autoload -Uz select-word-style
+select-word-style default
+zstyle ':zle:*' word-chars " /=;@:{},|"
+zstyle ':zle:*' word-style unspecified
+
+# prompt
+autoload -U colors && colors
+PROMPT="[${fg[green]}%n${reset_color}@${fg[blue]}%m${reset_color}] ${fg[red]}%D %*${reset_color} 
+%# "
+RPROMPT="%~"
+
+# alias
+## ls
+alias ls='ls -F'
+alias la='ls -a'
+alias ll='ls -l'
+## rm
+alias rm='rm -i'
+## cp
+alias cp='cp -i'
+## mv
+alias mv='mv -i'
+## mkdir
+alias mkdir='mkdir -p'
+## cd
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../..'
+# global alias
+alias -g H='| head'
+alias -g T='| tail'
+alias -g G='| grep'
+alias -g N='> /dev/null'
+alias -g V='| vim -R -'
+alias -g P=' --help | less'
+
+# harmful
+## ^D
+setopt IGNORE_EOF
+## ^Q/^S control flow
+setopt NO_FLOW_CONTROL
+## beep
+setopt NO_BEEP
+
+# complement
+## menu mode
+zstyle ':completion:*:default' menu select=2
+## ignore camel
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -83,13 +162,6 @@ alias TAGS_BEF-CMS=$tagsVariableCoupy
 #autoload -U predict-on
 #predict-on
 
-# pain間のhistory共有
-setopt SHARE_HISTORY
-
-# directory
-setopt AUTO_CD
-setopt AUTO_PUSHD
-setopt PUSHD_IGNORE_DUPS
 
 # tmuxnator
 [[ -s ~/.tmuxinator/scripts/tmuxintor ]] && source ~/.tmuxinator/scripts/tmuxinator
@@ -97,17 +169,7 @@ setopt PUSHD_IGNORE_DUPS
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# コマンド履歴をインクリメンタルに検索
-bindkey '^r' \
-  history-incremental-pattern-search-backward
-bindkey '^s' \
-  history-incremental-pattern-search-forward
 
-# コマンド入力途中に履歴を参照
-autoload -Uz history-search-end
-zle -N history-beginning-search-backward-end \
-  history-search-end
-bindkey '^o' history-beginning-search-backward-end
 
 # Packer
 export PATH=~/packer:$PATH
