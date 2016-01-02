@@ -4,6 +4,7 @@ git submodule init
 git submodule update
 
 RUBY_VERSION=2.2.3
+PAKER_VERSION=0.8.6
 
 for i in `ls -a`
 do
@@ -47,7 +48,7 @@ sudo chmod a+x /usr/local/bin/php-cs-fixer
 which rbenv && rbenv install $RUBY_VERSION && rbenv global $RUBY_VERSION
 
 # bundler
-which rbenv && rbenv exex gem install bundler
+which rbenv && rbenv exec gem install bundler
 
 # tmuxinatorの導入
 which bundle && bundle install
@@ -55,3 +56,6 @@ which bundle && bundle install
 # hub
 [ ! -d $HOME/repos/hub ] && mkdir -p $HOME/repos && cd $HOME/repos && git clone git@github.com:github/hub.git
 [ ! -f $HOME/.zsh/completions/_hub ] && cp $HOME/repos/hub/etc/hub.zsh_completion $HOME/.zsh/completions/_hub
+
+# packer
+[! -d $HOME/packer ] && mkdir -p $HOME/packer && cd $HOME/Downloads && wget -O https://releases.hashicorp.com/packer/${PAKER_VERSION}/packer_${PAKER_VERSION}_darwin_amd64.zip && unzip packer_${PAKER_VERSION}_darwin_amd64.zip -d $HOME/packer
