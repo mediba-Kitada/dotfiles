@@ -1,5 +1,15 @@
 # Path to your oh-my-zsh configuration.
 ZSH=/bin/zsh
+# harmful
+## ^D
+setopt IGNORE_EOF
+## ^Q/^S control flow
+setopt NO_FLOW_CONTROL
+## beep
+setopt NO_BEEP
+
+# colors
+autoload -U colors && colors
 
 # man
 function zman() {
@@ -37,10 +47,8 @@ zstyle ':zle:*' word-chars " /=;@:{},|"
 zstyle ':zle:*' word-style unspecified
 
 # prompt
-autoload -U colors && colors
-PROMPT="[${fg[green]}%n${reset_color}@${fg[blue]}%m${reset_color}] ${fg[red]}%D %*${reset_color} 
-%# "
-RPROMPT="%~"
+PROMPT="[${fg[green]}%n${reset_color}@${fg[blue]}%m${reset_color}] ${fg[red]}%D %*${reset_color}
+${fg[cyan]}%#${reset_color} "
 
 # alias
 ## ls
@@ -67,19 +75,46 @@ alias -g N='> /dev/null'
 alias -g V='| vim -R -'
 alias -g P=' --help | less'
 
-# harmful
-## ^D
-setopt IGNORE_EOF
-## ^Q/^S control flow
-setopt NO_FLOW_CONTROL
-## beep
-setopt NO_BEEP
-
 # complement
 ## menu mode
 zstyle ':completion:*:default' menu select=2
 ## ignore camel
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# plugins
+autoload -Uz add-zsh-hook
+## cdr
+autoload -Uz chpwd_recent_dirs cdr
+add-zsh-hook chpwd chpwd_recent_dirs
+zstyle ':chpwd:*' recent-dirs-max 200
+zstyle ':chpwd:*' recent-dirs-default true
+## zmv
+autoload -Uz zmv
+alias zmv='noglob zmv -W'
+## vcs_info
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' formats "${fg[magenta]}(%s)-[%b]${reset_color}"
+zstyle ':vcs_info:*' actionformats "${fg[red]}(%s)-[%b|%a]${reset_color}"
+function _update_vcs_info_msg() {
+  LANG=en_US.UTF-8 vcs_info
+  RPROMPT="${vcs_info_msg_0_} %~"
+}
+add-zsh-hook precmd _update_vcs_info_msg
+## antigen
+if [[ -f ${HOME}/.zsh/antigen/antigen.zsh ]]; then
+  source ${HOME}/.zsh/antigen/antigen.zsh
+ 
+  ## zsh-syntax-highlighting
+  antigen bundle zsh-users/zsh-syntax-highlighting
+  ## zsh-completions
+  antigen bundle zsh-users/zsh-completions src
+  fpath=($HOME/.zsh/zsh-completions/src(N-/) $fpath)
+  ## hub
+  antigen bundle github/hub
+  eval "$(hub alias -s)"
+
+  antigen apply
+fi
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -116,7 +151,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git plarailAdvance_IRkit aws)
-eval "$(hub alias -s)"
 #function git(){hub "$@"} #hub
 
 # User configuration
@@ -178,7 +212,6 @@ export PATH=~/packer:$PATH
 export PATH=$PATH:$GOPATH/bin
 
 # completions
-fpath=($HOME/.zsh/zsh-completions/src(N-/) $fpath)
 fpath=($HOME/.zsh/completions $fpath)
 autoload -Uz compinit
 compinit
