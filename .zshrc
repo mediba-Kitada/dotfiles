@@ -130,6 +130,18 @@ bindkey '^x^r' peco-execute-history
 ## git
 bindkey '^x^gcob' anyframe-widget-checkout-git-branch
 bindkey '^x^gib' anyframe-widget-insert-git-branch
+## tmux
+### windows
+function peco-tmux-windows() {
+  local i=$(tmux lsw | awk '/active.$/ {print NR-1}')
+  local f='#{window_index}: #{window_name}#{window_flag} #{pane_current_path}'
+  tmux lsw -F "$f" \
+    | anyframe-selector-auto "" --initial-index $i \
+	| cut -d ':' -f 1 \
+	| anyframe-action-execute tmux select-window -t
+}
+zle -N peco-tmux-windows
+bindkey '^xtw' peco-tmux-windows
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
