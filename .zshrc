@@ -47,9 +47,6 @@ select-word-style default
 zstyle ':zle:*' word-chars " /=;@:{},|"
 zstyle ':zle:*' word-style unspecified
 
-# prompt
-PROMPT="[${fg[green]}%n${reset_color}@${fg[blue]}%m${reset_color}] ${fg[red]}%D %*${reset_color}
-${fg[cyan]}%#${reset_color} "
 
 # alias
 ## ls
@@ -98,7 +95,8 @@ zstyle ':vcs_info:*' formats "${fg[magenta]}(%s)-[%b]${reset_color}"
 zstyle ':vcs_info:*' actionformats "${fg[red]}(%s)-[%b|%a]${reset_color}"
 function _update_vcs_info_msg() {
   LANG=en_US.UTF-8 vcs_info
-  RPROMPT="${vcs_info_msg_0_} %~"
+  PROMPT="[${fg[green]}%n${reset_color}@${fg[blue]}%m${reset_color}] ${fg[red]}%D %*${reset_color} ${vcs_info_msg_0_} %~
+${fg[cyan]}%#${reset_color} "
 }
 add-zsh-hook precmd _update_vcs_info_msg
 ## antigen
