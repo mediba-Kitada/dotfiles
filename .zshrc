@@ -9,9 +9,6 @@ setopt NO_FLOW_CONTROL
 ## beep
 setopt NO_BEEP
 
-# colors
-autoload -U colors && colors
-
 # man
 function zman() {
   PAGER="less -g -s '+/^ {7}"$1"'" man zshall
@@ -91,12 +88,14 @@ autoload -Uz zmv
 alias zmv='noglob zmv -W'
 ## vcs_info
 autoload -Uz vcs_info
-zstyle ':vcs_info:*' formats "${fg[magenta]}(%s)-[%b]${reset_color}"
-zstyle ':vcs_info:*' actionformats "${fg[red]}(%s)-[%b|%a]${reset_color}"
+zstyle ':vcs_info:*' formats "%F{magenta}(%s)-[%b]%f"
+zstyle ':vcs_info:*' actionformats "%F{red}(%s)-[%b|%a]%f"
 function _update_vcs_info_msg() {
   LANG=en_US.UTF-8 vcs_info
-  PROMPT="[${fg[green]}%n${reset_color}@${fg[blue]}%m${reset_color}] ${fg[red]}%D %*${reset_color} ${vcs_info_msg_0_} %~
-${fg[cyan]}%#${reset_color} "
+  #PROMPT="[${fg[green]}%n${reset_color}@${fg[blue]}%m${reset_color}] ${fg[red]}%D %*${reset_color} ${vcs_info_msg_0_} %~
+#${fg[cyan]}%#${reset_color} "
+  PROMPT="[%F{green}%n%f@%F{blue}%m%f] %F{red}%D %*%f ${vcs_info_msg_0_} %~
+%F{cyan]}%#%f "
 }
 add-zsh-hook precmd _update_vcs_info_msg
 ## antigen
