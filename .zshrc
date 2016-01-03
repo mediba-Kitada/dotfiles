@@ -41,7 +41,7 @@ bindkey -e
 # Edit CLI
 autoload -Uz select-word-style
 select-word-style default
-zstyle ':zle:*' word-chars " /=;@:{},|"
+zstyle ':zle:*' word-chars " '/=;@:{},|"
 zstyle ':zle:*' word-style unspecified
 
 
@@ -106,13 +106,15 @@ if [[ -f ${HOME}/.zsh/antigen/antigen.zsh ]]; then
   antigen bundle zsh-users/zsh-syntax-highlighting
   ## zsh-completions
   antigen bundle zsh-users/zsh-completions src
-  ## hub
-  antigen bundle github/hub
-  eval "$(hub alias -s)"
   ## anyframe
   antigen bundle mollifier/anyframe
 
   antigen apply
+fi
+## hub
+if [[ -f $HOME/.zsh/completions/_hub ]]; then
+  eval "$(hub alias -s)"
+  fpath=(${HOME}/.zsh/completions $fpath)
 fi
 
 # Anything interface by Peco

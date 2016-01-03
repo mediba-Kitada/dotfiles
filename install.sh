@@ -37,6 +37,10 @@ sudo chmod a+x /usr/local/bin/php-cs-fixer
 
 # antigen
 [ ! -d $HOME/.zsh/antigen ] && mkdir -p $HOME/.zsh && cd $HOME/.zsh && git clone git@github.com:zsh-users/antigen.git
+# hub
+mkdir -p $HOME/.zsh/completions
+[ ! -d $HOME/repos/hub ] && mkdir -p $HOME/repos && cd $HOME/repos && git clone git@github.com:github/hub.git
+[ ! -f $HOME/.zsh/completions/_hub ] && cp $HOME/repos/hub/etc/hub.zsh_completion $HOME/.zsh/completions/_hub
 
 # ruby
 which rbenv && rbenv install $RUBY_VERSION && rbenv global $RUBY_VERSION
@@ -48,4 +52,4 @@ which rbenv && rbenv exec gem install bundler
 which bundle && bundle install
 
 # packer
-[! -d $HOME/packer ] && mkdir -p $HOME/packer && cd $HOME/Downloads && wget -O https://releases.hashicorp.com/packer/${PAKER_VERSION}/packer_${PAKER_VERSION}_darwin_amd64.zip && unzip packer_${PAKER_VERSION}_darwin_amd64.zip -d $HOME/packer
+[ ! -d $HOME/packer ] && mkdir -p $HOME/packer && cd $HOME/Downloads && wget -O https://releases.hashicorp.com/packer/${PAKER_VERSION}/packer_${PAKER_VERSION}_darwin_amd64.zip && unzip packer_${PAKER_VERSION}_darwin_amd64.zip -d $HOME/packer
