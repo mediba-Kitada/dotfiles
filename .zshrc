@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH=/bin/zsh
+
 # harmful
 ## ^D
 setopt IGNORE_EOF
@@ -108,13 +109,27 @@ if [[ -f ${HOME}/.zsh/antigen/antigen.zsh ]]; then
   antigen bundle zsh-users/zsh-syntax-highlighting
   ## zsh-completions
   antigen bundle zsh-users/zsh-completions src
-  fpath=($HOME/.zsh/zsh-completions/src(N-/) $fpath)
   ## hub
   antigen bundle github/hub
   eval "$(hub alias -s)"
+  ## anyframe
+  antigen bundle mollifier/anyframe
 
   antigen apply
 fi
+
+# Anything interface by Peco
+## history
+function peco-execute-history() {
+  builtin history -n -r 1 \
+    | anyframe-selector-auto "${LBUFFER}" \
+	| anyframe-action-execute
+}
+zle -N peco-execute-history
+bindkey '^x^r' peco-execute-history
+## git
+bindkey '^x^gcob' anyframe-widget-checkout-git-branch
+bindkey '^x^gib' anyframe-widget-insert-git-branch
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -203,8 +218,6 @@ alias TAGS_BEF-CMS=$tagsVariableCoupy
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-
-
 # Packer
 export PATH=~/packer:$PATH
 
@@ -212,6 +225,5 @@ export PATH=~/packer:$PATH
 export PATH=$PATH:$GOPATH/bin
 
 # completions
-fpath=($HOME/.zsh/completions $fpath)
 autoload -Uz compinit
 compinit
