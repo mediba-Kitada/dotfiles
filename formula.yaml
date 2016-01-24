@@ -163,3 +163,5 @@ brew:
     args: ""
   - name: packer
     args: ""
+  - name: php56-phalcon
+    args: ""
