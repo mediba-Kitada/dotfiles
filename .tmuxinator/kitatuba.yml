@@ -24,3 +24,7 @@ windows:
       panes:
         - cd ~/blog && vim
         - # empty
+  - dev:
+      layout: main-horizon
+      panes:
+        - cd ~/mediba
