@@ -2,3 +2,12 @@ php_manual_ja.tar.gz
 /.oh-my-zsh/
 .zsh_history
 /.zsh/
+
+# Temporary Files
+## vim
+[._]*.s[a-z][a-z]
+[._]s[a-z][a-z]
+*~
+*.un~
+Session.vim
+.netrwhist
