@@ -122,7 +122,7 @@ fi
 function peco-execute-history() {
   builtin history -n -r 1 \
     | anyframe-selector-auto "${LBUFFER}" \
-	| anyframe-action-execute
+	| anyframe-action-put
 }
 zle -N peco-execute-history
 bindkey '^x^r' peco-execute-history
