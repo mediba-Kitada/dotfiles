@@ -122,7 +122,7 @@ fi
 function peco-execute-history() {
   builtin history -n -r 1 \
     | anyframe-selector-auto "${LBUFFER}" \
-	| anyframe-action-execute
+	| anyframe-action-put
 }
 zle -N peco-execute-history
 bindkey '^x^r' peco-execute-history
@@ -221,9 +221,22 @@ alias TAGS_BEF-CMS=$tagsVariableCoupy
 #autoload -U predict-on
 #predict-on
 
-
-# tmuxnator
-[[ -s ~/.tmuxinator/scripts/tmuxintor ]] && source ~/.tmuxinator/scripts/tmuxinator
+# tmux
+if ( ! test $TMUX ) && ( ! expr $TERM : "^screen" > /dev/null ) && which tmux > /dev/null; then
+  if ( tmux has-session ); then
+    session=`tmux list-sessions |grep -e '^[0-9].*]$'| head -n 1 | sed -e 's/^\([0-9]\+\).*$/\1/'`
+	if [ -n "$session" ]; then
+      echo "Attach tmux session $session."
+	  tmux attach-session -t $session
+	else
+      echo "Session has been already attached."
+	  tmux list-sessions
+    fi
+  else
+    echo "Create new tmux session."
+	tmux
+  fi
+fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
