@@ -176,8 +176,7 @@ bindkey '^xtw' peco-tmux-windows
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git plarailAdvance_IRkit aws)
-#function git(){hub "$@"} #hub
+# plugins=(git plarailAdvance_IRkit aws)
 
 # User configuration
 
@@ -234,6 +233,12 @@ export PATH=~/packer:$PATH
 
 # golang
 export PATH=$PATH:$GOPATH/bin
+
+# anyenv
+if [[ -d $HOME/.anyenv ]]; then
+  export PATH=$HOME/.anyenv/bin:$PATH
+  eval "$(anyenv init -)"
+fi
 
 # completions
 autoload -Uz compinit
