@@ -165,3 +165,5 @@ brew:
     args: ""
   - name: php56-phalcon
     args: ""
+  - name: scala
+    args: ""
