@@ -69,6 +69,7 @@ alias -g G='| grep'
 alias -g N='> /dev/null'
 alias -g V='| vim -R -'
 alias -g P=' --help | less'
+alias -g vi='vim'
 
 # complement
 ## menu mode
