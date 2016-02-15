@@ -253,6 +253,14 @@ if [[ -d $HOME/.anyenv ]]; then
   eval "$(anyenv init -)"
 fi
 
+export PATH="/usr/local/sbin:$PATH"
+
+export HOMEBREW_PREFIX="/usr/local"
+export HOMEBREW_REPOSITORY="/usr/local"
+export HOMEBREW_CELLAR="/usr/local/Cellar"
+export HOMEBREW_BOTTLE_DOMAIN="https://homebrew.bintray.com"
+
+
 # completions
 autoload -Uz compinit
 compinit
