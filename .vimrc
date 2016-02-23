@@ -273,6 +273,9 @@ NeoBundle 'guileen/vim-node-dict'
 " vim-scala
 NeoBundle 'derekwyatt/vim-scala'
 
+" Vdebug
+NeoBundle 'joonty/vdebug'
+
 call neobundle#end()
  
 " Required:
@@ -393,3 +396,32 @@ au FileType javascript set dictionary+=$HOME/.vim/bundle/vim-node-dict/dict/node
 
 " github-issues
 let g:github_access_token = "e484054fa0b0737921ca878f45279ee6f391c422"
+
+" page nation
+"set scrolloff=5
+
+" 検索結果のハイライトを消す
+set hlsearch
+nnoremap <ESC><ESC> :nohlsearch<CR>
+
+" ビープ音off
+set visualbell t_vb=
+set noerrorbells
+
+" 検索結果の中央表示
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
+
+" move command mode from insert mode
+inoremap <silent> jj <ESC>
+
+" 全角スペースの可視化
+highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=#666666
+au BufNewFile,BufRead * match ZenkakuSpace /　/
+
+" copy clipboard yanked data
+set clipboard=unnamed,autoselect
