@@ -270,6 +270,8 @@ NeoBundle 'rails.vim'
 NeoBundle 'othree/xml.vim'
 " vim-node-dict
 NeoBundle 'guileen/vim-node-dict'
+" vim-scala
+NeoBundle 'derekwyatt/vim-scala'
 
 call neobundle#end()
  
