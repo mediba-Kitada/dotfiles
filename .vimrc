@@ -181,7 +181,7 @@ NeoBundle 'szw/vim-tags'
 NeoBundle 'thinca/vim-ref'
 " vim-markdown
 NeoBundle 'godlygeek/tabular'
-NeoBundle 'plasticboy/vim-markdown'
+"NeoBundle 'plasticboy/vim-markdown'
 " TwitVim
 NeoBundle 'vim-scripts/TwitVim'
 " fugitive
