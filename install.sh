@@ -55,6 +55,7 @@ which rbenv && rbenv exec gem install bundler
 # python
 which anyenv && anyenv install pyenv && source ~/.zshrc
 whicy pyenv && pyenv install $PYTHON_VERSION && pyenv global $PYTHON_VERSION
+which pip && pip install powerline-status
 
 # packer
 [ ! -d $HOME/packer ] && mkdir -p $HOME/packer && cd $HOME/Downloads && wget -O https://releases.hashicorp.com/packer/${PAKER_VERSION}/packer_${PAKER_VERSION}_darwin_amd64.zip && unzip packer_${PAKER_VERSION}_darwin_amd64.zip -d $HOME/packer
