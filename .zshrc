@@ -109,6 +109,8 @@ if [[ -f ${HOME}/.zsh/antigen/antigen.zsh ]]; then
   antigen bundle zsh-users/zsh-completions src
   ## anyframe
   antigen bundle mollifier/anyframe
+  ## tmux-mem-cpu-load
+  antigen bundle thewtex/tmux-mem-cpu-load
 
   antigen apply
 fi
@@ -261,6 +263,8 @@ export HOMEBREW_REPOSITORY="/usr/local"
 export HOMEBREW_CELLAR="/usr/local/Cellar"
 export HOMEBREW_BOTTLE_DOMAIN="https://homebrew.bintray.com"
 
+# sshp
+alias sshp='ssh -i ~/.ssh/id_rsa proper-kitada@$(aws --profile "$APP"_"$ENV"_proper --region ap-northeast-1 ec2 describe-instances | jq '\''.Reservations[].Instances[] | {ip:.PublicIpAddress, tags:.Tags[0]} | .ip + "," + .tags.Value'\'' | peco | perl -nle '\''print $1 if /([\d.]+)/'\'')'
 
 # completions
 autoload -Uz compinit
