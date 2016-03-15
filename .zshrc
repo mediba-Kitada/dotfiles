@@ -200,6 +200,7 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:$PA
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 export LANG=ja_JP.UTF-8
+export LC_ALL=ja_JP.UTF-8
 
 # ruby
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
@@ -254,7 +255,18 @@ export PATH=$PATH:$GOPATH/bin
 if [[ -d $HOME/.anyenv ]]; then
   export PATH=$HOME/.anyenv/bin:$PATH
   eval "$(anyenv init -)"
+
+  #export PYTHONPATH="$HOME/.anyenv/envs/pyenv/versions/2.7.8/lib/python2.7/site-packages"
+  # powerline
+  #powerline-daemon -q
+
 fi
+
+# python
+export PYTHONPATH="/usr/local/lib/python2.7/site-packages"
+# powerline
+powerline-daemon -q
+powerline-config tmux setup
 
 export PATH="/usr/local/sbin:$PATH"
 
