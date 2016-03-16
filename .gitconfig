@@ -1,6 +1,3 @@
-[user]
- name = kitatuba
- email = hokudenyoku@gmail.com
 [alias]
  alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\t=> \\2/' | sort
  b = branch -a
@@ -13,7 +10,7 @@
  s = status --short --branch
  st = status
  f = fetch
-	
+ pom = pull origin master
 [color]
  ui = auto
 
@@ -33,3 +30,5 @@ helper = /opt/boxen/bin/boxen-git-credential
 
 [push]
 	default = simple
+[init]
+	templatedir = /Users/kitada/.git_template

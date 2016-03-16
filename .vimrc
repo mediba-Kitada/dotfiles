@@ -270,6 +270,8 @@ NeoBundle 'rails.vim'
 NeoBundle 'othree/xml.vim'
 " vim-node-dict
 NeoBundle 'guileen/vim-node-dict'
+" vim-scala
+NeoBundle 'derekwyatt/vim-scala'
 
 " Vdebug
 NeoBundle 'joonty/vdebug'
@@ -426,3 +428,11 @@ set clipboard=unnamed,autoselect
 
 " TwitVim
 let g:twitvim_browser_cmd = 'open -a Google\ Chrome'
+
+" Powerline
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+set laststatus=2
+set showtabline=2
+set noshowmode 

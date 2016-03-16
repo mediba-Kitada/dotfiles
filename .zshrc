@@ -109,6 +109,8 @@ if [[ -f ${HOME}/.zsh/antigen/antigen.zsh ]]; then
   antigen bundle zsh-users/zsh-completions src
   ## anyframe
   antigen bundle mollifier/anyframe
+  ## tmux-mem-cpu-load
+  antigen bundle thewtex/tmux-mem-cpu-load
 
   antigen apply
 fi
@@ -177,8 +179,7 @@ bindkey '^xtw' peco-tmux-windows
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git plarailAdvance_IRkit aws)
-#function git(){hub "$@"} #hub
+# plugins=(git plarailAdvance_IRkit aws)
 
 # User configuration
 
@@ -199,6 +200,7 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/local/opt/coreutils/libexec/gnubin:$PA
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 export LANG=ja_JP.UTF-8
+export LC_ALL=ja_JP.UTF-8
 
 # ruby
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
@@ -249,9 +251,32 @@ export PATH=~/packer:$PATH
 # golang
 export PATH=$PATH:$GOPATH/bin
 
+# anyenv
+if [[ -d $HOME/.anyenv ]]; then
+  export PATH=$HOME/.anyenv/bin:$PATH
+  eval "$(anyenv init -)"
+
+  #export PYTHONPATH="$HOME/.anyenv/envs/pyenv/versions/2.7.8/lib/python2.7/site-packages"
+  # powerline
+  #powerline-daemon -q
+
+fi
+
 # python
 export PYTHONPATH="$HOME/Library/Python/2.7"
 export PATH=$PATH:$PYTHONPATH/bin
+# powerline
+powerline-daemon -q
+
+export PATH="/usr/local/sbin:$PATH"
+
+export HOMEBREW_PREFIX="/usr/local"
+export HOMEBREW_REPOSITORY="/usr/local"
+export HOMEBREW_CELLAR="/usr/local/Cellar"
+export HOMEBREW_BOTTLE_DOMAIN="https://homebrew.bintray.com"
+
+# sshp
+alias sshp='ssh -i ~/.ssh/id_rsa proper-kitada@$(aws --profile "$APP"_"$ENV"_proper --region ap-northeast-1 ec2 describe-instances | jq '\''.Reservations[].Instances[] | {ip:.PublicIpAddress, tags:.Tags[0]} | .ip + "," + .tags.Value'\'' | peco | perl -nle '\''print $1 if /([\d.]+)/'\'')'
 
 # completions
 autoload -Uz compinit

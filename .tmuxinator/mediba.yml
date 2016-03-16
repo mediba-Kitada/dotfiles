@@ -30,3 +30,4 @@ windows:
   - seasparrow: cd ~/project/seasparrow/seasparrow
   - coupy: cd ~/project/tokuten-aws/tokuten-aws/coupy
   - tokuten-aws: cd ~/project/tokuten-aws/tokuten-aws
+  - apollo: cd ~/project/sar-cms/sar-cms

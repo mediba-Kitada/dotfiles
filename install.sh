@@ -1,10 +1,10 @@
 #!/bin/sh
 
-git submodule init
-git submodule update
+git submodule update --init --recursive
 
 RUBY_VERSION=2.2.3
 PAKER_VERSION=0.8.6
+PYTHON_VERSION=3.5.1
 
 for i in `ls -a`
 do
@@ -42,14 +42,20 @@ mkdir -p $HOME/.zsh/completions
 [ ! -d $HOME/repos/hub ] && mkdir -p $HOME/repos && cd $HOME/repos && git clone git@github.com:github/hub.git
 [ ! -f $HOME/.zsh/completions/_hub ] && cp $HOME/repos/hub/etc/hub.zsh_completion $HOME/.zsh/completions/_hub
 
+# setup zsh
+source ~/.zshrc
+
 # ruby
+which anyenv && anyenv install rbenv && source ~/.zshrc
 which rbenv && rbenv install $RUBY_VERSION && rbenv global $RUBY_VERSION
 
-# bundler
+## bundler
 which rbenv && rbenv exec gem install bundler
 
-# tmuxinatorの導入
-which bundle && bundle install
+# python
+which anyenv && anyenv install pyenv && source ~/.zshrc
+whicy pyenv && pyenv install $PYTHON_VERSION && pyenv global $PYTHON_VERSION
+which pip && pip install powerline-status
 
 # packer
 [ ! -d $HOME/packer ] && mkdir -p $HOME/packer && cd $HOME/Downloads && wget -O https://releases.hashicorp.com/packer/${PAKER_VERSION}/packer_${PAKER_VERSION}_darwin_amd64.zip && unzip packer_${PAKER_VERSION}_darwin_amd64.zip -d $HOME/packer

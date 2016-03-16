@@ -173,3 +173,7 @@ brew:
     args: ""
   - name: python
     args: ""
+  - name: scala
+    args: ""
+  - name: libmcrypt
+    args: ""
