@@ -181,7 +181,7 @@ NeoBundle 'szw/vim-tags'
 NeoBundle 'thinca/vim-ref'
 " vim-markdown
 NeoBundle 'godlygeek/tabular'
-"NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'tpope/vim-markdown'
 " TwitVim
 NeoBundle 'vim-scripts/TwitVim'
 " fugitive
@@ -423,3 +423,6 @@ au BufNewFile,BufRead * match ZenkakuSpace /　/
 
 " copy clipboard yanked data
 set clipboard=unnamed,autoselect
+
+" TwitVim
+let g:twitvim_browser_cmd = 'open -a Google\ Chrome'
