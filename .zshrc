@@ -249,6 +249,10 @@ export PATH=~/packer:$PATH
 # golang
 export PATH=$PATH:$GOPATH/bin
 
+# python
+export PYTHONPATH="$HOME/Library/Python/2.7"
+export PATH=$PATH:$PYTHONPATH/bin
+
 # completions
 autoload -Uz compinit
 compinit
