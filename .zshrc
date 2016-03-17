@@ -256,17 +256,13 @@ if [[ -d $HOME/.anyenv ]]; then
   export PATH=$HOME/.anyenv/bin:$PATH
   eval "$(anyenv init -)"
 
+  # python
   #export PYTHONPATH="$HOME/.anyenv/envs/pyenv/versions/2.7.8/lib/python2.7/site-packages"
-  # powerline
-  #powerline-daemon -q
 
 fi
-
-# python
-export PYTHONPATH="$HOME/Library/Python/2.7"
-export PATH=$PATH:$PYTHONPATH/bin
 # powerline
-powerline-daemon -q
+if which powerline-daemon > /dev/null; && powerline-daemon -q
+if which powerline-config > /dev/null; && powerline-config tmux setup
 
 export PATH="/usr/local/sbin:$PATH"
 
