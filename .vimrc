@@ -257,15 +257,12 @@ NeoBundle 'ahayman/vim-nodejs-complete'
 NeoBundle 'jaxbot/github-issues.vim'
 " JSON
 NeoBundle 'elzr/vim-json'
-
 " preview Markdown
 NeoBundle 'kannokanno/previm'
 " ansible
 NeoBundle 'chase/vim-ansible-yaml'
 " textile
 NeoBundle 'timcharper/textile.vim'
-" rails.vim
-NeoBundle 'rails.vim'
 " xml.vim
 NeoBundle 'othree/xml.vim'
 " vim-node-dict
@@ -275,6 +272,24 @@ NeoBundle 'derekwyatt/vim-scala'
 
 " Vdebug
 NeoBundle 'joonty/vdebug'
+
+" syntastic
+NeoBundle 'scrooloose/syntastic'
+
+" vim-endwise
+"" 自動で閉じる
+NeoBundle 'tpope/vim-endwise'
+
+" Ruby
+"" vim-ref-ri
+NeoBundle 'yuku-t/vim-ref-ri'
+"" rails.vim
+NeoBundle 'rails.vim'
+"" .や::を入力したときにオムニ補完が有効になるようにする
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.ruby = '[^.  *\t]\.\w*\|\h\w*::'
 
 call neobundle#end()
  
@@ -436,3 +451,8 @@ python del powerline_setup
 set laststatus=2
 set showtabline=2
 set noshowmode 
+
+
+" syntastic with Rubocop
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+let g:syntastic_ruby_checkers = ['rubocop']

@@ -177,3 +177,7 @@ brew:
     args: ""
   - name: libmcrypt
     args: ""
+  - name: peco
+    args: ""
+  - name: rsense
+    args: ""

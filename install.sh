@@ -3,6 +3,7 @@
 git submodule update --init --recursive
 
 RUBY_VERSION=2.2.3
+RSense_CONFIG='/usr/local/Cellar/rsense/0.3/libexec/etc/config.rb'
 PAKER_VERSION=0.8.6
 PYTHON_VERSION=3.5.1
 
@@ -19,11 +20,11 @@ do
 done
 
 # Neobundleの導入
-[ ! -d ~/.vim/bundle ] || mkdir -p ~/.vim/bundle
-[ ! -d ~/.vim/tags/ ] || mkdir -p ~/.vim/tags/
-[ ! -d ~/.vim/dict/ ] || mkdir -p ~/.vim/dict/
-[ ! -d ~/.vim/vim-ref/cache ] || mkdir -p ~/.vim/vim-ref/cache
-[ ! -d ~/.vim/bundle/neobundle.vim ] || git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+[ ! -d ~/.vim/bundle ] && mkdir -p ~/.vim/bundle
+[ ! -d ~/.vim/tags/ ] && mkdir -p ~/.vim/tags/
+[ ! -d ~/.vim/dict/ ] && mkdir -p ~/.vim/dict/
+[ ! -d ~/.vim/vim-ref/cache ] && mkdir -p ~/.vim/vim-ref/cache
+[ ! -d ~/.vim/bundle/neobundle.vim ] && git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 
 # php-cs-fixerの導入
 [ ! -f /usr/local/bin/php-cs-fixer ] || sudo wget http://get.sensiolabs.org/php-cs-fixer.phar -O /usr/local/bin/php-cs-fixer
@@ -46,16 +47,17 @@ mkdir -p $HOME/.zsh/completions
 source ~/.zshrc
 
 # ruby
-which anyenv && anyenv install rbenv && source ~/.zshrc
-which rbenv && rbenv install $RUBY_VERSION && rbenv global $RUBY_VERSION
+which anyenv && anyenv install rbenv
+which anyenv exec rbenv && anyenv exec rbenv install $RUBY_VERSION && an exec rbenv global $RUBY_VERSION
+[ -f $RSense_CONFIG ] && ruby $RSense_CONFIG > ~/.rsense
 
 ## bundler
 which rbenv && rbenv exec gem install bundler
 
 # python
 which anyenv && anyenv install pyenv && source ~/.zshrc
-whicy pyenv && pyenv install $PYTHON_VERSION && pyenv global $PYTHON_VERSION
-which pip && pip install powerline-status
+# which pyenv && pyenv install $PYTHON_VERSION && pyenv global $PYTHON_VERSION
+which pip && pip install --user powerline-status
 
 # packer
 [ ! -d $HOME/packer ] && mkdir -p $HOME/packer && cd $HOME/Downloads && wget -O https://releases.hashicorp.com/packer/${PAKER_VERSION}/packer_${PAKER_VERSION}_darwin_amd64.zip && unzip packer_${PAKER_VERSION}_darwin_amd64.zip -d $HOME/packer
