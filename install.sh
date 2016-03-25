@@ -19,6 +19,9 @@ do
   ln -s ~/dotfiles/$i ~/
 done
 
+# vim初期設定
+cp -R ./.vim ~/
+
 # Neobundleの導入
 [ ! -d ~/.vim/bundle ] && mkdir -p ~/.vim/bundle
 [ ! -d ~/.vim/tags/ ] && mkdir -p ~/.vim/tags/
