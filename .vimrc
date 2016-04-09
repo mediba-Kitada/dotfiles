@@ -155,6 +155,11 @@ command! Sjis	Cp932
 " オートインデント"
 set autoindent
 
+" 誤操作防止
+nnoremap ZZ <Nop>
+nnoremap ZQ <Nop>
+nnoremap Q <Nop>
+
 "---------------------------
 " Start Neobundle Settings.
 "---------------------------
@@ -451,7 +456,6 @@ python del powerline_setup
 set laststatus=2
 set showtabline=2
 set noshowmode 
-
 
 " syntastic with Rubocop
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
