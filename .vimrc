@@ -274,6 +274,8 @@ NeoBundle 'othree/xml.vim'
 NeoBundle 'guileen/vim-node-dict'
 " vim-scala
 NeoBundle 'derekwyatt/vim-scala'
+" golang
+NeoBundle 'fatih/vim-go'
 
 " Vdebug
 NeoBundle 'joonty/vdebug'
@@ -295,6 +297,7 @@ if !exists('g:neocomplete#force_omni_input_patterns')
   let g:neocomplete#force_omni_input_patterns = {}
 endif
 let g:neocomplete#force_omni_input_patterns.ruby = '[^.  *\t]\.\w*\|\h\w*::'
+
 
 call neobundle#end()
  
@@ -460,3 +463,9 @@ set noshowmode
 " syntastic with Rubocop
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
 let g:syntastic_ruby_checkers = ['rubocop']
+
+" vim-go
+let g:go_hightlight_functions = 1
+let g:go_hightlight_methods = 1
+let g:go_hightlight_structs = 1
+let g:go_hightlight_interfaces = 1

@@ -248,8 +248,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Packer
 export PATH=~/packer:$PATH
 
-# golang
-export PATH=$PATH:$GOPATH/bin
+# GOPATH with direnv
+eval "$(direnv hook zsh)"
 
 # anyenv
 if [[ -d $HOME/.anyenv ]]; then
