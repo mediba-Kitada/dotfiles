@@ -181,3 +181,7 @@ brew:
     args: ""
   - name: rsense
     args: ""
+  - name: direnv
+    args: ""
+  - name: glide
+    args: ""
