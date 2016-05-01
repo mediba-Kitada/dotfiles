@@ -261,8 +261,10 @@ if [[ -d $HOME/.anyenv ]]; then
 
 fi
 # powerline
-if which powerline-daemon > /dev/null; && powerline-daemon -q
-if which powerline-config > /dev/null; && powerline-config tmux setup
+if ! which powerline-daemon > /dev/null; && export PATH=$HOME/Library/Python/2.7/bin:$PATH
+powerline-daemon -q
+if ! which powerline-config > /dev/null; && export PATH=$HOME/Library/Python/2.7/bin:$PATH
+powerline-config tmux setup
 
 export PATH="/usr/local/sbin:$PATH"
 
