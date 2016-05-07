@@ -64,3 +64,6 @@ which pip && pip install --user powerline-status
 
 # packer
 [ ! -d $HOME/packer ] && mkdir -p $HOME/packer && cd $HOME/Downloads && wget -O https://releases.hashicorp.com/packer/${PAKER_VERSION}/packer_${PAKER_VERSION}_darwin_amd64.zip && unzip packer_${PAKER_VERSION}_darwin_amd64.zip -d $HOME/packer
+
+# golang
+[ ! -d $HOME/go ] && mkdir -p $HOME/go

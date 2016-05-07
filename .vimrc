@@ -160,6 +160,10 @@ nnoremap ZZ <Nop>
 nnoremap ZQ <Nop>
 nnoremap Q <Nop>
 
+" leaderを,とする
+let mapleader = ","
+noremap \ ,
+
 "---------------------------
 " Start Neobundle Settings.
 "---------------------------
@@ -176,8 +180,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'scrooloose/nerdtree' 
 " 自動的に閉じ括弧を挿入
 NeoBundle 'Townk/vim-autoclose' 
-" ねこ
-NeoBundle 'nefo-mi/nyan-modoki.vim'
 " phpqa
 NeoBundle 'joonty/vim-phpqa'
 " ctags
@@ -312,11 +314,6 @@ NeoBundleCheck
 " End Neobundle Settings.
 "-------------------------
 
-" ねこ
-set laststatus=2
-set statusline=%{g:NyanModoki()}
-let g:nyan_modoki_select_cat_face_number = 2
-
 " CodeSnifferの設定をプロジェクト毎に読み込み
 augroup vimrc-local
   autocmd!
@@ -344,7 +341,7 @@ let Tlist_Use_Right_Window = 1
 let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
 let g:tlist_php_settings = 'php;c:class;f:function;d:constant'
-nnoremap <Leader>t :Tlist<CR>
+nnoremap <Leader>tl :Tlist<CR>
 
 " PHPマニュアル読み込み
 let g:ref_cache_dir = $HOME.'/.vim/vim-ref/cache'
@@ -465,7 +462,17 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
 let g:syntastic_ruby_checkers = ['rubocop']
 
 " vim-go
+"" mapping
+""" go run
+au FileType go nmap <Leader>gr <Plug>(go-run)
+""" go test
+au FileType go nmap <Leader>gt <Plug>(go-test)
+"" highlight
 let g:go_hightlight_functions = 1
 let g:go_hightlight_methods = 1
 let g:go_hightlight_structs = 1
 let g:go_hightlight_interfaces = 1
+let g:go_hightlight_operators = 1
+let g:go_hightlight_build_constraints = 1
+"" GoFmt時にインポートするパッケージを整理
+let g:go_fmt_command = "goimports"

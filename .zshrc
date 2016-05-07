@@ -250,6 +250,8 @@ export PATH=~/packer:$PATH
 
 # GOPATH with direnv
 eval "$(direnv hook zsh)"
+## GOPATH
+export GOPATH="$HOME/go"
 
 # anyenv
 if [[ -d $HOME/.anyenv ]]; then
