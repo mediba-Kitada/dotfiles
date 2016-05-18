@@ -308,6 +308,9 @@ NeoBundle 'tyru/open-browser.vim'
 " open-browser-github.vim
 NeoBundle 'tyru/open-browser-github.vim'
 
+" tableを記述/整形
+NeoBundle 'dhruvasagar/vim-table-mode'
+
 call neobundle#end()
  
 " Required:
@@ -398,10 +401,6 @@ nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 
 " indent for javascript
 autocmd filetype coffee,javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-
-" preview Markdown
-" let g:previm_open_cmd = 'atom -n'
-let g:previm_open_cmd = 'open -a Google\ Chrome'
 
 " crontab対策
 "set backupskip=/tmp/*,/private/tmp/*
@@ -495,8 +494,11 @@ set spelllang=en,cjk
 autocmd FileType gitcommit setlocal spell
 "" git commitの際は、挿入モード
 autocmd FileType gitcommit startinsert
+
+" github
 "" open-browser-github.vim キーバインド
 """ 編集中のファイルの最新のコミットをブラウザで表示
 nnoremap gio :<C-u>OpenGithubFile<CR>
 xnoremap gio :OpenGithubFile<CR>
-
+"" Github Flavored Markdownの表記法に合わせる
+let g:table_mode_corner = "|"
