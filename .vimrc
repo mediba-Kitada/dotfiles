@@ -300,6 +300,13 @@ if !exists('g:neocomplete#force_omni_input_patterns')
 endif
 let g:neocomplete#force_omni_input_patterns.ruby = '[^.  *\t]\.\w*\|\h\w*::'
 
+" git コミットブラウザ agit.vim
+NeoBundle 'cohama/agit.vim'
+
+" open-browser.vim カーソル下のURIをブラウザで表示
+NeoBundle 'tyru/open-browser.vim'
+" open-browser-github.vim
+NeoBundle 'tyru/open-browser-github.vim'
 
 call neobundle#end()
  
@@ -475,4 +482,21 @@ let g:go_hightlight_interfaces = 1
 let g:go_hightlight_operators = 1
 let g:go_hightlight_build_constraints = 1
 "" GoFmt時にインポートするパッケージを整理
-let g:go_fmt_command = "goimports"
+"let g:go_fmt_command = "goimports"
+
+" git
+"" :Man 確認したいコマンド
+runtime ftplugin/man.vim
+"" :gi gitコマンド
+nnoremap gi :<C-u>!git<Space>
+"" スペルチェック
+set spelllang=en,cjk
+"" git commitの際に自動でスペルチェックを有効にする
+autocmd FileType gitcommit setlocal spell
+"" git commitの際は、挿入モード
+autocmd FileType gitcommit startinsert
+"" open-browser-github.vim キーバインド
+""" 編集中のファイルの最新のコミットをブラウザで表示
+nnoremap gio :<C-u>OpenGithubFile<CR>
+xnoremap gio :OpenGithubFile<CR>
+
