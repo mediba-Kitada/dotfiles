@@ -184,6 +184,8 @@ NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'joonty/vim-phpqa'
 " ctags
 NeoBundle 'szw/vim-tags'
+" tabbar
+NeoBundle 'majutsushi/tagbar'
 " vim-ref
 NeoBundle 'thinca/vim-ref'
 " vim-markdown
