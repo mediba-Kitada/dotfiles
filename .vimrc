@@ -340,10 +340,12 @@ endfunction '))
 " PHP辞書ファイル
 autocmd FileType php :set dictionary=~/.vim/dict/php.dict
 
-" ctags
-autocmd BufNewFile,BufRead $HOME/vagrants/lucky-aws/kittyhawk/tokuten.auone.jp/*.php setlocal tags=$HOME/.vim/tags/kittyhawk.tags
-autocmd BufNewFile,BufRead $HOME/project/au-blinkfeed/au-blinkfeed/*.php setlocal tags=$HOME/.vim/tags/au-blinkfeed.tags
-autocmd BufNewFile,BufRead $HOME/vagrants/lucky-aws/coupy/*.php setlocal tags=$HOME/.vim/tags/coupy.tags
+" 拡張子phpのファイルを開いた際にtagsファイルを変更
+au BufNewFile,BufRead *.php set tags+=$HOME/php.tags
+
+" vim-tags tagsファイルを更新
+au BufNewFile,BufRead *.php let g:vim_tags_project_tags_command = "ctags --languages=php -f $HOME/php.tags `pwd` 2>/dev/null &"
+
 NeoBundleLazy 'vim-scripts/taglist.vim', {
 \    'autoload' : {
 \        'commands' : 'Tlist',},}

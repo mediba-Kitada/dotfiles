@@ -1,4 +1,5 @@
---sort=yes
+--append=yes
 --recurse=yes
+--sort=yes
 --langmap=PHP:+.inc.tpl
---php-types=cfd
+--php-kinds=cfd
