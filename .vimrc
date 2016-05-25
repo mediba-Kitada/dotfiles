@@ -311,6 +311,9 @@ NeoBundle 'tyru/open-browser-github.vim'
 " tableを記述/整形
 NeoBundle 'dhruvasagar/vim-table-mode'
 
+" GitHubの絵文字,issue番号,リポジトリ名etcの補完
+NeoBundle 'rhysd/github-complete.vim'
+
 call neobundle#end()
  
 " Required:
