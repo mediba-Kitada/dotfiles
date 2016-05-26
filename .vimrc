@@ -335,6 +335,10 @@ augroup vimrc-local
   autocmd BufNewFile,BufReadPost * call s:vimrc_local(expand(':p:h'))
 augroup END
 
+" デフォルトではphpmd/phpcsの自動実行はオフ
+let g:phpqa_messdetector_autorun = 0
+let g:phpqa_codesniffer_autorun = 0
+
 function! s:vimrc_local(loc)
   let files = findfile('.vimrc.local', escape(a:loc, ' ') . ';', -1)
   for i in reverse(filter(files, 'filereadable(v:val)'))
