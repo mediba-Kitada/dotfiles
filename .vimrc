@@ -186,6 +186,13 @@ NeoBundle 'joonty/vim-phpqa'
 NeoBundle 'szw/vim-tags'
 " tabbar
 NeoBundle 'majutsushi/tagbar'
+" vim-scripts/tagbar-phpctags
+NeoBundle 'vim-scripts/tagbar-phpctags', {
+  \ 'build' :{
+  \   'others' : 'chmod +x bin/phpctags',
+  \ },
+  \}
+
 " vim-ref
 NeoBundle 'thinca/vim-ref'
 " vim-markdown
