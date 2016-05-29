@@ -115,6 +115,11 @@ nnoremap <C-h><C-h>	:<C-u>help<Space><C-r><C-w><Enter>
 noremap ; :
 noremap : ;
 
+" コマンド、検索履歴はCtrl-Fに統一
+noremap q: <NOP>
+noremap q/ <NOP>
+noremap q? <NOP>
+
 " 論理行移動と表示行移動のキーバインディング入れ替え"
 noremap j	gj
 noremap k	gk
