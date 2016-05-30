@@ -115,6 +115,11 @@ nnoremap <C-h><C-h>	:<C-u>help<Space><C-r><C-w><Enter>
 noremap ; :
 noremap : ;
 
+" コマンド、検索履歴はCtrl-Fに統一
+noremap q: <NOP>
+noremap q/ <NOP>
+noremap q? <NOP>
+
 " 論理行移動と表示行移動のキーバインディング入れ替え"
 noremap j	gj
 noremap k	gk
@@ -229,9 +234,9 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 " " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+  "return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
   " For no inserting <CR> key.
-  "return pumvisible() ? "\<C-y>" : "\<CR>"
+  return pumvisible() ? "\<C-y>" : "\<CR>"
 endfunction
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
