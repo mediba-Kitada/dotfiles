@@ -169,6 +169,10 @@ nnoremap Q <Nop>
 let mapleader = ","
 noremap \ ,
 
+" 正規表現
+nnoremap / /\v
+nnoremap ? ?\v
+
 "---------------------------
 " Start Neobundle Settings.
 "---------------------------
