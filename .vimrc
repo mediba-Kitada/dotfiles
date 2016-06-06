@@ -26,7 +26,7 @@ if has("vms")
 else
   set backup		" keep a backup file
 endif
-set history=50		" keep 50 lines of command line history
+set history=10000		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
@@ -172,6 +172,8 @@ noremap \ ,
 " 正規表現
 nnoremap / /\v
 nnoremap ? ?\v
+"" /の自動エスケープ
+cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 
 "---------------------------
 " Start Neobundle Settings.
