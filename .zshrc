@@ -253,7 +253,7 @@ eval "$(direnv hook zsh)"
 ## GOPATH
 export GOPATH="$HOME/go"
 ## bin
-export $GOBIN="$GOPATH/bin"
+export GOBIN="$GOPATH/bin"
 
 # anyenv
 if [[ -d $HOME/.anyenv ]]; then
