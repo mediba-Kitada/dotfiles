@@ -111,7 +111,7 @@ brew:
     args: ""
   - name: php-code-sniffer
     args: ""
-  - name: php55
+  - name: php56
     args: ""
   - name: pkg-config
     args: ""
@@ -184,4 +184,6 @@ brew:
   - name: direnv
     args: ""
   - name: glide
+    args: ""
+  - name: tmux-cssh
     args: ""
