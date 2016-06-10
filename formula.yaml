@@ -1,6 +1,5 @@
 tap:
 - b4b4r07/brionac
-- caskroom/cask
 - homebrew/binary
 - homebrew/bundle
 - homebrew/completions
@@ -21,13 +20,9 @@ brew:
     args: ""
   - name: binutils
     args: ""
-  - name: brew-cask
-    args: ""
   - name: brionac
     args: ""
   - name: cabal-install
-    args: ""
-  - name: cask
     args: ""
   - name: cloog018
     args: ""
