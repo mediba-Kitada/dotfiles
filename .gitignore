@@ -2,6 +2,7 @@ php_manual_ja.tar.gz
 /.oh-my-zsh/
 .zsh_history
 /.zsh/
+bundle/
 
 # Temporary Files
 ## vim
