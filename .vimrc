@@ -110,6 +110,11 @@ set showmode
 " ヘルプモードのショートカット"
 nnoremap <C-h>	:<C-u>help<space>
 nnoremap <C-h><C-h>	:<C-u>help<Space><C-r><C-w><Enter>
+" 読むべき:helpドキュメント
+"" tips ヒント
+"" user-manual 目的別ユーザマニュアル
+"" reference_toc 各機能の詳細を記したリファレンス
+"" sys-file-list 環境固有の事情を記したドキュメント
 
 " コマンドモードのショートカット"
 noremap ; :
