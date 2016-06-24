@@ -111,6 +111,8 @@ if [[ -f ${HOME}/.zsh/antigen/antigen.zsh ]]; then
   antigen bundle mollifier/anyframe
   ## tmux-mem-cpu-load
   antigen bundle thewtex/tmux-mem-cpu-load
+  ## Docker autocompletion
+  antigen bundle docker      
 
   antigen apply
 fi
