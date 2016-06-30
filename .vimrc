@@ -534,3 +534,11 @@ nnoremap gio :<C-u>OpenGithubFile<CR>
 xnoremap gio :OpenGithubFile<CR>
 "" Github Flavored Markdownの表記法に合わせる
 let g:table_mode_corner = "|"
+
+" open-browser
+"" netrwのgxマッピングを解除
+let g:netrw_nogx = 1
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
+
+
