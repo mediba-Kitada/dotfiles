@@ -538,3 +538,9 @@ let g:table_mode_corner = "|"
 " 数値処理
 "" 0がプレフィックスの数値を10進数として扱う
 set nrformats=
+
+" open-browser
+"" netrwのgxマッピングを解除
+let g:netrw_nogx = 1
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
