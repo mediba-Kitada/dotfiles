@@ -534,3 +534,7 @@ nnoremap gio :<C-u>OpenGithubFile<CR>
 xnoremap gio :OpenGithubFile<CR>
 "" Github Flavored Markdownの表記法に合わせる
 let g:table_mode_corner = "|"
+
+" 数値処理
+"" 0がプレフィックスの数値を10進数として扱う
+set nrformats=
