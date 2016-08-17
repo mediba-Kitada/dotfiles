@@ -544,3 +544,5 @@ set nrformats=
 let g:netrw_nogx = 1
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
+
+let g:previm_open_cmd = 'open -a Safari'
