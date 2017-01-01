@@ -186,3 +186,5 @@ brew:
     args: ""
   - name: ghq
     args: ""
+  - name: axel
+    args: ""
