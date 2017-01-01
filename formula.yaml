@@ -182,3 +182,7 @@ brew:
     args: ""
   - name: tmux-cssh
     args: ""
+  - name: reattach-to-user-namespace
+    args: ""
+  - name: ghq
+    args: ""
