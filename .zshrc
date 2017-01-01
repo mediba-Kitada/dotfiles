@@ -257,6 +257,19 @@ export GOPATH="$HOME/go"
 ## bin
 export GOBIN="$GOPATH/bin"
 
+# manage repos by ghq and peco
+bindkey '^]' peco-src
+
+function peco-src() {
+  local src=$(ghq list --full-path | peco --query "$LBUFFER")
+  if [ -n "$src" ]; then
+    BUFFER="cd $src"
+    zle accept-line
+  fi
+  zle -R -c
+}
+zle -N peco-src
+
 # anyenv
 if [[ -d $HOME/.anyenv ]]; then
   export PATH=$HOME/.anyenv/bin:$PATH
