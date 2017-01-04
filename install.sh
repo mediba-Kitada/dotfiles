@@ -34,10 +34,10 @@ cp -R ./.vim ~/
 sudo chmod a+x /usr/local/bin/php-cs-fixer
 
 # PHP辞書ファイル
-[ ! -f ~/.vim/dict/php.dict ] || php -r '$f=get_defined_functions();echo join("\n",$f["internal"]);'|sort > ~/.vim/dict/php.dict
+[ ! -f ~/.vim/dict/php.dict ] && php -r '$f=get_defined_functions();echo join("\n",$f["internal"]);'|sort > ~/.vim/dict/php.dict
 
 # PHPマニュアル
-[ ! -d ~/.vim/vim-ref/php-chunked-xhtml ] || cd ~/.vim/vim-ref && wget http://jp1.php.net/distributions/manual/php_manual_ja.tar.gz && tar -zxvf php_manual_ja.tar.gz -C ~/.vim/vim-ref 
+[ ! -d ~/.vim/vim-ref/php-chunked-xhtml ] && cd ~/.vim/vim-ref && wget http://jp2.php.net/distributions/manual/php_manual_ja.tar.gz && tar -zxvf php_manual_ja.tar.gz -C ~/.vim/vim-ref
 
 # antigen
 [ ! -d $HOME/.zsh/antigen ] && mkdir -p $HOME/.zsh && cd $HOME/.zsh && git clone git@github.com:zsh-users/antigen.git
