@@ -184,3 +184,7 @@ brew:
     args: ""
   - name: axel
     args: ""
+  - name: v8
+    args: ""
+  - name: v8-315
+    args: ""
