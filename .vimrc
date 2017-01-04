@@ -388,6 +388,7 @@ nnoremap <Leader>tl :Tlist<CR>
 " PHPマニュアル読み込み
 let g:ref_cache_dir = $HOME.'/.vim/vim-ref/cache'
 let g:ref_phpmanual_path = $HOME.'/.vim/vim-ref/php-chunked-xhtml'
+let g:ref_refe_encoding = 'ecu-jp'
 
 " IDE for PHP
 "autocmd FileType php :NERDTree
@@ -485,7 +486,8 @@ au BufNewFile,BufRead * match ZenkakuSpace /　/
 set clipboard=unnamed,autoselect
 
 " TwitVim
-let g:twitvim_browser_cmd = 'open -a Google\ Chrome'
+let g:twitvim_browser_cmd = 'open'
+let g:twitvim_token_file = "$HOME/.twitvim.token"
 
 " Powerline
 python from powerline.vim import setup as powerline_setup
@@ -546,3 +548,10 @@ nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
 let g:previm_open_cmd = 'open -a Safari'
+" 拡張子がphpの場合は、tag変更
+au BufNewFile,BufRead *.php set tags+=$HOME/php.tags
+
+" scala
+let g:scala_use_default_keymappings = 1
+let g:scala_use_builtin_tagbar_defs = 1
+let g:scala_scaladoc_indent = 1
