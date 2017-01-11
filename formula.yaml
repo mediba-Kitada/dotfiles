@@ -182,6 +182,10 @@ brew:
     args: ""
   - name: tmux-cssh
     args: ""
+  - name: reattach-to-user-namespace
+    args: ""
+  - name: ghq
+    args: ""
   - name: axel
     args: ""
   - name: v8

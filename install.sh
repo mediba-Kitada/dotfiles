@@ -67,3 +67,4 @@ which pip && pip install --user powerline-status
 
 # golang
 [ ! -d $HOME/go ] && mkdir -p $HOME/go
+[ -d $GOPATH ] && git config --global ghq.root $GOPATH/src
