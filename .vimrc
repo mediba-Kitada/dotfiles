@@ -556,12 +556,23 @@ let g:scala_use_default_keymappings = 1
 let g:scala_use_builtin_tagbar_defs = 1
 let g:scala_scaladoc_indent = 1
 
-" split
+" 画面分割に関するキーマップ
 nnoremap s <Nop>
+"" 画面分割
 nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
+"" 分割した画面を移動
 nnoremap sh <C-w>h
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l
-nnoremap sn <C-w>w
+nnoremap sw <C-w>w
+nnoremap sH <C-w>H
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sr <C-w>R
+"" タブ操作
+nnoremap st :<C-u>tabnew<CR>
+nnoremap sn gt
+nnoremap sp gT
