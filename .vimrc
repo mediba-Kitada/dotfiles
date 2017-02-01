@@ -555,3 +555,13 @@ au BufNewFile,BufRead *.php set tags+=$HOME/php.tags
 let g:scala_use_default_keymappings = 1
 let g:scala_use_builtin_tagbar_defs = 1
 let g:scala_scaladoc_indent = 1
+
+" split
+nnoremap s <Nop>
+nnoremap ss :<C-u>sp<CR>
+nnoremap sv :<C-u>vs<CR>
+nnoremap sh <C-w>h
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sn <C-w>w
