@@ -282,13 +282,15 @@ NeoBundle 'Shougo/vimproc',{
 \   },
 \ }
 " javascript
-NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundleLazy 'othree/yajs.vim',{'autoload':{'filetypes':['javascript']}}
+"" Node.js
 NeoBundle 'moll/vim-node'
 NeoBundle 'ahayman/vim-nodejs-complete'
-NeoBundle 'jaxbot/github-issues.vim'
 " JSON
 NeoBundle 'elzr/vim-json'
+" github
+NeoBundle 'jaxbot/github-issues.vim'
 " preview Markdown
 NeoBundle 'kannokanno/previm'
 " ansible
@@ -338,6 +340,9 @@ NeoBundle 'dhruvasagar/vim-table-mode'
 
 " GitHubの絵文字,issue番号,リポジトリ名etcの補完
 NeoBundle 'rhysd/github-complete.vim'
+
+" memolist
+NeoBundle 'glidenote/memolist.vim'
 
 call neobundle#end()
  
@@ -432,9 +437,6 @@ nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 " レジスタ一覧
 nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 
-" indent for javascript
-autocmd filetype coffee,javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-
 " crontab対策
 "set backupskip=/tmp/*,/private/tmp/*
 
@@ -450,8 +452,6 @@ endfunction
 " active directory
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
-" node.js辞書ファイル
-au FileType javascript set dictionary+=$HOME/.vim/bundle/vim-node-dict/dict/node.dict
 
 " github-issues
 let g:github_access_token = "e484054fa0b0737921ca878f45279ee6f391c422"
@@ -576,3 +576,11 @@ nnoremap sr <C-w>R
 nnoremap st :<C-u>tabnew<CR>
 nnoremap sn gt
 nnoremap sp gT
+
+" JavaScript
+"" indent for javascript
+autocmd filetype coffee,javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+"" node.js辞書ファイル
+au FileType javascript set dictionary+=$HOME/.vim/bundle/vim-node-dict/dict/node.dict
+"" syntax highlighting
+autocmd BufRead,BufNewFile *.{es6,js} setfiletype javascript
