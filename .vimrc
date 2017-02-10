@@ -344,6 +344,9 @@ NeoBundle 'rhysd/github-complete.vim'
 " memolist
 NeoBundle 'glidenote/memolist.vim'
 
+" ALE(Asynchronous Lint Engine)
+NeoBundle 'w0rp/ale'
+
 call neobundle#end()
  
 " Required:
@@ -584,3 +587,6 @@ autocmd filetype coffee,javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2
 au FileType javascript set dictionary+=$HOME/.vim/bundle/vim-node-dict/dict/node.dict
 "" syntax highlighting
 autocmd BufRead,BufNewFile *.{es6,js} setfiletype javascript
+
+" ALE
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
