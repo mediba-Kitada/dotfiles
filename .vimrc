@@ -282,11 +282,9 @@ NeoBundle 'Shougo/vimproc',{
 \   },
 \ }
 " javascript
-NeoBundle 'kchmck/vim-coffee-script'
 NeoBundleLazy 'othree/yajs.vim',{'autoload':{'filetypes':['javascript']}}
 "" Node.js
 NeoBundle 'moll/vim-node'
-NeoBundle 'ahayman/vim-nodejs-complete'
 " JSON
 NeoBundle 'elzr/vim-json'
 " github
