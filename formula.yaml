@@ -128,8 +128,6 @@ brew:
     args: ""
   - name: unixodbc
     args: ""
-  - name: vim
-    args: ""
   - name: wget
     args: ""
   - name: xz
@@ -191,4 +189,8 @@ brew:
   - name: v8
     args: ""
   - name: v8-315
+    args: ""
+  - name: terraform
+    args: ""
+  - name: yarn
     args: ""
