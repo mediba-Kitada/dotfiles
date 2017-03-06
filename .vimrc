@@ -586,5 +586,9 @@ au FileType javascript set dictionary+=$HOME/.vim/bundle/vim-node-dict/dict/node
 "" syntax highlighting
 autocmd BufRead,BufNewFile *.{es6,js} setfiletype javascript
 
+" shell script
+"" indent for shell script
+autocmd filetype sh setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+
 " ALE
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
