@@ -263,6 +263,8 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
+
+
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -487,8 +489,7 @@ au BufNewFile,BufRead * match ZenkakuSpace /　/
 set clipboard=unnamed,autoselect
 
 " TwitVim
-let g:twitvim_browser_cmd = 'open'
-let g:twitvim_token_file = "$HOME/.twitvim.token"
+let g:twitvim_browser_cmd = 'open -a Safari'
 
 " Powerline
 python from powerline.vim import setup as powerline_setup
@@ -591,4 +592,16 @@ autocmd BufRead,BufNewFile *.{es6,js} setfiletype javascript
 autocmd filetype sh setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
 " ALE
-let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+"let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+let g:ale_emit_conflict_warnings = 0
+
+" 起動時の挙動
+autocmd VimEnter * nested if @% == '' && s:GetBufByte() == 0 | edit $MYVIMRC | endif
+function! s:GetBufByte()
+  let byte = line2byte(line('$') + 1)
+  if byte == -1
+	return 0
+  else
+	return byte - 1
+  endif
+endfunction
