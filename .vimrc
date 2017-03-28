@@ -215,7 +215,8 @@ NeoBundle 'thinca/vim-ref'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'tpope/vim-markdown'
 " TwitVim
-NeoBundle 'vim-scripts/TwitVim'
+NeoBundle 'twitvim/twitvim'
+let twitvim_enable_python = 1
 " fugitive
 NeoBundle 'tpope/vim-fugitive'
 " neosnippet
@@ -346,6 +347,9 @@ NeoBundle 'glidenote/memolist.vim'
 
 " ALE(Asynchronous Lint Engine)
 NeoBundle 'w0rp/ale'
+
+" OpenSSL
+NeoBundle 'vim-scripts/openssl.vim'
 
 call neobundle#end()
  
@@ -489,7 +493,7 @@ au BufNewFile,BufRead * match ZenkakuSpace /　/
 set clipboard=unnamed,autoselect
 
 " TwitVim
-let g:twitvim_browser_cmd = 'open -a Safari'
+let g:twitvim_browser_cmd = 'open -a Google\ Chrome'
 
 " Powerline
 python from powerline.vim import setup as powerline_setup
