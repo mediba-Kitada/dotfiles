@@ -205,12 +205,12 @@ export LANG=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
 
 # ruby
-if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
+#if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 
 
 # added by travis gem
 [ -f /Users/kitada/.travis/travis.sh ] && source /Users/kitada/.travis/travis.sh
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # ctags
 alias ctags="`brew --prefix`/bin/ctags"
@@ -295,6 +295,33 @@ export HOMEBREW_BOTTLE_DOMAIN="https://homebrew.bintray.com"
 # sshp
 alias sshp='ssh -i ~/.ssh/id_rsa proper-kitada@$(aws --profile "$APP"_"$ENV"_proper --region ap-northeast-1 ec2 describe-instances | jq '\''.Reservations[].Instances[] | {ip:.PublicIpAddress, tags:.Tags[0]} | .ip + "," + .tags.Value'\'' | peco | perl -nle '\''print $1 if /([\d.]+)/'\'')'
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+	nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
+
 # completions
-autoload -Uz compinit
-compinit
+#autoload -Uz compinit
+#compinit
+
+# グロッビング対応
+setopt nonomatch
