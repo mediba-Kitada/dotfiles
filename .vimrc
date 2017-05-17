@@ -217,6 +217,7 @@ NeoBundle 'tpope/vim-markdown'
 " TwitVim
 NeoBundle 'twitvim/twitvim'
 let twitvim_enable_python = 1
+let twitvim_count = 50
 " fugitive
 NeoBundle 'tpope/vim-fugitive'
 " neosnippet
@@ -493,7 +494,7 @@ au BufNewFile,BufRead * match ZenkakuSpace /　/
 set clipboard=unnamed,autoselect
 
 " TwitVim
-let g:twitvim_browser_cmd = 'open -a Google\ Chrome'
+let g:twitvim_browser_cmd = 'open'
 
 " Powerline
 python from powerline.vim import setup as powerline_setup
@@ -540,6 +541,12 @@ autocmd FileType gitcommit startinsert
 """ 編集中のファイルの最新のコミットをブラウザで表示
 nnoremap gio :<C-u>OpenGithubFile<CR>
 xnoremap gio :OpenGithubFile<CR>
+""" カレントディレクトリのリポジトリのPRをブラウザで表示
+nnoremap gipr :<C-u>OpenGithubPullReq<CR>
+xnoremap gipr :OpenGithubPullReq<CR>
+""" カレントディレクトリのリポジトリをブラウザで表示
+nnoremap gip :<C-u>OpenGithubProject<CR>
+xnoremap gip :OpenGithubProject<CR>
 "" Github Flavored Markdownの表記法に合わせる
 let g:table_mode_corner = "|"
 
@@ -553,7 +560,7 @@ let g:netrw_nogx = 1
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
-let g:previm_open_cmd = 'open -a Safari'
+let g:previm_open_cmd = 'open'
 " 拡張子がphpの場合は、tag変更
 au BufNewFile,BufRead *.php set tags+=$HOME/php.tags
 
