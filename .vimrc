@@ -352,6 +352,12 @@ NeoBundle 'w0rp/ale'
 " OpenSSL
 NeoBundle 'vim-scripts/openssl.vim'
 
+" TOML
+NeoBundle 'cespare/vim-toml'
+
+" itchyny/calendar.vim
+NeoBundle 'itchyny/calendar.vim'
+
 call neobundle#end()
  
 " Required:
@@ -514,6 +520,9 @@ let g:syntastic_ruby_checkers = ['rubocop']
 au FileType go nmap <Leader>gr <Plug>(go-run)
 """ go test
 au FileType go nmap <Leader>gt <Plug>(go-test)
+""" Show the relevant GoDoc for the word under the cursor in a split window.
+au FileType go nmap <Leader>gdt <Plug>(go-doc-split)
+
 "" highlight
 let g:go_hightlight_functions = 1
 let g:go_hightlight_methods = 1
@@ -605,6 +614,10 @@ autocmd filetype sh setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 " ALE
 "let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_emit_conflict_warnings = 0
+
+" calendar.vim
+let g:calendar_google_calendar = 1
+let g:calendar_views = ['year','month','weekday','day','clock']
 
 " 起動時の挙動
 autocmd VimEnter * nested if @% == '' && s:GetBufByte() == 0 | edit $MYVIMRC | endif
