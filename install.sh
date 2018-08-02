@@ -5,7 +5,7 @@ git submodule update --init --recursive
 RUBY_VERSION=2.2.3
 RSense_CONFIG='/usr/local/Cellar/rsense/0.3/libexec/etc/config.rb'
 PAKER_VERSION=0.8.6
-PYTHON_VERSION=3.5.1
+PYTHON_VERSION=3.6.1
 
 for i in `ls -a`
 do
@@ -48,6 +48,11 @@ mkdir -p $HOME/.zsh/completions
 
 # setup zsh
 source ~/.zshrc
+
+# anyenv
+git clone https://github.com/riywo/anyenv ./.anyenv
+mkdir -p ./.anyenv/plugins
+git clone https://github.com/znz/anyenv-update.git ./.anyenv/plugins/anyenv-update
 
 # ruby
 which anyenv && anyenv install rbenv

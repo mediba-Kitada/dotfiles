@@ -12,8 +12,6 @@ brew:
     args: ""
   - name: ack
     args: ""
-  - name: android-sdk
-    args: ""
   - name: ansible
     args: ""
   - name: autoconf
@@ -23,8 +21,6 @@ brew:
   - name: brionac
     args: ""
   - name: cabal-install
-    args: ""
-  - name: cloog018
     args: ""
   - name: cmake
     args: ""

@@ -24,6 +24,7 @@
 
 [hub]
 protocol = https
+	host = vcs.mediba.jp
 
 [credential]
 helper = /opt/boxen/bin/boxen-git-credential
@@ -32,3 +33,7 @@ helper = /opt/boxen/bin/boxen-git-credential
 	default = simple
 [init]
 	templatedir = /Users/kitada/.git_template
+[ghq]
+	#root = /Users/kitada/repos
+	#root = /Users/kitada/project
+	root = /Users/kitada/go/src

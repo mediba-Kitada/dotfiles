@@ -70,6 +70,10 @@ alias -g N='> /dev/null'
 alias -g V='| vim -R -'
 alias -g P=' --help | less'
 alias -g vi='vim'
+# exa
+alias ea='exa -a'
+alias el='exa -l'
+alias et='exa -T'
 
 # complement
 ## menu mode
@@ -280,10 +284,10 @@ if [[ -d $HOME/.anyenv ]]; then
 
 fi
 # powerline
-if ! which powerline-daemon > /dev/null; && export PATH=$HOME/Library/Python/2.7/bin:$PATH
-powerline-daemon -q
-if ! which powerline-config > /dev/null; && export PATH=$HOME/Library/Python/2.7/bin:$PATH
-powerline-config tmux setup
+#if ! which powerline-daemon > /dev/null; && export PATH=$HOME/Library/Python/2.7/bin:$PATH
+$HOME/.local/bin/powerline-daemon -q
+#if ! which powerline-config > /dev/null; && export PATH=$HOME/Library/Python/2.7/bin:$PATH
+$HOME/.local/bin/powerline-config tmux setup
 
 export PATH="/usr/local/sbin:$PATH"
 
@@ -325,3 +329,19 @@ load-nvmrc
 
 # グロッビング対応
 setopt nonomatch
+
+# バージョン管理しない情報
+[ -f $HOME/.zshrc_local ] && . $HOME/.zshrc_local
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/kitada/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/kitada/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/kitada/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/kitada/google-cloud-sdk/completion.zsh.inc'; fi
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/kitada/project/vulsan/vulsan/target_maker/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/kitada/project/vulsan/vulsan/target_maker/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/kitada/project/vulsan/vulsan/target_maker/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/kitada/project/vulsan/vulsan/target_maker/node_modules/tabtab/.completions/sls.zsh
