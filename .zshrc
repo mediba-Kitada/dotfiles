@@ -1,6 +1,8 @@
 # Path to your oh-my-zsh configuration.
 ZSH=/bin/zsh
 
+export PYTHON_VERSION="3.7"
+
 # harmful
 ## ^D
 setopt IGNORE_EOF
@@ -283,11 +285,11 @@ if [[ -d $HOME/.anyenv ]]; then
   #export PYTHONPATH="$HOME/.anyenv/envs/pyenv/versions/2.7.8/lib/python2.7/site-packages"
 
 fi
+
 # powerline
-#if ! which powerline-daemon > /dev/null; && export PATH=$HOME/Library/Python/2.7/bin:$PATH
-$HOME/.local/bin/powerline-daemon -q
-#if ! which powerline-config > /dev/null; && export PATH=$HOME/Library/Python/2.7/bin:$PATH
-$HOME/.local/bin/powerline-config tmux setup
+if ! which powerline > /dev/null; && export PATH=$HOME/Library/Python/$PYTHON_VERSION/bin:$PATH
+powerline-daemon -q
+powerline-config tmux setup
 
 export PATH="/usr/local/sbin:$PATH"
 
@@ -301,7 +303,7 @@ alias sshp='ssh -i ~/.ssh/id_rsa proper-kitada@$(aws --profile "$APP"_"$ENV"_pro
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+. /usr/local/opt/nvm/nvm.sh # This loads nvm
 autoload -U add-zsh-hook
 load-nvmrc() {
   local node_version="$(nvm version)"
@@ -324,8 +326,8 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
 # completions
-#autoload -Uz compinit
-#compinit
+autoload -Uz compinit
+compinit
 
 # グロッビング対応
 setopt nonomatch

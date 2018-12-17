@@ -6,6 +6,7 @@ RUBY_VERSION=2.5.3
 RSense_CONFIG='/usr/local/Cellar/rsense/0.3/libexec/etc/config.rb'
 PAKER_VERSION=0.8.6
 PYTHON_VERSION=3.7.1
+NODE_VERSION='v10.14.2'
 
 for i in `ls -a`
 do
@@ -73,3 +74,8 @@ which pip3 && pip3 install --user powerline-status
 # golang
 [ ! -d $HOME/go ] && mkdir -p $HOME/go
 [ -d $GOPATH ] && git config --global ghq.root $GOPATH/src
+
+# node.js
+mkdir $HOME/.nvm
+nvm install $NODE_VERSION --lts
+nvm version $NODE_VERSION
