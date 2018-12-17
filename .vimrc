@@ -504,7 +504,6 @@ let g:twitvim_browser_cmd = 'open'
 
 " Powerline
 let g:powerline_pycmd="python3"
-set rtp+=$HOME/.local/lib/python3.6/site-packages/powerline/bindings/vim/
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup

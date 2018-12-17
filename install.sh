@@ -5,7 +5,7 @@ git submodule update --init --recursive
 RUBY_VERSION=2.5.3
 RSense_CONFIG='/usr/local/Cellar/rsense/0.3/libexec/etc/config.rb'
 PAKER_VERSION=0.8.6
-PYTHON_VERSION=3.6.1
+PYTHON_VERSION=3.7.1
 
 for i in `ls -a`
 do
@@ -64,8 +64,8 @@ which rbenv && rbenv exec gem install bundler
 
 # python
 which anyenv && anyenv install pyenv && source ~/.zshrc
-# which pyenv && pyenv install $PYTHON_VERSION && pyenv global $PYTHON_VERSION
-which pip && pip install --user powerline-status
+which pyenv && pyenv install $PYTHON_VERSION && pyenv global $PYTHON_VERSION
+which pip3 && pip3 install --user powerline-status
 
 # packer
 [ ! -d $HOME/packer ] && mkdir -p $HOME/packer && cd $HOME/Downloads && wget -O https://releases.hashicorp.com/packer/${PAKER_VERSION}/packer_${PAKER_VERSION}_darwin_amd64.zip && unzip packer_${PAKER_VERSION}_darwin_amd64.zip -d $HOME/packer
