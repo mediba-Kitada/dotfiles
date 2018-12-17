@@ -68,7 +68,7 @@ agree
         - Spotlight検索を表示
             Option + Space
         - Finderの検索ウィンドウを表示
-            Controll + Option + Space
+            - チェックを外す
     - 入力ソース
         - 前の入力ソースを選択
             - チェックを外す
@@ -106,12 +106,7 @@ agree
 
 ### Google Chrome
 
-- [Share Extensions](https://chrome.google.com/webstore/detail/share-extensions/chdafcbnfkfenoeejpaeenpdamhmalhe)でExtensions一覧をエクスポート
-- ブックマークをHTMLファイルで出力、pandocでmarkdownファイルに変換
-- safariを起動して手動でインストール
-- chromeをデフォルトのブラウザに設定
-- エクスポートしたmarkdownファイルをプレビューモードで開き、Extensionsをインストールしていく
-- markdownファイルをHTMLに変換し、インポート
+- アカウント同期機能を利用
 
 ### SSH
 
@@ -132,30 +127,14 @@ $ git clone git@github.com:mediba-Kitada/dotfiles.git
 
 ### Karabiner
 
-- Chromeを起動し、アプリケーションをDL
-    https://pqrs.org/osx/karabiner/index.html.ja
+- Chromeを起動し、アプリケーションを[DL](https://pqrs.org/osx/karabiner/)
 - システム環境設定
     - セキュリティとプライバシー
-        - プライバシー
-            - Karabinerのパスを指定し、制御を許可する
-            - Karabiner_AZNotfilterを指定し、制御を許可する
-
-- 既存Macで設定をexport
-
-```bash
-$ /Applications/Karabiner.app/Contents/Library/bin/karabiner export > ~/dotfiles/karabiner.sh
-```
-
-- KarabinerをGUIで開く
-- 移行先Macに設定をimport
-
-```
-$ ~/dotfiles/karabiner.sh
-```
+        - Karabinerの挙動を許可する
 
 ### google日本語入力
 
-- https://tools.google.com/dlpage/japaneseinput/eula.html?platform=mac&hl=ja
+- Homebrew(cask)で管理
 - システム環境設定
     - キーボード
         - 入力ソース
@@ -164,7 +143,7 @@ $ ~/dotfiles/karabiner.sh
 
 ### shifit
 
-- http://shift-it.en.softonic.com/mac
+- 本家[200~https://github.com/fikovnik/ShiftIt]
 - システム環境設定
     - セキュリティとプライバシー
         - プライバシー
@@ -176,12 +155,9 @@ $ ~/dotfiles/karabiner.sh
 
 ```bash
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-# brionacのインストール
-$ brew tap b4b4r07/brionac
-$ brew install brionac
-# 各CLIアプリケーションをインストール
+# 各アプリケーションをインストール
 $ cd $HOME/dotfiles
-$ brionac a
+$ brew bundle
 ```
 
 ### zsh
@@ -245,30 +221,13 @@ $ vi
 ```zsh
 # rbenvのインストール
 $ anyenv install rbenv && source ~/.zshrc
-$ rbenv install 2.2.3
-$ rbenv exec bundle exec bitclust setup
+$ rbenv install 2.5.3
 # バージョンを固定
-$ rbenv global $RUBY_VERSION
-```
-
-### VirtualBox
-
-- https://www.virtualbox.org/ 
-- pkgファイrを解答してくれないので、CLI
-
-```zsh
-$ sudo installer -package /Volumes/VirtualBox/VirtualBox.pkg -target /
-$ source ~/.zshrc
-```
-
-### Vagrant
-
-- https://www.vagrantup.com/
-- pkgファイルを解凍ししてくれないので、CLI
-
-```zsh
-$ sudo installer -package /Volumes/Vagrant/Vagrant.pkg -target /
-$ source ~/.zshrc
+$ rbenv global 2.5.3
+$ rbenv exec gem install bundler
+$ rbenv exec bundle install
+# リファレンスのダウンロード
+$ rbenv exec bundle exec bitclust setup
 ```
 
 ### AWS
@@ -281,31 +240,6 @@ $HOME/.ssh/config
 ```
 
 - Opsworksを利用している場合は、SSH公開鍵を更新する
-
-### 複合機
-
-- ドライバのDL及びインストール
-	- http://www.konicaminolta.jp/business/download/copiers/bizhub_c554_c454/ps/detail_mac_osx109.html
-- システム環境設定での操作
-	- プリントとスキャン >> プリンタの追加 >> IP
-	- アドレス：IPアドレスを入力（複合機2は192.168.3.246）
-	- プロトコル：LPDを選択 （※IPPを選択したら印刷できませんでした）
-	- ドライバ：「KONICA MINOLTA C554 PS」を選択
-- 給紙ユニット：なし
-- 廃紙ユニット：なし
-- パンチキット：なし
-- ハードディスク：チェックあり
-- セキュリティ印刷のみ許可：チェックあり
-- パブリックユーザーを許可：チェックなし
-- 部門管理
-	- 部門名:ブランク
-	- パスワード:0500
-- セキュリティ印刷
-	- ID:社員番号
-	- パスワード:適当
-#### google日本語入力
-
-https://tools.google.com/dlpage/japaneseinput/eula.html?platform=mac&hl=ja
 
 #### homebrew
 
@@ -327,24 +261,3 @@ $ git clone git@github.com:mediba-Kitada/dotfiles.git
 $ cd ~/dotfiles
 $ ./install.sh
 ```
-
-#### zsh
-
-```bash
-$ source ~/.zshrc
-```
-
-#### vim
-
-```zsh
-$ brew uninstall vim
-$ brew reinstall vim --with-lua
-```
-
-#### Ruby
-
-```bash
-# リファレンスのダウンロード
-$ rbenv exec bundle exec bitclust setup
-```
-

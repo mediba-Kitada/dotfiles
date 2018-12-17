@@ -2,7 +2,7 @@
 
 git submodule update --init --recursive
 
-RUBY_VERSION=2.2.3
+RUBY_VERSION=2.5.3
 RSense_CONFIG='/usr/local/Cellar/rsense/0.3/libexec/etc/config.rb'
 PAKER_VERSION=0.8.6
 PYTHON_VERSION=3.6.1
