@@ -82,7 +82,6 @@ brew "peg"
 brew "php-code-sniffer"
 brew "qt"
 brew "qcachegrind"
-brew "r"
 brew "rbenv"
 brew "reattach-to-user-namespace"
 brew "scala"
@@ -104,6 +103,9 @@ brew "yarn"
 brew "zlib"
 brew "drone/drone/drone"
 cask "google-japanese-ime"
+cask "rstudio"
 cask "shiftit"
+mas "1Password 7", id: 1333542190
+mas "LINE", id: 539883307
 mas "Slack", id: 803453959
 mas "Xcode", id: 497799835
