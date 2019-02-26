@@ -173,16 +173,11 @@ $ source .zshrc
 
 ### powerline
 
-前述の ```dotfiles/install.sh``` でインストールを実施しているが動作していないので、手動で実行
+- pyenvはHomebrewで導入
 
 ```zsh
-# pipのインストール
-$ anyenv install pyenv && source ~/.zshrc
-$ pip install --upgrade pip
-# pipは標準pythonに付属しているはずだが、付属していない場合は手動でインストール
-$ curl -kL https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python
 # powerline-statusのインストール
-$ pip install --user powerline-status
+$ pip3 install --user powerline-status
 # powerline用フォントをインストール
 $ cd $HOME/dotfiles
 $ sh fonts/install.sh
@@ -251,7 +246,7 @@ $ brew install brionac
 
 #### shifit
 
-http://shift-it.en.softonic.com/mac
+
 
 #### dotfiles
 
