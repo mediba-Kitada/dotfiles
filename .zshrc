@@ -102,7 +102,7 @@ function _update_vcs_info_msg() {
   #PROMPT="[${fg[green]}%n${reset_color}@${fg[blue]}%m${reset_color}] ${fg[red]}%D %*${reset_color} ${vcs_info_msg_0_} %~
 #${fg[cyan]}%#${reset_color} "
   PROMPT="[%F{green}%n%f@%F{blue}%m%f] %F{red}%D %*%f ${vcs_info_msg_0_} %~
-%F{cyan]}%#%f "
+%F{cyan}%#%f "
 }
 add-zsh-hook precmd _update_vcs_info_msg
 ## antigen
