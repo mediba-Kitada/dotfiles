@@ -6,7 +6,7 @@ RUBY_VERSION=2.5.3
 RSense_CONFIG='/usr/local/Cellar/rsense/0.3/libexec/etc/config.rb'
 PAKER_VERSION=0.8.6
 PYTHON_VERSION=3.7.2
-NODE_VERSION='v10.14.2'
+NODE_VERSION='v10.15.1'
 
 for i in `ls -a`
 do
