@@ -12,3 +12,5 @@ bundle/
 *.un~
 Session.vim
 .netrwhist
+.vim/dict/
+.vim/vim-ref/
