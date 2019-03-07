@@ -251,7 +251,8 @@ $ brew install brionac
 
 #### shifit
 
-http://shift-it.en.softonic.com/mac
+- [最新版](https://github.com/fikovnik/ShiftIt/releases)のアーカイブをダウンロード
+- 展開後は、`/Applications`にmvする
 
 #### dotfiles
 
@@ -260,4 +261,12 @@ $ cd ~/
 $ git clone git@github.com:mediba-Kitada/dotfiles.git
 $ cd ~/dotfiles
 $ ./install.sh
+```
+
+### git
+
+- Git ignoreの設定
+
+```
+$ git config --global core.excludesfile ~/.gitignore
 ```
