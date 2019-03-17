@@ -16,7 +16,6 @@
 
 [core]
  pager = LESSCHARSET=utf-8 less
-	excludesFile = $HOME/.gitignore
 	editor = /usr/local/bin/vim
 
 [merge]
