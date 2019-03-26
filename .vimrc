@@ -223,8 +223,6 @@ NeoBundle 'elzr/vim-json'
 " XML
 NeoBundle 'othree/xml.vim'
 
-" vim-scala
-NeoBundle 'derekwyatt/vim-scala'
 " golang
 NeoBundle 'fatih/vim-go'
 
@@ -462,11 +460,6 @@ vmap gx <Plug>(openbrowser-smart-search)
 let g:previm_open_cmd = 'open'
 " 拡張子がphpの場合は、tag変更
 au BufNewFile,BufRead *.php set tags+=$HOME/php.tags
-
-" scala
-let g:scala_use_default_keymappings = 1
-let g:scala_use_builtin_tagbar_defs = 1
-let g:scala_scaladoc_indent = 1
 
 " 画面分割に関するキーマップ
 nnoremap s <Nop>
