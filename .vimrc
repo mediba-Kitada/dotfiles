@@ -205,9 +205,10 @@ NeoBundle 'majutsushi/tagbar'
 " Ruby reference(refe2) viewer
 NeoBundle 'thinca/vim-ref'
 
-" vim-markdown
+" Markdown
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'tpope/vim-markdown'
+NeoBundle 'previm/previm'
 
 " Twitter client
 NeoBundle 'twitvim/twitvim'
@@ -219,10 +220,9 @@ NeoBundleLazy 'othree/yajs.vim',{'autoload':{'filetypes':['javascript']}}
 NeoBundle 'moll/vim-node'
 NeoBundle 'elzr/vim-json'
 
-" preview Markdown
-NeoBundle 'kannokanno/previm'
 " ansible
 NeoBundle 'chase/vim-ansible-yaml'
+
 " textile
 NeoBundle 'timcharper/textile.vim'
 " xml.vim
