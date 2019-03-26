@@ -100,6 +100,9 @@ nnoremap <Space>.	:<C-u>edit $MYVIMRC<Enter>
 " Reload .vimrc"
 nnoremap <Space>s.	:<C-u>source $MYVIMRC<Enter>
 
+" ESCをCtl-cにマッピング
+inoremap <C-c> <ESc>
+
 " 行数を表示
 set number
 
