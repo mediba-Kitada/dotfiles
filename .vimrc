@@ -214,18 +214,6 @@ NeoBundle 'twitvim/twitvim'
 let twitvim_enable_python = 1
 let twitvim_count = 50
 
-" neosnippet
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
 " unite
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc',{
