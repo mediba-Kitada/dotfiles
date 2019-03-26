@@ -256,9 +256,6 @@ NeoBundle 'w0rp/ale'
 " OpenSSL
 NeoBundle 'vim-scripts/openssl.vim'
 
-" TOML
-NeoBundle 'cespare/vim-toml'
-
 " itchyny/calendar.vim
 NeoBundle 'itchyny/calendar.vim'
 
