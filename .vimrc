@@ -100,6 +100,9 @@ nnoremap <Space>.	:<C-u>edit $MYVIMRC<Enter>
 " Reload .vimrc"
 nnoremap <Space>s.	:<C-u>source $MYVIMRC<Enter>
 
+" 行数を表示
+set number
+
 " 検索における大文字/小文字の区別削除"
 set ignorecase
 set smartcase
@@ -298,7 +301,6 @@ let Tlist_Exit_OnlyWindow = 1
 nnoremap <Leader>tl :Tlist<CR>
 
 
-set number
 
 " md as markdow
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
@@ -313,7 +315,6 @@ set noswapfile
 " Exコマンド補完
 set wildmenu
 set wildmode=full
-
 
 " crontab対策
 "set backupskip=/tmp/*,/private/tmp/*
