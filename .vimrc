@@ -278,19 +278,12 @@ augroup vimrc-local
   autocmd BufNewFile,BufReadPost * call s:vimrc_local(expand(':p:h'))
 augroup END
 
-" デフォルトではphpmd/phpcsの自動実行はオフ
-let g:phpqa_messdetector_autorun = 0
-let g:phpqa_codesniffer_autorun = 0
-
 function! s:vimrc_local(loc)
   let files = findfile('.vimrc.local', escape(a:loc, ' ') . ';', -1)
   for i in reverse(filter(files, 'filereadable(v:val)'))
     source `=i`
   endfor
 endfunction '))
-
-" PHP辞書ファイル
-autocmd FileType php :set dictionary=~/.vim/dict/php.dict
 
 " vim-tags
 set exrc
@@ -302,16 +295,9 @@ NeoBundleLazy 'vim-scripts/taglist.vim', {
 let Tlist_Use_Right_Window = 1
 let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
-let g:tlist_php_settings = 'php;c:class;f:function;d:constant'
 nnoremap <Leader>tl :Tlist<CR>
 
-" PHPマニュアル読み込み
-let g:ref_cache_dir = $HOME.'/.vim/vim-ref/cache'
-let g:ref_phpmanual_path = $HOME.'/.vim/vim-ref/php-chunked-xhtml'
-let g:ref_refe_encoding = 'ecu-jp'
 
-" IDE for PHP
-"autocmd FileType php :NERDTree
 set number
 
 " md as markdow
@@ -433,8 +419,6 @@ nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
 let g:previm_open_cmd = 'open'
-" 拡張子がphpの場合は、tag変更
-au BufNewFile,BufRead *.php set tags+=$HOME/php.tags
 
 " 画面分割に関するキーマップ
 nnoremap s <Nop>
