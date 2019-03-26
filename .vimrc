@@ -194,18 +194,13 @@ NeoBundleFetch 'Shougo/neobundle.vim'
  
 " NERDTreeを設定 
 NeoBundle 'scrooloose/nerdtree' 
+
 " 自動的に閉じ括弧を挿入
 NeoBundle 'Townk/vim-autoclose' 
-" ctags
+
+" ctags,tabbar
 NeoBundle 'szw/vim-tags'
-" tabbar
 NeoBundle 'majutsushi/tagbar'
-" vim-scripts/tagbar-phpctags
-NeoBundle 'vim-scripts/tagbar-phpctags', {
-  \ 'build' :{
-  \   'others' : 'chmod +x bin/phpctags',
-  \ },
-  \}
 
 " vim-ref
 NeoBundle 'thinca/vim-ref'
