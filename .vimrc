@@ -230,13 +230,10 @@ NeoBundle 'fatih/vim-go'
 " DBGP(Common DeBugGer Protocol as used by Xdebug) client
 NeoBundle 'joonty/vdebug'
 
-" vim-endwise
-"" 自動で閉じる
+" Ruby
+"" if, do def等を自動で閉じる
 NeoBundle 'tpope/vim-endwise'
 
-" Ruby
-"" vim-ref-ri
-NeoBundle 'yuku-t/vim-ref-ri'
 "" rails.vim
 NeoBundle 'rails.vim'
 
