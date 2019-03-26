@@ -214,14 +214,11 @@ NeoBundle 'twitvim/twitvim'
 let twitvim_enable_python = 1
 let twitvim_count = 50
 
-" javascript
+" ES2015, node.js, JSON
 NeoBundleLazy 'othree/yajs.vim',{'autoload':{'filetypes':['javascript']}}
-"" Node.js
 NeoBundle 'moll/vim-node'
-" JSON
 NeoBundle 'elzr/vim-json'
-" github
-NeoBundle 'jaxbot/github-issues.vim'
+
 " preview Markdown
 NeoBundle 'kannokanno/previm'
 " ansible
@@ -367,9 +364,6 @@ endfunction
 " active directory
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
-
-" github-issues
-let g:github_access_token = "e484054fa0b0737921ca878f45279ee6f391c422"
 
 " page nation
 "set scrolloff=5
