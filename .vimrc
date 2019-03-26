@@ -247,8 +247,7 @@ NeoBundle 'tyru/open-browser.vim'
 " tableを記述/整形
 NeoBundle 'dhruvasagar/vim-table-mode'
 
-
-" memolist
+" memo
 NeoBundle 'glidenote/memolist.vim'
 
 " ALE(Asynchronous Lint Engine)
