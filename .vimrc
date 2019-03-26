@@ -214,13 +214,6 @@ NeoBundle 'twitvim/twitvim'
 let twitvim_enable_python = 1
 let twitvim_count = 50
 
-" unite
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc',{
-\	'build' : {
-\     'mac' : 'make -f make_mac.mak',
-\   },
-\ }
 " javascript
 NeoBundleLazy 'othree/yajs.vim',{'autoload':{'filetypes':['javascript']}}
 "" Node.js
@@ -358,29 +351,6 @@ set noswapfile
 set wildmenu
 set wildmode=full
 
-" unite.vim
-" insert modeで開始
-let g:unite_enable_start_insert = 1
-" 大文字/小文字を区別しない
-let g:unite_enable_ignore_case = 1
-let g:unite_enable_smart_case = 1
-" grep検索
-nnoremap <silent> ,g :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
-nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
-" grep検索結果の再呼び出し
-nnoremap <silent> ,r :<C-u>UniteResume search-buffer<CR>
-" unite grep に ag(The Silver Searcher) を利用
-if executable('ag')
-	let g:unite_source_grep_command = 'ag'
-	let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
-	let g:unite_source_grep_recursive_opt = ''
-endif
-" バッファ一覧
-nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
-" ファイル一覧
-nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-" レジスタ一覧
-nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 
 " crontab対策
 "set backupskip=/tmp/*,/private/tmp/*
