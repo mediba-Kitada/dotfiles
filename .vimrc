@@ -202,17 +202,18 @@ NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'szw/vim-tags'
 NeoBundle 'majutsushi/tagbar'
 
-" vim-ref
+" Ruby reference(refe2) viewer
 NeoBundle 'thinca/vim-ref'
+
 " vim-markdown
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'tpope/vim-markdown'
-" TwitVim
+
+" Twitter client
 NeoBundle 'twitvim/twitvim'
 let twitvim_enable_python = 1
 let twitvim_count = 50
-" fugitive
-NeoBundle 'tpope/vim-fugitive'
+
 " neosnippet
 NeoBundle 'Shougo/neocomplete.vim'
 let g:acp_enableAtStartup = 0
