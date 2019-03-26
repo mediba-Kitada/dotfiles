@@ -220,8 +220,6 @@ NeoBundleLazy 'othree/yajs.vim',{'autoload':{'filetypes':['javascript']}}
 NeoBundle 'moll/vim-node'
 NeoBundle 'elzr/vim-json'
 
-" textile
-NeoBundle 'timcharper/textile.vim'
 " xml.vim
 NeoBundle 'othree/xml.vim'
 " vim-node-dict
