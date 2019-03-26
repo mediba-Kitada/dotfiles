@@ -230,26 +230,23 @@ NeoBundle 'fatih/vim-go'
 " DBGP(Common DeBugGer Protocol as used by Xdebug) client
 NeoBundle 'joonty/vdebug'
 
-" Ruby
+" ruby, rails
 "" if, do def等を自動で閉じる
 NeoBundle 'tpope/vim-endwise'
+NeoBundle 'tpope/vim-rails'
 
-"" rails.vim
-NeoBundle 'rails.vim'
+" git, GitHub
+"" ブラウザ
+NeoBundle 'cohama/agit.vim' 
+"" GitHubの絵文字,issue番号,リポジトリ名etcの補完
+NeoBundle 'rhysd/github-complete.vim'
 
-" git コミットブラウザ agit.vim
-NeoBundle 'cohama/agit.vim'
-
-" open-browser.vim カーソル下のURIをブラウザで表示
+" カーソル下のURIをブラウザで表示
 NeoBundle 'tyru/open-browser.vim'
-" open-browser-github.vim
-NeoBundle 'tyru/open-browser-github.vim'
 
 " tableを記述/整形
 NeoBundle 'dhruvasagar/vim-table-mode'
 
-" GitHubの絵文字,issue番号,リポジトリ名etcの補完
-NeoBundle 'rhysd/github-complete.vim'
 
 " memolist
 NeoBundle 'glidenote/memolist.vim'
@@ -426,16 +423,6 @@ autocmd FileType gitcommit setlocal spell
 autocmd FileType gitcommit startinsert
 
 " github
-"" open-browser-github.vim キーバインド
-""" 編集中のファイルの最新のコミットをブラウザで表示
-nnoremap gio :<C-u>OpenGithubFile<CR>
-xnoremap gio :OpenGithubFile<CR>
-""" カレントディレクトリのリポジトリのPRをブラウザで表示
-nnoremap gipr :<C-u>OpenGithubPullReq<CR>
-xnoremap gipr :OpenGithubPullReq<CR>
-""" カレントディレクトリのリポジトリをブラウザで表示
-nnoremap gip :<C-u>OpenGithubProject<CR>
-xnoremap gip :OpenGithubProject<CR>
 "" Github Flavored Markdownの表記法に合わせる
 let g:table_mode_corner = "|"
 
