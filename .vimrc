@@ -220,10 +220,9 @@ NeoBundleLazy 'othree/yajs.vim',{'autoload':{'filetypes':['javascript']}}
 NeoBundle 'moll/vim-node'
 NeoBundle 'elzr/vim-json'
 
-" xml.vim
+" XML
 NeoBundle 'othree/xml.vim'
-" vim-node-dict
-NeoBundle 'guileen/vim-node-dict'
+
 " vim-scala
 NeoBundle 'derekwyatt/vim-scala'
 " golang
