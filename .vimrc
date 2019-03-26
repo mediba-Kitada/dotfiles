@@ -196,8 +196,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'scrooloose/nerdtree' 
 " 自動的に閉じ括弧を挿入
 NeoBundle 'Townk/vim-autoclose' 
-" phpqa
-NeoBundle 'joonty/vim-phpqa'
 " ctags
 NeoBundle 'szw/vim-tags'
 " tabbar
