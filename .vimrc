@@ -227,10 +227,8 @@ NeoBundle 'othree/xml.vim'
 NeoBundle 'fatih/vim-go'
 
 " Vdebug
+" DBGP(Common DeBugGer Protocol as used by Xdebug) client
 NeoBundle 'joonty/vdebug'
-
-" syntastic
-NeoBundle 'scrooloose/syntastic'
 
 " vim-endwise
 "" 自動で閉じる
@@ -398,9 +396,6 @@ set laststatus=2
 set showtabline=2
 set noshowmode 
 
-" syntastic with Rubocop
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
-let g:syntastic_ruby_checkers = ['rubocop']
 
 " vim-go
 "" mapping
