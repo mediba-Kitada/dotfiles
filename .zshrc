@@ -347,3 +347,6 @@ if [ -f '/Users/kitada/google-cloud-sdk/completion.zsh.inc' ]; then source '/Use
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/kitada/project/vulsan/vulsan/target_maker/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/kitada/project/vulsan/vulsan/target_maker/node_modules/tabtab/.completions/sls.zsh
+
+# dein
+export DEIN_DIR="$HOME/.cache/dein"

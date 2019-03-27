@@ -186,6 +186,31 @@ nnoremap ? ?\v
 "" /の自動エスケープ
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 
+" 構文チェックを有効化
+syntax enable
+
+"----
+"Start dein
+"----
+if &compatible
+  set compatible
+endif
+set runtimepath+=$DEIN_DIR/repos/github.com/Shougo/dein.vim
+if dein#load_state("$DEIN_DIR")
+  call dein#begin("$DEIN_DIR")
+  call dein#add("$DEIN_DIR/repos/github.com/Shougo/dein.vim")
+  call dein#add('Shougo/deoplete.vim')
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
+  call dein#end()
+  call dein#save_state()
+endif
+"----
+"End dein
+"----
+
 "---------------------------
 " Start Neobundle Settings.
 "---------------------------
@@ -266,9 +291,6 @@ NeoBundle 'vim-scripts/openssl.vim'
 NeoBundle 'itchyny/calendar.vim'
 
 call neobundle#end()
- 
-" Required:
-filetype plugin indent on
  
 " 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
 " 毎回聞かれると邪魔な場合もあるので、この設定は任意です。
