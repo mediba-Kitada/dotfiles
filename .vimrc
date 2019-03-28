@@ -195,12 +195,10 @@ syntax enable
 if &compatible
   set compatible
 endif
-let s:path = expand('$CACHE/dein')
-let s:dein_runtimepath = join([s:path,'/repos/github.com/Shougo/dein.vim'], '')
-set runtimepath+=s:dein_runtimepath
-if dein#load_state(s:path)
-  call dein#begin(s:path)
-  call dein#add(s:dein_runtimepath)
+set runtimepath+=$DEIN_DIR/repos/github.com/Shougo/dein.vim
+if dein#load_state($DEIN_DIR)
+  call dein#begin($DEIN_DIR)
+  call dein#add('$DEIN_DIR/repos/github.com/Shougo/dein.vim')
   call dein#add('Shougo/deoplete.vim')
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
