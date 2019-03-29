@@ -208,10 +208,6 @@ call dein#begin($DEIN_DIR, [
 	\ ])
 call dein#load_toml(s:dein_toml, {'lazy': 0})
 call dein#load_toml(s:dein_lazy_toml, {'lazy': 1})
-if !has('nvim')
-  call dein#add('roxma/nvim-yarp')
-  call dein#add('roxma/vim-hug-neovim-rpc')
-endif
 call dein#end()
 call dein#save_state()
 "----
