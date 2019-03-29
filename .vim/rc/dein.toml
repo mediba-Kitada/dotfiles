@@ -96,9 +96,17 @@ repo = 'glidenote/memolist.vim'
 # ALE(Asynchronous Lint Engine)
 [[plugins]]
 repo = 'w0rp/ale'
+hook_add = '''
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+let g:ale_emit_conflict_warnings = 0
+'''
 
 [[plugins]]
 repo = 'vim-scripts/openssl.vim'
 
 [[plugins]]
 repo = 'itchyny/calendar.vim'
+hook_add = '''
+let g:calendar_google_calendar = 1
+let g:calendar_views = ['year','month','weekday','day','clock']
+'''
