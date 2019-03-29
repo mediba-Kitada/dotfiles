@@ -1,0 +1,104 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree' 
+
+# 自動的に閉じ括弧を挿入
+[[plugins]]
+repo = 'Townk/vim-autoclose' 
+
+# ctags,tabbar
+[[plugins]]
+repo = 'szw/vim-tags'
+[[plugins]]
+repo = 'majutsushi/tagbar'
+
+# Ruby reference(refe2) viewer
+[[plugins]]
+repo = 'thinca/vim-ref'
+
+# Markdown
+[[plugins]]
+repo =  'godlygeek/tabular'
+[[plugins]]
+repo =  'tpope/vim-markdown'
+[[plugins]]
+repo =  'previm/previm'
+hook_add = '''
+let g:previm_open_cmd = 'open'
+'''
+
+# Twitter client
+[[plugins]]
+repo = 'twitvim/twitvim'
+hook_add = '''
+let twitvim_enable_python = 1
+let twitvim_count = 50
+let g:twitvim_browser_cmd = 'open'
+'''
+
+# XML
+[[plugins]]
+repo = 'othree/xml.vim'
+
+# golang
+[[plugins]]
+repo = 'fatih/vim-go'
+hook_add = '''
+" go run
+au FileType go nmap <Leader>gr <Plug>(go-run)
+" go test
+au FileType go nmap <Leader>gt <Plug>(go-test)
+" Show the relevant GoDoc for the word under the cursor in a split window.
+au FileType go nmap <Leader>gdt <Plug>(go-doc-split)
+'''
+# Vdebug
+[[plugins]]
+# DBGP(Common DeBugGer Protocol as used by Xdebug) client
+repo = 'joonty/vdebug'
+
+# ruby, rails
+# if, do def等を自動で閉じる
+[[plugins]]
+repo = 'tpope/vim-endwise'
+repo = 'tpope/vim-rails'
+
+
+# git, GitHub
+# ブラウザ
+[[plugins]]
+repo = 'cohama/agit.vim' 
+[[plugins]]
+# GitHubの絵文字,issue番号,リポジトリ名etcの補完
+repo = 'rhysd/github-complete.vim'
+
+# カーソル下のURIをブラウザで表示
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+# tableを記述/整形
+[[plugins]]
+repo = 'dhruvasagar/vim-table-mode'
+hook_add = '''
+" netrwのgxマッピングを解除
+let g:netrw_nogx = 1
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
+'''
+
+[[plugins]]
+repo = 'glidenote/memolist.vim'
+
+# ALE(Asynchronous Lint Engine)
+[[plugins]]
+repo = 'w0rp/ale'
+
+[[plugins]]
+repo = 'vim-scripts/openssl.vim'
+
+[[plugins]]
+repo = 'itchyny/calendar.vim'

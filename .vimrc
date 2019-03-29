@@ -100,6 +100,7 @@ nnoremap <Space>.	:<C-u>edit $MYVIMRC<Enter>
 " Reload .vimrc"
 nnoremap <Space>s.	:<C-u>source $MYVIMRC<Enter>
 
+
 " ESCをCtl-cにマッピング
 inoremap <C-c> <ESc>
 
@@ -192,113 +193,30 @@ syntax enable
 "----
 "Start dein
 "----
+let g:dein#install_log_filename = '~/dein.log'
+let s:dein_toml = '~/.vim/rc/dein.toml'
+let s:dein_lazy_toml = '~/.vim/rc/deinlazy.toml'
 if &compatible
   set compatible
 endif
 set runtimepath+=$DEIN_DIR/repos/github.com/Shougo/dein.vim
-if dein#load_state($DEIN_DIR)
-  call dein#begin($DEIN_DIR)
-  call dein#add('$DEIN_DIR/repos/github.com/Shougo/dein.vim')
-  call dein#add('Shougo/deoplete.vim')
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-  endif
-  call dein#end()
-  call dein#save_state()
+if !dein#load_state($DEIN_DIR)
+	finish
 endif
+call dein#begin($DEIN_DIR, [
+	\ expand('<sfile>'), s:dein_toml, s:dein_lazy_toml
+	\ ])
+call dein#load_toml(s:dein_toml, {'lazy': 0})
+call dein#load_toml(s:dein_lazy_toml, {'lazy': 1})
+if !has('nvim')
+  call dein#add('roxma/nvim-yarp')
+  call dein#add('roxma/vim-hug-neovim-rpc')
+endif
+call dein#end()
+call dein#save_state()
 "----
 "End dein
 "----
-
-"---------------------------
-" Start Neobundle Settings.
-"---------------------------
-" bundleで管理するディレクトリを指定
-set runtimepath+=~/.vim/bundle/neobundle.vim/
- 
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
- 
-" neobundle自体をneobundleで管理
-NeoBundleFetch 'Shougo/neobundle.vim'
- 
-" NERDTreeを設定 
-NeoBundle 'scrooloose/nerdtree' 
-
-" 自動的に閉じ括弧を挿入
-NeoBundle 'Townk/vim-autoclose' 
-
-" ctags,tabbar
-NeoBundle 'szw/vim-tags'
-NeoBundle 'majutsushi/tagbar'
-
-" Ruby reference(refe2) viewer
-NeoBundle 'thinca/vim-ref'
-
-" Markdown
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'tpope/vim-markdown'
-NeoBundle 'previm/previm'
-
-" Twitter client
-NeoBundle 'twitvim/twitvim'
-let twitvim_enable_python = 1
-let twitvim_count = 50
-
-" ES2015, node.js, JSON
-NeoBundleLazy 'othree/yajs.vim',{'autoload':{'filetypes':['javascript']}}
-NeoBundle 'moll/vim-node'
-NeoBundle 'elzr/vim-json'
-
-" XML
-NeoBundle 'othree/xml.vim'
-
-" golang
-NeoBundle 'fatih/vim-go'
-
-" Vdebug
-" DBGP(Common DeBugGer Protocol as used by Xdebug) client
-NeoBundle 'joonty/vdebug'
-
-" ruby, rails
-"" if, do def等を自動で閉じる
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'tpope/vim-rails'
-
-" git, GitHub
-"" ブラウザ
-NeoBundle 'cohama/agit.vim' 
-"" GitHubの絵文字,issue番号,リポジトリ名etcの補完
-NeoBundle 'rhysd/github-complete.vim'
-
-" カーソル下のURIをブラウザで表示
-NeoBundle 'tyru/open-browser.vim'
-
-" tableを記述/整形
-NeoBundle 'dhruvasagar/vim-table-mode'
-
-" memo
-NeoBundle 'glidenote/memolist.vim'
-
-" ALE(Asynchronous Lint Engine)
-NeoBundle 'w0rp/ale'
-
-" OpenSSL
-NeoBundle 'vim-scripts/openssl.vim'
-
-" itchyny/calendar.vim
-NeoBundle 'itchyny/calendar.vim'
-
-call neobundle#end()
- 
-" 未インストールのプラグインがある場合、インストールするかどうかを尋ねてくれるようにする設定
-" 毎回聞かれると邪魔な場合もあるので、この設定は任意です。
-NeoBundleCheck
- 
-"-------------------------
-" End Neobundle Settings.
-"-------------------------
 
 " CodeSnifferの設定をプロジェクト毎に読み込み
 augroup vimrc-local
@@ -316,16 +234,6 @@ endfunction '))
 " vim-tags
 set exrc
 set secure
-
-NeoBundleLazy 'vim-scripts/taglist.vim', {
-\    'autoload' : {
-\        'commands' : 'Tlist',},}
-let Tlist_Use_Right_Window = 1
-let Tlist_Show_One_File = 1
-let Tlist_Exit_OnlyWindow = 1
-nnoremap <Leader>tl :Tlist<CR>
-
-
 
 " md as markdow
 autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
@@ -386,9 +294,6 @@ au BufNewFile,BufRead * match ZenkakuSpace /　/
 " copy clipboard yanked data
 set clipboard=unnamed,autoselect
 
-" TwitVim
-let g:twitvim_browser_cmd = 'open'
-
 " Powerline
 let g:powerline_pycmd="python3"
 python3 from powerline.vim import setup as powerline_setup
@@ -399,14 +304,6 @@ set showtabline=2
 set noshowmode 
 
 
-" vim-go
-"" mapping
-""" go run
-au FileType go nmap <Leader>gr <Plug>(go-run)
-""" go test
-au FileType go nmap <Leader>gt <Plug>(go-test)
-""" Show the relevant GoDoc for the word under the cursor in a split window.
-au FileType go nmap <Leader>gdt <Plug>(go-doc-split)
 
 "" highlight
 let g:go_hightlight_functions = 1
@@ -437,14 +334,6 @@ let g:table_mode_corner = "|"
 " 数値処理
 "" 0がプレフィックスの数値を10進数として扱う
 set nrformats=
-
-" open-browser
-"" netrwのgxマッピングを解除
-let g:netrw_nogx = 1
-nmap gx <Plug>(openbrowser-smart-search)
-vmap gx <Plug>(openbrowser-smart-search)
-
-let g:previm_open_cmd = 'open'
 
 " 画面分割に関するキーマップ
 nnoremap s <Nop>
