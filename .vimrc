@@ -1,4 +1,197 @@
-dein
+" An example for a vimrc file.
+"
+" Maintainer:	Bram Moolenaar <Bram@vim.org>
+" Last change:	2011 Apr 15
+"
+" To use it, copy it to
+"     for Unix and OS/2:  ~/.vimrc
+"	      for Amiga:  s:.vimrc
+"  for MS-DOS and Win32:  $VIM\_vimrc
+"	    for OpenVMS:  sys$login:.vimrc
+
+" When started as 'evim' evim.vim will already have done these settings.
+if v:progname =~? "evim"
+  finish
+endif
+
+" Use Vim settings, rather than Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+if has("vms")
+  set nobackup		" do not keep a backup file, use versions instead
+else
+  set backup		" keep a backup file
+endif
+set history=10000		" keep 50 lines of command line history
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
+set incsearch		" do incremental searching
+
+" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
+" let &guioptions = substitute(&guioptions, "t", "", "g")
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+" so that you can undo CTRL-U after inserting a line break.
+inoremap <C-U> <C-G>u<C-U>
+
+" In many terminal emulators the mouse works just fine, thus enable it.
+if has('mouse')
+  set mouse=a
+endif
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+  syntax on
+  set hlsearch
+endif
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
+
+  " Put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+  au!
+
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  " Also don't do it when the mark is in the first line, that is the default
+  " position when opening a file.
+  autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
+  augroup END
+
+else
+
+  set autoindent		" always set autoindenting on
+
+endif " has("autocmd")
+
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+		  \ | wincmd p | diffthis
+endif
+
+" Edit .vimrc"
+nnoremap <Space>.	:<C-u>edit $MYVIMRC<Enter>
+" Reload .vimrc"
+nnoremap <Space>s.	:<C-u>source $MYVIMRC<Enter>
+
+
+" ESCをCtl-cにマッピング
+inoremap <C-c> <ESc>
+
+" 行数を表示
+set number
+
+" 検索における大文字/小文字の区別削除"
+set ignorecase
+set smartcase
+
+" 現在のモードの表示"
+set showmode
+
+" ヘルプモードのショートカット"
+nnoremap <C-h>	:<C-u>help<space>
+nnoremap <C-h><C-h>	:<C-u>help<Space><C-r><C-w><Enter>
+" 読むべき:helpドキュメント
+"" tips ヒント
+"" user-manual 目的別ユーザマニュアル
+"" reference_toc 各機能の詳細を記したリファレンス
+"" sys-file-list 環境固有の事情を記したドキュメント
+
+" コマンドモードのショートカット"
+noremap ; :
+noremap : ;
+
+" コマンド、検索履歴はCtrl-Fに統一
+noremap q: <NOP>
+noremap q/ <NOP>
+noremap q? <NOP>
+
+" 論理行移動と表示行移動のキーバインディング入れ替え"
+noremap j	gj
+noremap k	gk
+noremap gj	j
+noremap gk	k
+
+" 日時の入力補完"
+inoremap <expr> ,df	strftime('%Y-%m-%d %H:%M:%S')
+inoremap <expr> ,dd	strftime('%Y-%m-%d')
+inoremap <expr> ,dt	strftime('%Y:%m:%S')
+
+" 最後に変更したテキストの選択"
+nnoremap gc	`[v`]
+vnoremap gc	:<C-u>nomal gc<Enter>
+onoremap gc	:<C-u>nomal gc<Enter>
+
+" シンタックスハイライトの色設定の上書き"
+colorscheme desert
+autocmd ColorScheme *
+\ highlight TabLine
+\	cterm=NONE
+\	ctermfg=lightgray
+\	ctermbg=darkgray
+doautocmd ColorScheme _
+
+" カレントウィンドウのカーソル行をハイライト"
+autocmd WinEnter *	setlocal cursorline
+autocmd WinLeave *	setlocal nocursorline
+
+" 文字エンコーディングを指定しファイルを開く"
+command! Cp932	edit ++enc=cp932
+command! Eucjp	edit ++enc=ecu-jp
+command! Iso2022jp	edit ++enc=iso-2022jp
+command! Utf8	edit ++enc=utf-8
+command! Jis	Iso2022jp
+command! Sjis	Cp932
+
+" オートインデント"
+set autoindent
+
+" 誤操作防止
+nnoremap ZZ <Nop>
+nnoremap ZQ <Nop>
+nnoremap Q <Nop>
+
+" leaderを,とする
+let mapleader = ","
+noremap \ ,
+
+" 正規表現
+nnoremap / /\v
+nnoremap ? ?\v
+"" /の自動エスケープ
+cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
+
+" 構文チェックを有効化
+syntax enable
+
+"----
+"Start dein
 "----
 let g:dein#install_log_filename = '~/dein.log'
 let s:dein_toml = '~/.vim/rc/dein.toml'
@@ -15,6 +208,10 @@ call dein#begin($DEIN_DIR, [
 	\ ])
 call dein#load_toml(s:dein_toml, {'lazy': 0})
 call dein#load_toml(s:dein_lazy_toml, {'lazy': 1})
+if !has('nvim')
+  call dein#add('roxma/nvim-yarp')
+  call dein#add('roxma/vim-hug-neovim-rpc')
+endif
 call dein#end()
 call dein#save_state()
 "----
@@ -105,6 +302,8 @@ python3 del powerline_setup
 set laststatus=2
 set showtabline=2
 set noshowmode 
+
+
 
 "" highlight
 let g:go_hightlight_functions = 1
