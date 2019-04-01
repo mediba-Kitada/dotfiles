@@ -19,3 +19,9 @@ repo = 'moll/vim-node'
 [[plugins]]
 repo = 'elzr/vim-json'
 
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+hook_add = '''
+	nnoremap <silent> ,g :<C-u>Denite -buffer-name=search
+		\ -no-empty -mode=normal grep<CR>
+'''

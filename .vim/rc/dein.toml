@@ -1,5 +1,9 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
@@ -16,6 +20,9 @@ repo = 'Townk/vim-autoclose'
 repo = 'szw/vim-tags'
 [[plugins]]
 repo = 'majutsushi/tagbar'
+hook_add = '''
+filetype on
+'''
 
 # Ruby reference(refe2) viewer
 [[plugins]]
