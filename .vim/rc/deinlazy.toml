@@ -24,4 +24,12 @@ repo = 'Shougo/denite.nvim'
 hook_add = '''
 	nnoremap <silent> ,g :<C-u>Denite -buffer-name=search
 		\ -no-empty -mode=normal grep<CR>
+	nnoremap <silent> ,cg :<C-u>Denite -buffer-name=search
+		\ -no-empty -mode=normal grep<CR><C-R><C-W>
+	" バッファ一覧
+	nnoremap <silent> ,db :<C-u>Denite -buffer-name=search<CR>
+	" ファイル一覧
+	nnoremap <silent> ,df :<C-u>Denite -buffer-name=files file<CR>
+	" レジスタ一覧
+	nnoremap <silent> ,dr :<C-u>Denite -buffer-name=register register<CR>
 '''
