@@ -1,4 +1,5 @@
 " dein configurations
+
 let g:dein#install_log_filename = '~/dein.log'
 let s:dein_toml = '~/.vim/rc/dein.toml'
 let s:dein_lazy_toml = '~/.vim/rc/deinlazy.toml'
