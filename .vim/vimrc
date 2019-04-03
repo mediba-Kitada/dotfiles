@@ -1,13 +1,6 @@
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2011 Apr 15
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
+"---------------------------------------------------------------------------
+" kitatuba's .vimrc
+"---------------------------------------------------------------------------
 
 " When started as 'evim' evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -190,29 +183,8 @@ cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 " 構文チェックを有効化
 syntax enable
 
-"----
-"Start dein
-"----
-let g:dein#install_log_filename = '~/dein.log'
-let s:dein_toml = '~/.vim/rc/dein.toml'
-let s:dein_lazy_toml = '~/.vim/rc/deinlazy.toml'
-if &compatible
-  set compatible
-endif
-set runtimepath+=$DEIN_DIR/repos/github.com/Shougo/dein.vim
-if !dein#load_state($DEIN_DIR)
-	finish
-endif
-call dein#begin($DEIN_DIR, [
-	\ expand('<sfile>'), s:dein_toml, s:dein_lazy_toml
-	\ ])
-call dein#load_toml(s:dein_toml, {'lazy': 0})
-call dein#load_toml(s:dein_lazy_toml, {'lazy': 1})
-call dein#end()
-call dein#save_state()
-"----
-"End dein
-"----
+" dein
+execute 'source' fnamemodify(expand('<sfile>'), ':h').'/rc/dein.rc.vim'
 
 " CodeSnifferの設定をプロジェクト毎に読み込み
 augroup vimrc-local
