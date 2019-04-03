@@ -1,39 +1,43 @@
 [alias]
- alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\t=> \\2/' | sort
- b = branch -a
- c = commit
- co = checkout
- d = diff
- dc = diff --cached
- info = remote show origin
- l = log --graph -n 20 --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset'
- s = status --short --branch
- st = status
- f = fetch
- pom = pull origin master
+	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\t=> \\2/' | sort
+	b = branch -a
+	c = commit
+	co = checkout
+	d = diff
+	dc = diff --cached
+	info = remote show origin
+	l = log --graph -n 20 --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset'
+	s = status --short --branch
+	st = status
+	f = fetch
+	pom = pull origin master
 [color]
- ui = auto
+	ui = auto
 
 [core]
- pager = LESSCHARSET=utf-8 less
+	pager = LESSCHARSET=utf-8 less
 	editor = /usr/local/bin/vim
 
 [merge]
 	conflictstyle = diff3
 
 [hub]
-protocol = https
+	protocol = https
 	host = vcs.mediba.jp
-
-[credential]
-helper = /opt/boxen/bin/boxen-git-credential
 
 [push]
 	default = simple
+
 [init]
 	templatedir = $HOME/.git_template
+
 [ghq]
-	root = $HOME/go/src
+	root = ~/.ghq
+	root = ~/go/src
+
+[ghq "vcs.mediba.jp"]
+	vcs = git
+
 [user]
 	email = hokudenyoku@gmail.com
 	name = kitatuba
