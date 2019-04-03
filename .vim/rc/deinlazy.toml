@@ -34,7 +34,7 @@ nnoremap <silent> ,uf :<C-u>DeniteBufferDir file/rec<CR>
 " レジスタ一覧
 nnoremap <silent> ,ur :<C-u>Denite -buffer-name=register register<CR>
 " ghqでリポジトリ一覧にアクセス
-nnoremap <silent> [Window]g :<C-u>Denite ghq<CR>
+nnoremap <silent> ,gh :<C-u>Denite ghq<CR>
 '''
 
 [[plugins]]
