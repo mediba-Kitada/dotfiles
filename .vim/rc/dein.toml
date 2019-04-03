@@ -83,18 +83,21 @@ repo = 'cohama/agit.vim'
 # GitHubの絵文字,issue番号,リポジトリ名etcの補完
 repo = 'rhysd/github-complete.vim'
 
-# カーソル下のURIをブラウザで表示
 [[plugins]]
 repo = 'tyru/open-browser.vim'
+hook_add = '''
+" カーソル下のURIをブラウザで表示
+nmap ,bo <Plug>(openbrowser-open)
+vmap ,bo <Plug>(openbrowser-open)
+" カーソル下の文字列をぐぐる
+nmap ,bs <Plug>(openbrowser-smart-search)
+vmap ,bs <Plug>(openbrowser-smart-search)
+'''
 
 # tableを記述/整形
 [[plugins]]
 repo = 'dhruvasagar/vim-table-mode'
 hook_add = '''
-" netrwのgxマッピングを解除
-let g:netrw_nogx = 1
-nmap gx <Plug>(openbrowser-smart-search)
-vmap gx <Plug>(openbrowser-smart-search)
 '''
 
 [[plugins]]
