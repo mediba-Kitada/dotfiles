@@ -120,3 +120,17 @@ hook_add = '''
 let g:calendar_google_calendar = 1
 let g:calendar_views = ['year','month','weekday','day','clock']
 '''
+
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+hook_add = '''
+autocmd User lsp_setup call lsp#register_server({
+	\ 'name': 'intelephense',
+	\ 'cmd': {server_info->['node', expand('$NVM_BIN/intelephense'), '--stdio']},
+	\ 'initialization_options': {"storagePath": '/tmp/intelephense'},
+	\ 'whitelist': ['php'],
+	\ })
+'''
