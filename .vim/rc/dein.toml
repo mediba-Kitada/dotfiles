@@ -127,12 +127,15 @@ repo = 'prabirshrestha/async.vim'
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 hook_add = '''
-autocmd User lsp_setup call lsp#register_server({
-	\ 'name': 'intelephense',
-	\ 'cmd': {server_info->['node', expand('$NVM_BIN/intelephense'), '--stdio']},
-	\ 'initialization_options': {"storagePath": '/tmp/intelephense'},
-	\ 'whitelist': ['php'],
-	\ })
+" PHP
+if executable('intelephense')
+	autocmd User lsp_setup call lsp#register_server({
+		\ 'name': 'intelephense',
+		\ 'cmd': {server_info->['node', expand('$NVM_BIN/intelephense'), '--stdio']},
+		\ 'initialization_options': {"storagePath": '/tmp/intelephense'},
+		\ 'whitelist': ['php'],
+		\ })
+endif
 let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_echo_cursol = 1
 let g:lsp_signs_error = {'text': '✗'}
