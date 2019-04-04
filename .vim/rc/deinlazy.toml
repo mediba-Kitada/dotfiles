@@ -66,3 +66,6 @@ repo = 'prabirshrestha/asyncomplete-lsp.vim'
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
+hook_source = '''
+let g:asyncomplete_log_file = expand('~/asyncomplete.log')
+'''
