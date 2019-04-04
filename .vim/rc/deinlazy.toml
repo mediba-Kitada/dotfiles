@@ -50,6 +50,13 @@ repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-neosnippet.vim'
+hook_source = '''
+call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
+	\ 'name': 'neosnippet',
+	\ 'whitelist': ['*'],
+	\ 'completor': function('asyncomplete#sources#neosnippet#completor'),
+	\ }))
+'''
 
 [[plugins]]
 repo = 'prabirshrestha/async.vim'
@@ -59,10 +66,3 @@ repo = 'prabirshrestha/asyncomplete-lsp.vim'
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
-hook_add = '''
-call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
-	\ 'name': 'neosnippet',
-	\ 'whitelist': ['*'],
-	\ 'completor': function('asyncomplete#sources#neosnippet#completor'),
-	\ }))
-'''
