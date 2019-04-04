@@ -93,6 +93,8 @@ nnoremap <Space>.	:<C-u>edit $MYVIMRC<Enter>
 " Reload .vimrc"
 nnoremap <Space>s.	:<C-u>source $MYVIMRC<Enter>
 
+" 行におけるカーソル移動
+set whichwrap+=h,l,<,>,[,],b,s,~
 
 " ESCをCtl-cにマッピング
 inoremap <C-c> <ESc>
@@ -213,6 +215,9 @@ set shiftwidth=4
 " swapファイルを利用しない
 set noswapfile
 
+" 他のファイルの編集をスタートさせる全てのコマンドに関して、いらないバッファは捨てられない
+set hidden
+
 " Exコマンド補完
 set wildmenu
 set wildmode=full
@@ -238,7 +243,7 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " 検索結果のハイライトを消す
 set hlsearch
-nnoremap <ESC><ESC> :nohlsearch<CR>
+nnoremap <ESC><ESC> :nohlsearch<CR><ESC>
 
 " ビープ音off
 set visualbell t_vb=
