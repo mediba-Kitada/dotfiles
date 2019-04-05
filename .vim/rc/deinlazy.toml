@@ -53,7 +53,7 @@ repo = 'prabirshrestha/asyncomplete-neosnippet.vim'
 hook_source = '''
 call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
 	\ 'name': 'neosnippet',
-	\ 'whitelist': ['*'],
+	\ 'whitelist': ['php'],
 	\ 'completor': function('asyncomplete#sources#neosnippet#completor'),
 	\ }))
 
@@ -67,6 +67,8 @@ repo = 'prabirshrestha/async.vim'
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
+on_ft = ['php']
+depends = ['asyncomplete.vim', 'vim-lsp']
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
