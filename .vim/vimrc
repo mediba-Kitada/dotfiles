@@ -93,6 +93,11 @@ nnoremap <Space>.	:<C-u>edit $MYVIMRC<Enter>
 " Reload .vimrc"
 nnoremap <Space>s.	:<C-u>source $MYVIMRC<Enter>
 
+" asyncomplate用にautocmdグループを作成する
+augroup vimrc
+	autocmd!
+augroup END
+
 " 行におけるカーソル移動
 set whichwrap+=h,l,<,>,[,],b,s,~
 
