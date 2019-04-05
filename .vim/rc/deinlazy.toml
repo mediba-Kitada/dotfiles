@@ -56,6 +56,10 @@ call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_opt
 	\ 'whitelist': ['*'],
 	\ 'completor': function('asyncomplete#sources#neosnippet#completor'),
 	\ }))
+
+" 特定のファイルタイプのファイルのみ補完対象とする
+let g:asyncomplate_enable_for_all = 0
+autocmd vimrc FileType php
 '''
 
 [[plugins]]
