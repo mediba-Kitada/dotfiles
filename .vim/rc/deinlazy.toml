@@ -25,16 +25,16 @@ on_cmd = 'Denite'
 hook_source = 'source ~/.vim/rc/denite.rc.vim'
 hook_add = '''
 " カレントディレクトリをgrep
-nnoremap <silent> ,g :<C-u>Denite grep:.<CR>
-nnoremap <silent> ,cg :<C-u>DeniteCursorWord grep:.<CR>
+nnoremap <silent> <Leader>g :<C-u>Denite grep:.<CR>
+nnoremap <silent> <Leader>cg :<C-u>DeniteCursorWord grep:.<CR>
 " バッファ一覧を表示
-nnoremap <silent> ,ub :<C-u>Denite buffer<CR>
+nnoremap <silent> <Leader>ub :<C-u>Denite buffer<CR>
 " 対象ファイルのカレントディレクトリ ファイル一覧を表示
-nnoremap <silent> ,uf :<C-u>DeniteBufferDir file/rec<CR>
+nnoremap <silent> <Leader>uf :<C-u>DeniteBufferDir file/rec<CR>
 " レジスタ一覧
-nnoremap <silent> ,ur :<C-u>Denite -buffer-name=register register<CR>
+nnoremap <silent> <Leader>ur :<C-u>Denite -buffer-name=register register<CR>
 " ghqでリポジトリ一覧にアクセス
-nnoremap <silent> ,gh :<C-u>Denite ghq<CR>
+nnoremap <silent> <Leader>gh :<C-u>Denite ghq<CR>
 '''
 
 [[plugins]]
