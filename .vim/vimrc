@@ -89,9 +89,9 @@ if !exists(":DiffOrig")
 endif
 
 " Edit .vimrc"
-nnoremap <Space>.	:<C-u>edit $MYVIMRC<Enter>
+nnoremap <Leader>.	:<C-u>edit $MYVIMRC<Enter>
 " Reload .vimrc"
-nnoremap <Space>s.	:<C-u>source $MYVIMRC<Enter>
+nnoremap <Leader>s.	:<C-u>source $MYVIMRC<Enter>
 
 " asyncomplate用にautocmdグループを作成する
 augroup vimrc
@@ -178,8 +178,8 @@ nnoremap ZQ <Nop>
 nnoremap Q <Nop>
 
 " leaderを,とする
-let mapleader = ","
-noremap \ ,
+let mapleader = "\<Space>"
+noremap \ <Space>
 
 " 正規表現
 nnoremap / /\v
