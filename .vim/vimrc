@@ -178,8 +178,8 @@ nnoremap ZQ <Nop>
 nnoremap Q <Nop>
 
 " leaderを,とする
-let g:mapleader = "\<Space>"
-noremap \ <Space>
+let g:mapleader = ","
+noremap \ ,
 
 " 正規表現
 nnoremap / /\v
