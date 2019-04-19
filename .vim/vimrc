@@ -14,7 +14,6 @@ if has("vms")
 else
   set backup		" keep a backup file
 endif
-set history=10000		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
@@ -83,6 +82,9 @@ endif
 nnoremap <Space>. :<C-u>edit $MYVIMRC<Enter>
 " Reload .vimrc"
 nnoremap <Space>s. :<C-u>source $MYVIMRC<Enter>
+
+" コマンド履歴の保持数
+set history=10000
 
 " マウス操作を有効化
 if has('mouse')
