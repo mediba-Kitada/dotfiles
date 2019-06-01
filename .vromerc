@@ -1,4 +1,4 @@
-set disablesites=mail.google.com,github.com,b.hatena.ne.jp/viewer,facebook.com/,vcs.mediba-dev.tools,vcs.mediba.jp,
+set disablesites=mail.google.com,github.com,b.hatena.ne.jp/viewer,facebook.com/,vcs.mediba-dev.tools,vcs.mediba.jp,console.aws.amazon.com,
 
 map ; :
 map : ;
