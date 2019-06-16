@@ -144,6 +144,20 @@ if executable('solargraph')
 		\ 'whitelist': ['ruby'],
 		\ })
 endif
+
+" Go
+if executable('gopls')
+	augroup LspGo
+		au!
+		autocmd User lsp_setup call lsp#register_server({
+		\ 'name': 'go-lang',
+		\ 'cmd': {server_info->['gopls']},
+		\ 'whitelist':['go'],
+		\})
+		autocmd FileType go setlocal omnifunc=lsp#complete
+	augroup END
+endif
+
 let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_echo_cursol = 1
 let g:lsp_signs_error = {'text': '✗'}

@@ -58,13 +58,13 @@ repo = 'prabirshrestha/asyncomplete-neosnippet.vim'
 hook_source = '''
 call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
 	\ 'name': 'neosnippet',
-	\ 'whitelist': ['php','ruby'],
+	\ 'whitelist': ['php','ruby','go'],
 	\ 'completor': function('asyncomplete#sources#neosnippet#completor'),
 	\ }))
 
 " 特定のファイルタイプのファイルのみ補完対象とする
 let g:asyncomplate_enable_for_all = 0
-autocmd vimrc FileType php,ruby,
+autocmd vimrc FileType php,ruby,go,
 '''
 
 [[plugins]]
@@ -72,7 +72,7 @@ repo = 'prabirshrestha/async.vim'
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
-on_ft = ['php','ruby']
+on_ft = ['php','ruby','go']
 depends = ['asyncomplete.vim', 'vim-lsp']
 
 [[plugins]]

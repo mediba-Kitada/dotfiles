@@ -209,7 +209,7 @@ set exrc
 set secure
 
 " md as markdow
-autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*,Rmd} set filetype=markdown
 
 " tab space
 set tabstop=4
