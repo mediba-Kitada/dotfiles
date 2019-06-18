@@ -136,6 +136,12 @@ if executable('gopls')
 		\ 'whitelist':['go'],
 		\})
 		autocmd FileType go setlocal omnifunc=lsp#complete
+		autocmd FileType go nmap <buffer> <Leader>gd <plug>(lsp-definition)
+		autocmd FileType go nmap <buffer> <Leader>gdd <plug>(lsp-document-diagnostics)
+		autocmd FileType go nmap <buffer> <Leader>gn <plug>(lsp-next-error)
+		autocmd FileType go nmap <buffer> <Leader>gp <plug>(lsp-previous-error)
+		autocmd FileType go nmap <buffer> <Leader>gf <plug>(lsp-document-format)
+		autocmd FileType go nmap <buffer> <Leader>gr <plug>(lsp-references)
 	augroup END
 endif
 
