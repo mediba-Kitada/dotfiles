@@ -140,7 +140,6 @@ if executable('gopls')
 		autocmd FileType go nmap <buffer> <Leader>gdd <plug>(lsp-document-diagnostics)
 		autocmd FileType go nmap <buffer> <Leader>gn <plug>(lsp-next-error)
 		autocmd FileType go nmap <buffer> <Leader>gp <plug>(lsp-previous-error)
-		autocmd FileType go nmap <buffer> <Leader>gf <plug>(lsp-document-format)
 		autocmd FileType go nmap <buffer> <Leader>gr <plug>(lsp-references)
 	augroup END
 endif
@@ -159,7 +158,7 @@ let g:lsp_log_file = expand('~/vim-lsp.log')
 repo = 'fatih/vim-go'
 hook_add = '''
 " go run
-au FileType go nmap <Leader>gr <Plug>(go-run)
+"au FileType go nmap <Leader>gr <Plug>(go-run)
 " go test
 au FileType go nmap <Leader>gt <Plug>(go-test)
 " Show the relevant GoDoc for the word under the cursor in a split window.
