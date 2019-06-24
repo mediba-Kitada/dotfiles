@@ -163,4 +163,8 @@ hook_add = '''
 au FileType go nmap <Leader>gt <Plug>(go-test)
 " Show the relevant GoDoc for the word under the cursor in a split window.
 au FileType go nmap <Leader>gdt <Plug>(go-doc-split)
+" Calls `golint` for the current package
+au FileType go nmap <Leader>gl <Plug>(go-lint)
+" Calls `go vet` for the current package
+au FileType go nmap <Leader>gv <Plug>(go-vet)
 '''
