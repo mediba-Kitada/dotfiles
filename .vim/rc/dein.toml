@@ -153,3 +153,15 @@ let g:lsp_signs_warning = {'text': '!!'}
 let g:lsp_log_verbose = 1
 let g:lsp_log_file = expand('~/vim-lsp.log')
 '''
+
+# golang
+[[plugins]]
+repo = 'fatih/vim-go'
+hook_add = '''
+" go run
+au FileType go nmap <Leader>gr <Plug>(go-run)
+" go test
+au FileType go nmap <Leader>gt <Plug>(go-test)
+" Show the relevant GoDoc for the word under the cursor in a split window.
+au FileType go nmap <Leader>gdt <Plug>(go-doc-split)
+'''
