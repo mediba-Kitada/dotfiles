@@ -273,16 +273,6 @@ set clipboard=unnamed,autoselect
 " Powerline
 execute 'source' fnamemodify(expand('<sfile>'), ':h').'/rc/powerline.rc.vim'
 
-"" highlight
-let g:go_hightlight_functions = 1
-let g:go_hightlight_methods = 1
-let g:go_hightlight_structs = 1
-let g:go_hightlight_interfaces = 1
-let g:go_hightlight_operators = 1
-let g:go_hightlight_build_constraints = 1
-"" GoFmt時にインポートするパッケージを整理
-let g:go_fmt_command = "goimports"
-
 " git
 "" :Man 確認したいコマンド
 runtime ftplugin/man.vim
@@ -303,12 +293,14 @@ let g:table_mode_corner = "|"
 "" 0がプレフィックスの数値を10進数として扱う
 set nrformats=
 
-" 画面分割に関するキーマップ
+" window分割に関するキーマップ
 nnoremap s <Nop>
-"" 画面分割
+"" windowを閉じる
+nnoremap sq <C-w>q
+"" window分割
 nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
-"" 分割した画面を移動
+"" 分割したwindowを移動
 nnoremap sh <C-w>h
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
