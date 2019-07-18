@@ -275,6 +275,8 @@ execute 'source' fnamemodify(expand('<sfile>'), ':h').'/rc/powerline.rc.vim'
 
 " :Man 確認したいコマンド
 runtime ftplugin/man.vim
+"" :gip git pushコマンド
+nnoremap gip :<C-u>!git push<CR>
 "" スペルチェック
 set spelllang=en,cjk
 "" git commitの際に自動でスペルチェックを有効にする
