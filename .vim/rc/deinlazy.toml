@@ -37,6 +37,8 @@ nnoremap <silent> <Leader>ur :<C-u>Denite -buffer-name=register register<CR>
 nnoremap <silent> <Leader>gh :<C-u>Denite ghq<CR>
 " denite-gitでgit操作
 nnoremap <silent> gi :<C-u>Denite gitstatus<CR>
+nnoremap <silent> gib :<C-u>Denite gitbranch<CR>
+nnoremap <silent> gil :<C-u>Denite gitlog<CR>
 '''
 
 [[plugins]]
