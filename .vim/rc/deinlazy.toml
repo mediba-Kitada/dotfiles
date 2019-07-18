@@ -35,6 +35,8 @@ nnoremap <silent> <Leader>uf :<C-u>DeniteBufferDir file/rec<CR>
 nnoremap <silent> <Leader>ur :<C-u>Denite -buffer-name=register register<CR>
 " ghqでリポジトリ一覧にアクセス
 nnoremap <silent> <Leader>gh :<C-u>Denite ghq<CR>
+" denite-gitでgit操作
+nnoremap <silent> gi :<C-u>Denite gitstatus<CR>
 '''
 
 [[plugins]]

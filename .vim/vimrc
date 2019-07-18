@@ -273,11 +273,8 @@ set clipboard=unnamed,autoselect
 " Powerline
 execute 'source' fnamemodify(expand('<sfile>'), ':h').'/rc/powerline.rc.vim'
 
-" git
-"" :Man 確認したいコマンド
+" :Man 確認したいコマンド
 runtime ftplugin/man.vim
-"" :gi gitコマンド
-nnoremap gi :<C-u>!git<Space>
 "" スペルチェック
 set spelllang=en,cjk
 "" git commitの際に自動でスペルチェックを有効にする

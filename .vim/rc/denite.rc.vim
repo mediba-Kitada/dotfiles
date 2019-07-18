@@ -12,6 +12,13 @@ function! s:denite_my_settings() abort
   \ denite#do_map('open_filter_buffer')
   nnoremap <silent><buffer><expr> <Space>
   \ denite#do_map('toggle_select').'j'
+  nnoremap <silent><buffer><expr> a
+  \ denite#do_map('do_action', 'add')
+  nnoremap <silent><buffer><expr> r
+  \ denite#do_map('do_action', 'reset')
+  nnoremap <silent><buffer><expr> c
+  \ denite#do_map('choose_action')
+en
 endfunction
 
 autocmd FileType denite-filter call s:denite_filter_my_settings()
