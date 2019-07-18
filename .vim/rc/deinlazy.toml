@@ -38,6 +38,10 @@ nnoremap <silent> <Leader>gh :<C-u>Denite ghq<CR>
 '''
 
 [[plugins]]
+repo = 'neoclide/denite-git'
+on_source = 'denite.nvim'
+
+[[plugins]]
 repo = 'Jagua/vim-denite-ghq'
 on_source = 'denite.nvim'
 
