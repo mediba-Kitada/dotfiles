@@ -99,6 +99,9 @@ let g:go_fmt_command = "goimports"
 let g:go_fmt_options = {
 	\ 'goimports': '-local vcs.mediba.jp',
 	\ }
+
+" go build
+"au FileType go nmap <Leader>gb <Plug>(go-build)
 " go run
 "au FileType go nmap <Leader>gr <Plug>(go-run)
 " go test
@@ -109,4 +112,8 @@ au FileType go nmap <Leader>gdt <Plug>(go-doc-split)
 au FileType go nmap <Leader>gl <Plug>(go-lint)
 " Calls `go vet` for the current package
 au FileType go nmap <Leader>gv <Plug>(go-vet)
+" next compile error
+map <C-n> :cnext<CR>
+" previous compile error
+map <C-m> :cprevious<CR>
 '''
