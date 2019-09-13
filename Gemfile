@@ -1,5 +1,7 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
-gem "rubocop"
+gem "rubocop-performance"
 gem "refe2"
+
+gem "solargraph"

@@ -23,8 +23,12 @@ endfunction
 
 autocmd FileType denite-filter call s:denite_filter_my_settings()
 function! s:denite_filter_my_settings() abort
-  imap <silent><buffer> <C-o> <Plug>(denite_filter_quit)
+  inoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
+  imap <silent><buffer> <C-c> <Plug>(denite_filter_quit)
 endfunction
+
+" Change default action.
+call denite#custom#kind('file', 'default_action', 'split')
 
 if executable('ag')
 	call denite#custom#var('file/rec', 'command',

@@ -39,6 +39,8 @@ nnoremap <silent> <Leader>gh :<C-u>Denite ghq<CR>
 nnoremap <silent> gi :<C-u>Denite gitstatus<CR>
 nnoremap <silent> gib :<C-u>Denite gitbranch<CR>
 nnoremap <silent> gil :<C-u>Denite gitlog<CR>
+" Shows all type and func declarations for golang
+au FileType go nnoremap <silent> <Leader>ll :<C-u>Denite decls<CR>
 '''
 
 [[plugins]]
