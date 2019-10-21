@@ -284,10 +284,6 @@ zle -N peco-src
 if [[ -d $HOME/.anyenv ]]; then
   export PATH=$HOME/.anyenv/bin:$PATH
   eval "$(anyenv init -)"
-
-  # python
-  #export PYTHONPATH="$HOME/.anyenv/envs/pyenv/versions/2.7.8/lib/python2.7/site-packages"
-
 fi
 
 # powerline
