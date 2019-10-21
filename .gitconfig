@@ -9,7 +9,7 @@
 	l = log --graph -n 20 --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset'
 	s = status --short --branch
 	st = status
-	f = fetch
+	fe = fetch
 	pom = pull origin master
 [color]
 	ui = auto
