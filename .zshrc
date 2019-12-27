@@ -266,6 +266,8 @@ export GOPATH="$HOME/go"
 ## bin
 export GOBIN="$GOPATH/bin"
 export PATH=$GOBIN:$PATH
+## module
+export GOPRIVATE=vcs.mediba.jp/*
 
 # manage repos by ghq and peco
 bindkey '^]' peco-src
