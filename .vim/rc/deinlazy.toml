@@ -94,3 +94,4 @@ let g:asyncomplete_log_file = expand('~/asyncomplete.log')
 # golang
 [[plugins]]
 repo = 'mattn/vim-goimports'
+on_ft = ['go']
