@@ -30,6 +30,7 @@ agree
 ### システム環境設定
 
 #### 日付と時刻
+
 - NTPサーバを ntp.nict.jp に変更
 - 時計の表示を デジタル時計 -> 秒を表示 -> 24時間表示にする
 
@@ -66,12 +67,10 @@ agree
 - ショートカット
     - Spotlight
         - Spotlight検索を表示
-            Option + Space
+            Ctl + Space
         - Finderの検索ウィンドウを表示
             - チェックを外す
     - 入力ソース
-        - 前の入力ソースを選択
-            - チェックを外す
         - 入力メニューの次のソースを選択
             - チェックを外す
 
@@ -112,6 +111,7 @@ agree
 
 ```
 $ ssh-keygen -t rsa -C kitada@mediba.jp
+$ cp memo/ssh/config ~/.ssh/config
 ```
 
 - 公開鍵をgithubとかbitbucketに登録する
@@ -128,9 +128,8 @@ $ git clone git@github.com:mediba-Kitada/dotfiles.git
 ### Karabiner
 
 - Chromeを起動し、アプリケーションを[DL](https://pqrs.org/osx/karabiner/)
-- システム環境設定
-    - セキュリティとプライバシー
-        - Karabinerの挙動を許可する
+- 設定ファイルをコピー
+	- `cp path/to/dotfiles/.config/karabiner/karabiner.json ~/.config.karabiner/karabiner.json`
 
 ### google日本語入力
 
@@ -143,7 +142,7 @@ $ git clone git@github.com:mediba-Kitada/dotfiles.git
 
 ### shifit
 
-- 本家[200~https://github.com/fikovnik/ShiftIt]
+- 本家[https://github.com/fikovnik/ShiftIt]
 - システム環境設定
     - セキュリティとプライバシー
         - プライバシー
@@ -173,7 +172,7 @@ $ source .zshrc
 
 ### powerline
 
-- pyenvはHomebrewで導入
+- Python3系を利用
 
 ```zsh
 # powerline-statusのインストール
@@ -193,69 +192,19 @@ $ sh fonts/install.sh
 
 ### vim
 
-前述の ```brionac a``` でvimをluajitでインストールしているが、luaがサポートされないので、手動で対応
-
 ```zsh
-$ brew uninstall vim
-$ brew reinstall vim --with-lua
-$ vi --version|grep +lua
-```
-
-#### vim-go
-
-```
-$ cd $HOME
-$ vi
-:GoInstallBinaries
-```
-
-### ruby
-
-前述の ```dotfiles/install.sh``` でインストールを実施しているが動作していないので、手動で実行
-
-```zsh
-# rbenvのインストール
-$ anyenv install rbenv && source ~/.zshrc
-$ rbenv install 2.5.3
-# バージョンを固定
-$ rbenv global 2.5.3
-$ rbenv exec gem install bundler
-$ rbenv exec bundle install
-# リファレンスのダウンロード
-$ rbenv exec bundle exec bitclust setup
+# deinのインストール
+$ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+$ sh ./installer.sh ~/.cache/dein
+# vimを起動しdeinの初期設定
+:call dein#install()
 ```
 
 ### AWS
 
-- 以下のファイルを移植
-
 ```
-$HOME/.aws/credentials
-$HOME/.ssh/config
-```
-
-- Opsworksを利用している場合は、SSH公開鍵を更新する
-
-#### homebrew
-
-```bash
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-$ brew tap b4b4r07/brionac
-$ brew install brionac
-```
-
-#### shifit
-
-- [最新版](https://github.com/fikovnik/ShiftIt/releases)のアーカイブをダウンロード
-- 展開後は、`/Applications`にmvする
-
-#### dotfiles
-
-```bash
-$ cd ~/
-$ git clone git@github.com:mediba-Kitada/dotfiles.git
-$ cd ~/dotfiles
-$ ./install.sh
+$ mkdir HOME/.aws
+$ cp memo/aws/credentials $HOME/.aws/credentials
 ```
 
 ### git
