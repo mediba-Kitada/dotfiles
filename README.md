@@ -216,3 +216,10 @@ $ cp memo/aws/credentials $HOME/.aws/credentials
 ```
 $ git config --global core.excludesfile ~/.gitignore
 ```
+
+### go
+
+```
+# realizeのインストール
+$ go get github.com/oxequa/realize
+```
