@@ -193,6 +193,8 @@ $ sh fonts/install.sh
 ### vim
 
 ```zsh
+# gopslのインストール
+$ go get golang.org/x/tools/gopls@latest
 # deinのインストール
 $ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 $ sh ./installer.sh ~/.cache/dein
