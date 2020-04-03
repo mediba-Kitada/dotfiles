@@ -215,6 +215,7 @@ $ cp memo/aws/credentials $HOME/.aws/credentials
 
 ```
 $ git config --global core.excludesfile ~/.gitignore
+$ git config --global core.excludesfile
 ```
 
 ### go
