@@ -162,3 +162,6 @@ if executable('typescript-language-server')
 		\ })
 endif
 '''
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
