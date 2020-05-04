@@ -210,13 +210,14 @@ $ sh fonts/install.sh
 ### vim
 
 ```zsh
-# gopslのインストール
-$ go get golang.org/x/tools/gopls@latest
+# eslint-language-serverのインストール(グローバルで必要)
+$ yarn global add typescript eslint
 # deinのインストール
 $ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 $ sh ./installer.sh ~/.cache/dein
-# vimを起動しdeinの初期設定
+# vimを起動しdeinとvim-lsp-settingsの初期設定
 :call dein#install()
+:LspInstallServer eslint-language-server
 ```
 
 ### AWS
@@ -240,4 +241,6 @@ $ git config --global core.excludesfile
 ```
 # realizeのインストール
 $ go get github.com/oxequa/realize
+# goimportsのインストール
+$ go get golang.org/x/tools/cmd/goimports
 ```
