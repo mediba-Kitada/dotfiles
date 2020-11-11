@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh configuration.
 ZSH=/bin/zsh
 
-export PYTHON_VERSION="3.7"
+export PYTHON_VERSION="3.8"
 
 # harmful
 ## ^D
