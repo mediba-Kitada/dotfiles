@@ -16,6 +16,7 @@ do
   [ $i = "README.md" ] && continue
   [ $i = "install.sh" ] && continue
   [ $i = "tmux-pbcopy" ] && continue
+  [ $i == "powerline" ] && ln -s ~/dotfiles/$i ~/.config/
   ln -s ~/dotfiles/$i ~/
 done
 
