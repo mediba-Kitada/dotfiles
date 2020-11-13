@@ -29,6 +29,9 @@
 [push]
 	default = simple
 
+[pull]
+	rebase = false
+
 [init]
 	templatedir = $HOME/.git_template
 
