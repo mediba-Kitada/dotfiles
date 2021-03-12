@@ -215,9 +215,11 @@ $ yarn global add typescript eslint
 # deinのインストール
 $ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
 $ sh ./installer.sh ~/.cache/dein
+$ pip3 install neovim
+
 # vimを起動しdeinとvim-lsp-settingsの初期設定
 :call dein#install()
-:LspInstallServer eslint-language-server
+:LspInstallServer vim-language-server
 ```
 
 ### AWS
