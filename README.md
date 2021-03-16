@@ -176,6 +176,13 @@ $ cd $HOME/dotfiles
 $ brew bundle
 ```
 
+### go
+
+```
+$ cd $HOME/dotfiles
+$ make go-install
+```
+
 ### zsh
 
 ```bash
@@ -217,9 +224,12 @@ $ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh
 $ sh ./installer.sh ~/.cache/dein
 $ pip3 install neovim
 
-# vimを起動しdeinとvim-lsp-settingsの初期設定
+# vimを起動しdeinと各種LSPサーバの初期設定
 :call dein#install()
 :LspInstallServer vim-language-server
+:LspInstallServer eslint-language-server
+:LspInstallServer gopls
+:LspInstallServer bash-language-server
 ```
 
 ### AWS
@@ -238,11 +248,7 @@ $ git config --global core.excludesfile ~/.gitignore
 $ git config --global core.excludesfile
 ```
 
-### go
 
-```
-# realizeのインストール
-$ go get github.com/oxequa/realize
-# goimportsのインストール
-$ go get golang.org/x/tools/cmd/goimports
-```
+### node.js
+
+- [nvm](https://github.com/nvm-sh/nvm)を[インストール](https://github.com/nvm-sh/nvm#git-install)
