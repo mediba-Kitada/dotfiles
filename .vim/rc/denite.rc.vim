@@ -18,7 +18,6 @@ function! s:denite_my_settings() abort
   \ denite#do_map('do_action', 'reset')
   nnoremap <silent><buffer><expr> c
   \ denite#do_map('choose_action')
-en
 endfunction
 
 autocmd FileType denite-filter call s:denite_filter_my_settings()

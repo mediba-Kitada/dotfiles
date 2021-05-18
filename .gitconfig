@@ -16,7 +16,7 @@
 
 [core]
 	pager = LESSCHARSET=utf-8 less
-	editor = /usr/local/bin/vim
+	editor = /opt/homebrew/bin/vim
 	excludesfile = /Users/kitada/dotfiles/gitignore/Global/Vim.gitignore
 
 [merge]
