@@ -126,24 +126,6 @@ if executable('solargraph')
 		\ })
 endif
 
-" Go
-if executable('gopls')
-	augroup LspGo
-		au!
-		autocmd User lsp_setup call lsp#register_server({
-		\ 'name': 'go-lang',
-		\ 'cmd': {server_info->['gopls']},
-		\ 'whitelist':['go'],
-		\})
-		autocmd FileType go setlocal omnifunc=lsp#complete
-		autocmd FileType go nmap <buffer> <Leader>gd <plug>(lsp-definition)
-		autocmd FileType go nmap <buffer> <Leader>gdd <plug>(lsp-document-diagnostics)
-		autocmd FileType go nmap <buffer> <Leader>gn <plug>(lsp-next-error)
-		autocmd FileType go nmap <buffer> <Leader>gp <plug>(lsp-previous-error)
-		autocmd FileType go nmap <buffer> <Leader>gr <plug>(lsp-references)
-	augroup END
-endif
-
 let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_echo_cursol = 1
 let g:lsp_signs_error = {'text': '✗'}
@@ -151,6 +133,24 @@ let g:lsp_signs_warning = {'text': '!!'}
 
 let g:lsp_log_verbose = 1
 let g:lsp_log_file = expand('~/vim-lsp.log')
+function! s:on_lsp_buffer_enabled() abort
+  setlocal omnifunc=lsp#complete
+  setlocal signcolumn=yes
+  if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+	setlocal omnifunc=lsp#complete
+	nmap <buffer> <Leader>gd <plug>(lsp-definition) " 宣言元にジャンプ
+  nmap <buffer> <Leader>gs <plug>(lsp-document-symbol-search) " シンボル検索
+	nmap <buffer> <Leader>gdd <plug>(lsp-document-diagnostics) " コード診断
+	nmap <buffer> <Leader>gn <plug>(lsp-next-error)
+	nmap <buffer> <Leader>gp <plug>(lsp-previous-error)
+	nmap <buffer> <Leader>gr <plug>(lsp-references)
+  nmap <buffer> <Leader>k <plug>(lsp-hover)
+endfunction
+
+augroup lsp_install
+  au!
+  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
 '''
 
 [[plugins]]
