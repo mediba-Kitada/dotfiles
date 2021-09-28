@@ -64,6 +64,10 @@ alias mkdir='mkdir -p'
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../..'
+## aws logs tail
+alias taildev='aws logs tail --profile auwellness_ro_dev `aws logs describe-log-groups --profile auwellness_ro_dev | jq -r ".logGroups[].logGroupName" | peco` --follow'
+alias tailstg='aws logs tail --profile auwellness_ro_stg `aws logs describe-log-groups --profile auwellness_ro_stg | jq -r ".logGroups[].logGroupName" | peco` --follow'
+alias tailprd='aws logs tail --profile auwellness_ro_prd `aws logs describe-log-groups --profile auwellness_ro_prd | jq -r ".logGroups[].logGroupName" | peco` --follow'
 # global alias
 alias -g H='| head'
 alias -g T='| tail'
