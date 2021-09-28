@@ -107,15 +107,6 @@ let g:calendar_views = ['year','month','weekday','day','clock']
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 hook_add = '''
-" PHP
-if executable('intelephense')
-	autocmd User lsp_setup call lsp#register_server({
-		\ 'name': 'intelephense',
-		\ 'cmd': {server_info->['node', expand('$NVM_BIN/intelephense'), '--stdio']},
-		\ 'initialization_options': {"storagePath": '/tmp/intelephense'},
-		\ 'whitelist': ['php'],
-		\ })
-endif
 " Ruby 
 if executable('solargraph')
 	autocmd User lsp_setup call lsp#register_server({
@@ -140,6 +131,8 @@ function! s:on_lsp_buffer_enabled() abort
 	setlocal omnifunc=lsp#complete
 	nmap <buffer> <Leader>gd <plug>(lsp-definition) " 宣言元にジャンプ
   nmap <buffer> <Leader>gs <plug>(lsp-document-symbol-search) " シンボル検索
+  nmap <buffer> <Leader>gS <plug>(lsp-workspace-symbol-search) " プロジェクト内をシンボル検索
+  nmap <buffer> <Leader>gr <plug>(lsp-references) " バッファ内を検索
 	nmap <buffer> <Leader>gdd <plug>(lsp-document-diagnostics) " コード診断
 	nmap <buffer> <Leader>gn <plug>(lsp-next-error)
 	nmap <buffer> <Leader>gp <plug>(lsp-previous-error)

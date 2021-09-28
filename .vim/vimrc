@@ -329,6 +329,10 @@ autocmd BufRead,BufNewFile *.{es6,js} setfiletype javascript
 "" indent for shell script
 autocmd filetype sh setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
+" PHP
+"" indent for PHP
+autocmd filetype php setlocal shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+
 " ALE
 "let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_emit_conflict_warnings = 0
