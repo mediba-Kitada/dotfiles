@@ -75,6 +75,7 @@ alias -g G='| grep'
 alias -g N='> /dev/null'
 alias -g V='| vim -R -'
 alias -g P=' --help | less'
+alias -g vim=/opt/homebrew/bin/vim
 alias -g vi='vim'
 # exa
 alias ea='exa -a'
