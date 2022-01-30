@@ -297,6 +297,7 @@ fi
 if ! which powerline > /dev/null; && export PATH=$HOME/Library/Python/$PYTHON_VERSION/bin:$PATH
 powerline-daemon -q
 powerline-config tmux setup
+powerline-config shell command -s zsh
 
 export PATH="/usr/local/sbin:$PATH"
 
