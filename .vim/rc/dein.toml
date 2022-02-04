@@ -151,3 +151,19 @@ repo = 'mattn/vim-lsp-settings'
 hook_add = '''
 let g:lsp_settings_filetype_javascript = ['typescript-language-server','eslint-language-server']
 '''
+
+# tree viewer
+[[plugins]]
+repo = 'lambdalisue/fern.vim'
+repo = 'lambdalisue/fern-renderer-nerdfont.vim'
+hook_add = '''
+let g:fern#renderer = "nerdfont"
+'''
+
+# font
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+repo = 'lambdalisue/nerdfont.vim'
+hook_add = '''
+set guifont=DroidSansMono_Nerd_Font:h11
+'''
