@@ -171,9 +171,9 @@ function! s:fern_settings() abort
   nmap <silent> <buffer> <C-u> <Plug>(fern-action-preview:scroll:up:half)
 endfunction
 augroup __fern__
-  autocmd FileType fern call s:fern_settings()
   au!
   autocmd VimEnter * ++nested Fern . -drawer -stay -keep -toggle -reveal=%
+  autocmd FileType fern call s:fern_settings()
 augroup END
 nnoremap  <Leader>t :<c-u>Fern . -drawer -stay -keep -toggle -reveal=%<cr>
 '''
