@@ -152,19 +152,23 @@ let g:lsp_settings_filetype_javascript = ['typescript-language-server','eslint-l
 # ファイラ 
 [[plugins]]
 repo = 'lambdalisue/fern.vim'
-repo = 'lambdalisue/fern-renderer-nerdfont.vim'
 hook_add = '''
-let g:fern#renderer = "nerdfont"
 augroup __fern__
   autocmd! *
   autocmd VimEnter * ++nested Fern . -drawer -stay -keep -toggle -reveal=%
 augroup END
 nnoremap  <Leader>t :<c-u>Fern . -drawer -stay -keep -toggle -reveal=%<cr>
 '''
+[[plugins]]
+repo = 'lambdalisue/fern-renderer-nerdfont.vim'
+hook_add ='''
+let g:fern#renderer = "nerdfont"
+'''
 
 # font
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
+[[plugins]]
 repo = 'lambdalisue/nerdfont.vim'
 hook_add = '''
 set guifont=DroidSansMono_Nerd_Font:h11
