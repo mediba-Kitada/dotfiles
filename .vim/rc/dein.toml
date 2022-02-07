@@ -151,11 +151,21 @@ let g:lsp_settings_filetype_javascript = ['typescript-language-server','eslint-l
 
 # ファイラ 
 [[plugins]]
+repo = 'yuki-yano/fern-preview.vim'
+
+[[plugins]]
 repo = 'lambdalisue/fern.vim'
 hook_add = '''
+function! s:fern_settings() abort
+  nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
+  nmap <silent> <buffer> <C-p> <Plug>(fern-action-preview:auto:toggle)
+  nmap <silent> <buffer> <C-d> <Plug>(fern-action-preview:scroll:down:half)
+  nmap <silent> <buffer> <C-u> <Plug>(fern-action-preview:scroll:up:half)
+endfunction
 augroup __fern__
   autocmd! *
   autocmd VimEnter * ++nested Fern . -drawer -stay -keep -toggle -reveal=%
+  autocmd FileType fern call s:fern_settings()
 augroup END
 nnoremap  <Leader>t :<c-u>Fern . -drawer -stay -keep -toggle -reveal=%<cr>
 '''
