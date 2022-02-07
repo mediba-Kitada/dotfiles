@@ -187,3 +187,21 @@ repo = 'lambdalisue/nerdfont.vim'
 hook_add = '''
 set guifont=DroidSansMono_Nerd_Font:h11
 '''
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+hook_add = '''
+nmap <c-e> <plug>(ctrlp-launcher)
+'''
+
+[[plugins]]
+repo = 'mattn/ctrlp-matchfuzzy'
+
+[[plugins]]
+repo = 'mattn/ctrlp-launcher'
+
+[[plugins]]
+repo = 'mattn/ctrlp-lsp'
+
+[[plugins]]
+repo = 'mattn/ctrlp-git'
