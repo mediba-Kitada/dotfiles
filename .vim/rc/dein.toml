@@ -161,6 +161,7 @@ repo = 'lambdalisue/fern-renderer-nerdfont.vim'
 
 [[plugins]]
 repo = 'lambdalisue/fern.vim'
+rev = 'main'
 hook_add = '''
 let g:fern#default_hidden=1
 let g:fern#renderer = "nerdfont"
