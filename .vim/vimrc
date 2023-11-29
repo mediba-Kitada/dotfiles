@@ -147,7 +147,7 @@ vnoremap gc	:<C-u>nomal gc<Enter>
 onoremap gc	:<C-u>nomal gc<Enter>
 
 " シンタックスハイライトの色設定の上書き"
-colorscheme desert
+colorscheme slate
 autocmd ColorScheme *
 \ highlight TabLine
 \	cterm=NONE

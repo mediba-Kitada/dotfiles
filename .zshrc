@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh configuration.
 ZSH=/bin/zsh
 
-export PYTHON_VERSION="3.9"
+export PYTHONPATH="$HOME/dotfiles/python3/lib/python3.11/site-packages:$PYTHONPATH"
 
 # harmful
 ## ^D
@@ -75,7 +75,7 @@ alias -g G='| grep'
 alias -g N='> /dev/null'
 alias -g V='| vim -R -'
 alias -g P=' --help | less'
-alias -g vim=/opt/homebrew/bin/vim
+alias -g vim=/opt/local/bin/vim
 alias -g vi='vim'
 # exa
 alias ea='exa -a'
@@ -271,8 +271,6 @@ export GOPATH="$HOME/go"
 ## bin
 export GOBIN="$GOPATH/bin"
 export PATH=$GOBIN:$PATH
-## module
-export GOPRIVATE=vcs.mediba.jp/*
 
 # manage repos by ghq and peco
 bindkey '^]' peco-src
@@ -294,7 +292,7 @@ if [[ -d $HOME/.anyenv ]]; then
 fi
 
 # powerline
-if ! which powerline > /dev/null; && export PATH=$HOME/Library/Python/$PYTHON_VERSION/bin:$PATH
+if ! which powerline > /dev/null; && export PATH=$HOME/dotfiles/python3/bin:$PATH
 powerline-daemon -q
 powerline-config tmux setup
 powerline-config shell command -s zsh

@@ -181,6 +181,7 @@ $ brew bundle
 ```
 $ cd $HOME/dotfiles
 $ make go-install
+$ bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
 ```
 
 ### zsh
