@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh configuration.
 ZSH=/bin/zsh
 
-export PYTHONPATH="$HOME/dotfiles/python3/lib/python3.11/site-packages:$PYTHONPATH"
+export PYTHONPATH="$HOME/.venv/lib/python3.11/site-packages:$PYTHONPATH"
 
 # harmful
 ## ^D
@@ -292,7 +292,7 @@ if [[ -d $HOME/.anyenv ]]; then
 fi
 
 # powerline
-if ! which powerline > /dev/null; && export PATH=$HOME/dotfiles/python3/bin:$PATH
+if ! which powerline > /dev/null; && export PATH=$HOME/.venv/bin:$PATH
 powerline-daemon -q
 powerline-config tmux setup
 powerline-config shell command -s zsh
