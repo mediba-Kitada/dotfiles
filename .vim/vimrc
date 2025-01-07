@@ -147,7 +147,8 @@ vnoremap gc	:<C-u>nomal gc<Enter>
 onoremap gc	:<C-u>nomal gc<Enter>
 
 " シンタックスハイライトの色設定の上書き"
-colorscheme slate
+" 2023/12/1更新 目に優しいslateに変更
+colorscheme slate 
 autocmd ColorScheme *
 \ highlight TabLine
 \	cterm=NONE
@@ -351,3 +352,6 @@ function! s:GetBufByte()
 	return byte - 1
   endif
 endfunction
+
+" vim-ai
+execute 'source' fnamemodify(expand('<sfile>'), ':h').'/rc/vim-ai.rc.vim'

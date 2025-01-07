@@ -80,7 +80,14 @@ alias -g vi='vim'
 # exa
 alias ea='exa -a'
 alias el='exa -l'
-alias et='exa -T'
+alias et='exa -alT'
+# aws-vault
+alias avl='aws-vault'
+if [[ -f $HOME/.zsh/completions/_aws-vault ]]; then
+  fpath=(${HOME}/.zsh/completions $fpath)
+fi
+# terraform
+alias tf='terraform'
 
 # complement
 ## menu mode
@@ -337,3 +344,7 @@ if [ -f '/Users/kitada/google-cloud-sdk/completion.zsh.inc' ]; then source '/Use
 
 # dein
 export DEIN_DIR="$HOME/.cache/dein"
+
+# Android Studio
+export PATH=$PATH:/$HOME/Library/Android/sdk/platform-tools
+#

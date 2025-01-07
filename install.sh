@@ -26,10 +26,13 @@ cp -R ./.vim ~/
 # antigen
 [ ! -d $HOME/.zsh/antigen ] && mkdir -p $HOME/.zsh && cd $HOME/.zsh && git clone git@github.com:zsh-users/antigen.git
 
-# hub
 mkdir -p $HOME/.zsh/completions
+# hub
 [ ! -d $HOME/repos/hub ] && mkdir -p $HOME/repos && cd $HOME/repos && git clone git@github.com:github/hub.git
 [ ! -f $HOME/.zsh/completions/_hub ] && cp $HOME/repos/hub/etc/hub.zsh_completion $HOME/.zsh/completions/_hub
+# aws-vault comp
+[ ! -d $HOME/repos/naitoNanaco/aws-vault-completion ] && mkdir -p $HOME/repos && cd $HOME/repos && git clone git@github.com:naitoNanaco/aws-vault-completion.git
+[ ! -f $HOME/.zsh/completions/_aws-vault ] && cp $HOME/repos/aws-vault-completion/_aws-vault $HOME/.zsh/completions/_aws-vault
 
 # setup zsh
 source ~/.zshrc

@@ -46,5 +46,5 @@
 	email = hokudenyoku@gmail.com
 	name = kitatuba
 
-[url "https://d62e087359ab87b4d412c23779015e59c6dd10d7:x-oauth-basic@vcs.mediba.jp/"]
-	insteadOf = https://vcs.mediba.jp/
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/

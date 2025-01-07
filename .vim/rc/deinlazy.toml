@@ -95,3 +95,8 @@ let g:asyncomplete_log_file = expand('~/asyncomplete.log')
 [[plugins]]
 repo = 'mattn/vim-goimports'
 on_ft = ['go']
+
+# codeium
+[[plugins]]
+repo = 'Exafunction/codeium.vim'
+on_ft = ['go']
