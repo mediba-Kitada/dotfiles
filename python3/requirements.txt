@@ -4,4 +4,4 @@ neovim==0.3.1
 git-remote-codecommit==1.15.1
 openai==0.28.1
 awscli==1.31.3
-aws-sam-cli==1.107.0
+aws-sam-cli==1.122.0
