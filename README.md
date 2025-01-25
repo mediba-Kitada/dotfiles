@@ -27,7 +27,7 @@ dotfiles
 
 ```bash
 $ xcode-select --install
-$ sudo xcrun cc
+$ sudo xcodebuild -license
 agree
 ```
 
