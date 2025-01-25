@@ -12,6 +12,10 @@ dotfiles
 - mediba.jpのアカウントを作成
 - クレジットカードの情報は、アカウント作成後に削除
 
+### ログインパスワードの変更
+
+- https://support.apple.com/ja-jp/guide/mac-help/mchlp1550/mac
+
 ### システムアップデート
 
 - App Storeの各アプリ、OSをアップデート
