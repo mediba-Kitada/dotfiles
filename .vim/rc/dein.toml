@@ -210,7 +210,6 @@ repo = 'mattn/ctrlp-git'
 # ChatGPT
 [[plugins]]
 repo = 'madox2/vim-ai'
-hook_add = '''
-xnoremap <leader>c :AIChat<CR>
-nnoremap <leader>c :AIChat<CR>
-'''
+
+[[plugins]]
+repo = 'github/copilot.vim'

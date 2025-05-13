@@ -355,3 +355,6 @@ endfunction
 
 " vim-ai
 execute 'source' fnamemodify(expand('<sfile>'), ':h').'/rc/vim-ai.rc.vim'
+
+" copilot.vim
+execute 'source' fnamemodify(expand('<sfile>'), ':h').'/rc/copilot.rc.vim'
