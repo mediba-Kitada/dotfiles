@@ -170,6 +170,10 @@ command! Sjis	Cp932
 
 " オートインデント"
 set autoindent
+set smartindent
+
+" カーソルがインデント位置にくる
+set smarttab
 
 " 誤操作防止
 nnoremap ZZ <Nop>
@@ -215,6 +219,7 @@ autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*,Rmd} set filetype=markdown
 " tab space
 set tabstop=4
 set shiftwidth=4
+set expandtab
 
 " swapファイルを利用しない
 set noswapfile
@@ -358,3 +363,6 @@ execute 'source' fnamemodify(expand('<sfile>'), ':h').'/rc/vim-ai.rc.vim'
 
 " copilot.vim
 execute 'source' fnamemodify(expand('<sfile>'), ':h').'/rc/copilot.rc.vim'
+
+" python3外部コマンドのpath
+let g:python3_host_prog = '/Users/kitada/.venv3.13/bin/python3'

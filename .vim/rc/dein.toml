@@ -213,3 +213,6 @@ repo = 'madox2/vim-ai'
 
 [[plugins]]
 repo = 'github/copilot.vim'
+
+[[plugins]]
+repo = 'sheerun/vim-polyglot'
