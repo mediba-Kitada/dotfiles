@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh configuration.
 ZSH=/bin/zsh
 
-export PYTHONPATH="$HOME/.venv/lib/python3.11/site-packages:$PYTHONPATH"
+export PYTHONPATH="$HOME/.venv/lib/python3.13/site-packages:$PYTHONPATH"
 
 # harmful
 ## ^D
@@ -347,4 +347,6 @@ export DEIN_DIR="$HOME/.cache/dein"
 
 # Android Studio
 export PATH=$PATH:/$HOME/Library/Android/sdk/platform-tools
-#
+
+# Java
+export PATH=/opt/homebrew/opt/java/libexec/openjdk.jdk/Contents/Home/bin:$PATH
