@@ -366,3 +366,5 @@ execute 'source' fnamemodify(expand('<sfile>'), ':h').'/rc/copilot.rc.vim'
 
 " python3外部コマンドのpath
 let g:python3_host_prog = '/Users/kitada/.venv3.13/bin/python3'
+
+autocmd BufWritePre *.go execute ':silent! !gofmt -w %'
